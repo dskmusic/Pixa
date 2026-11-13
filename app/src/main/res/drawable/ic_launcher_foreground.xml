@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icono de Pixa: lienzo con paisaje y una esquina que se "pixela". -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Lienzo -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M30,27h48a7,7 0,0 1,7 7v40a7,7 0,0 1,-7 7h-48a7,7 0,0 1,-7 -7v-40a7,7 0,0 1,7 -7z" />
+    <!-- Cielo -->
+    <path
+        android:fillColor="#FF7CC4FF"
+        android:pathData="M31,35h46a1,1 0,0 1,1 1v34a1,1 0,0 1,-1 1h-46a1,1 0,0 1,-1 -1v-34a1,1 0,0 1,1 -1z" />
+    <!-- Sol -->
+    <path
+        android:fillColor="#FFFFD166"
+        android:pathData="M66,45a6,6 0,1 0,0.01 0z" />
+    <!-- Montana lejana -->
+    <path
+        android:fillColor="#FF4A9D6B"
+        android:pathData="M30,71l16,-20l13,16l8,-9l11,13z" />
+    <!-- Montana cercana -->
+    <path
+        android:fillColor="#FF2E7D52"
+        android:pathData="M30,71l14,-13l12,13z" />
+    <!-- Esquina pixelada -->
+    <path
+        android:fillColor="#FFE94F6B"
+        android:pathData="M66,59h6v6h-6z M72,65h6v6h-6z M60,65h6v6h-6z" />
+    <path
+        android:fillColor="#FFF2994A"
+        android:pathData="M72,59h6v6h-6z M66,65h6v6h-6z" />
+</vector>

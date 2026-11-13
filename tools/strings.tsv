@@ -1,0 +1,1539 @@
+# Aplicación
+app_name|||Pixa by DSK|||Pixa by DSK
+app_name_short|||Pixa|||Pixa
+app_name_suffix||| by DSK||| by DSK
+# Acciones comunes
+action_ok|||OK|||Aceptar
+action_cancel|||Cancel|||Cancelar
+action_apply|||Apply|||Aplicar
+action_reset|||Reset|||Restablecer
+action_done|||Done|||Hecho
+action_close|||Close|||Cerrar
+action_minimize|||Minimize|||Minimizar
+action_maximize|||Maximize|||Maximizar
+action_back|||Back|||Atrás
+action_next|||Next|||Siguiente
+action_skip|||Skip|||Saltar
+action_delete|||Delete|||Borrar
+action_rename|||Rename|||Renombrar
+action_duplicate|||Duplicate|||Duplicar
+action_save|||Save|||Guardar
+action_share|||Share|||Compartir
+action_print|||Print|||Imprimir
+print_fill_prop|||Fit\nto\npage|||Ajustar\na la\npágina
+print_fill_full|||Fill the whole page|||Rellenar toda la página
+print_mode_body|||Choose how the image fills the page|||Elige cómo rellena la imagen la página
+action_add|||Add|||Añadir
+action_remove|||Remove|||Quitar
+action_edit|||Edit|||Editar
+action_replace|||Replace|||Reemplazar
+action_random|||Random|||Aleatorio
+action_regenerate|||Regenerate|||Regenerar
+action_select_all|||Select all|||Seleccionar todo
+action_clear|||Clear|||Limpiar
+action_view|||View|||Ver
+action_open|||Open|||Abrir
+action_select_image|||Choose image|||Seleccionar imagen
+action_import|||Import|||Importar
+action_export|||Export|||Exportar
+action_open_in_editor|||Edit|||Editar
+action_restore|||Restore|||Restaurar
+action_empty_trash|||Empty trash|||Vaciar papelera
+action_undo|||Undo|||Deshacer
+action_redo|||Redo|||Rehacer
+action_help|||Help|||Ayuda
+action_more|||More|||Más
+action_confirm_delete|||Delete permanently?|||Borrar definitivamente?
+action_dont_show_again|||Don't show again|||No volver a mostrar
+action_got_it|||Got it|||Entendido
+action_continue|||Continue|||Continuar
+action_discard|||Discard|||Descartar
+label_width|||Width|||Ancho
+label_height|||Height|||Alto
+label_size|||Size|||Tamaño
+label_tool|||Tool|||Herramienta
+label_symmetry|||Symmetry|||Simetría
+label_color|||Color|||Color
+label_opacity|||Opacity|||Opacidad
+label_angle|||Angle|||Ángulo
+label_rotation|||Rotation|||Rotación
+label_scale|||Scale|||Escala
+label_quality|||Quality|||Calidad
+label_format|||Format|||Formato
+label_name|||Name|||Nombre
+label_none|||None|||Ninguno
+label_custom|||Custom|||Personalizado
+label_default|||Default|||Por defecto
+label_tolerance|||Tolerance|||Tolerancia
+label_radius|||Radius|||Radio
+label_thickness|||Thickness|||Grosor
+label_spacing|||Spacing|||Separación
+label_padding|||Padding|||Margen interior
+label_background|||Background|||Fondo
+label_foreground|||Foreground|||Primer plano
+label_intensity|||Intensity|||Intensidad
+label_amount|||Amount|||Cantidad
+label_position|||Position|||Posición
+label_style|||Style|||Estilo
+label_font|||Font|||Fuente
+label_text|||Text|||Texto
+label_preview|||Preview|||Vista previa
+label_progress|||Processing...|||Procesando...
+label_loading|||Loading...|||Cargando...
+label_transparent|||Transparent|||Transparente
+label_solid_color|||Solid color|||Color sólido
+label_gradient|||Gradient|||Degradado
+label_image|||Image|||Imagen
+label_blurred|||Blurred background|||Fondo desenfocado
+label_horizontal|||Horizontal|||Horizontal
+label_vertical|||Vertical|||Vertical
+label_percent|||%1$d %%|||%1$d %%
+# Pantalla de inicio
+home_title|||Pixa|||Pixa
+home_new_canvas|||New canvas|||Nueva imagen
+home_new_canvas_sub|||Start from scratch|||Crear desde cero
+home_open_image|||Open image|||Abrir imagen
+home_open_image_sub|||Edit a photo|||Editar una foto
+home_camera|||Open camera|||Abrir cámara
+home_camera_sub|||Capture photo|||Capturar foto
+home_paste|||Paste image|||Pegar imagen
+home_paste_sub|||Clipboard|||Portapapeles
+home_create|||Create|||Crear
+home_tools|||Tools|||Herramientas
+home_recents|||Recent|||Recientes
+home_projects|||Projects|||Proyectos
+home_trash|||Trash|||Papelera
+home_no_projects|||Your projects will appear here|||Tus proyectos aparecerán aquí
+home_no_projects_sub|||Save your work to continue later|||Guarda tus trabajos para continuar más tarde
+home_no_recents|||Your recent images will appear here|||Tus imágenes recientes aparecerán aquí
+home_no_recents_sub|||Open or edit photos to see them here|||Abre o edita fotos para verlas aquí
+home_recents_picked|||%1$d selected|||%1$d elegidos
+home_recents_picked_cd|||Selected|||Elegido
+home_recents_remove|||Remove from Recent|||Quitar de recientes
+home_recents_remove_confirm|||Remove %1$d items from Recent? The files are not deleted.|||Quitar %1$d elementos de recientes? Los archivos no se borran.
+home_recents_clear|||Clear Recent|||Vaciar recientes
+home_recents_clear_confirm|||Empty the whole Recent list? Your projects and images are not deleted.|||Vaciar toda la lista de recientes? Tus proyectos e imágenes no se borran.
+home_recents_see_all|||See all|||Ver todos
+home_recents_all_title|||All recent|||Todos los recientes
+home_projects_all_title|||All projects|||Todos los proyectos
+home_projects_remove_confirm|||Move %1$d projects to trash? Projects are kept for 30 days.|||Mover %1$d proyectos a la papelera? Los proyectos se conservan 30 días.
+home_clipboard_empty|||No image in the clipboard|||No hay ninguna imagen en el portapapeles
+home_see_all|||See all|||Ver todo
+home_footer_prefix|||Made with ❤️ by|||Hecho con ❤️ por
+create_social|||Social posts|||Posts sociales
+create_meme|||Create meme|||Crear meme
+create_batch|||Batch editor|||Editor por lotes
+create_stitch|||Stitch photos|||Unir fotos
+# Proyectos vs imágenes
+save_project|||Save project|||Guardar proyecto
+save_project_sub|||Editable, stays in Pixa|||Editable, se queda en Pixa
+export_image|||Export image|||Exportar imagen
+export_image_sub|||Saved to your gallery|||Se guarda en tu galería
+share_image|||Share|||Compartir
+share_image_sub|||Send a finished image|||Envía una imagen final
+project_saved|||Project saved in Pixa|||Proyecto guardado en Pixa
+image_saved|||Image saved to Gallery > Pixa|||Imagen guardada en Galería > Pixa
+diff_title|||Two different things|||Dos cosas distintas
+diff_body|||"Save project" keeps an editable .pixa file inside Pixa so you can carry on later. It does not appear in your gallery.\n\n"Export image" creates a final picture (PNG, JPG...) that does appear in your gallery.|||"Guardar proyecto" guarda un archivo .pixa editable dentro de Pixa para seguir más tarde. No aparece en tu galería.\n\n"Exportar imagen" crea una imagen final (PNG, JPG...) que sí aparece en tu galería.
+exit_title|||Leave the editor?|||Salir del editor?
+exit_body|||You have unsaved changes.|||Tienes cambios sin guardar.
+exit_discard|||Leave without saving|||Salir sin guardar
+save_as_version|||Save as version|||Guardar como versión
+project_share_file|||Share project file|||Compartir archivo de proyecto
+project_renamed|||Renamed|||Renombrado
+project_duplicated|||Project duplicated|||Proyecto duplicado
+project_moved_to_trash|||Moved to trash|||Movido a la papelera
+project_restored|||Project restored|||Proyecto restaurado
+trash_days_left|||%1$d days left|||Quedan %1$d días
+trash_empty|||Trash is empty|||La papelera está vacía
+trash_info|||Deleted projects are kept for 30 days|||Los proyectos borrados se conservan 30 días
+trash_confirm_empty|||Delete every project in the trash?|||Borrar todos los proyectos de la papelera?
+# Nuevo lienzo y presets
+canvas_new_title|||New canvas|||Nuevo lienzo
+canvas_presets|||Presets|||Preajustes
+canvas_bg_color|||Background color|||Color de fondo
+canvas_bg_transparent|||Transparent background|||Fondo transparente
+canvas_create|||Create canvas|||Crear lienzo
+canvas_size_invalid|||Size must be between 8 and %1$d px|||El tamaño debe estar entre 8 y %1$d px
+preset_square|||Square post 1:1|||Post cuadrado 1:1
+preset_portrait|||Portrait 4:5|||Vertical 4:5
+preset_story|||Story 9:16|||Story 9:16
+preset_landscape|||Landscape 16:9|||Horizontal 16:9
+preset_thumb|||Video thumbnail 16:9|||Video 16:9
+preset_banner|||Banner|||Banner
+preset_cover|||Cover|||Portada
+preset_a4|||A4 300 dpi|||A4 300 ppp
+preset_hd|||HD 1920x1080|||HD 1920x1080
+preset_4k|||4K 3840x2160|||4K 3840x2160
+# Exportación
+export_title|||Export image|||Exportar imagen
+export_format_png|||PNG (lossless, transparency)|||PNG (sin pérdida, transparencia)
+export_format_jpeg|||JPEG (smaller)|||JPEG (más pequeño)
+export_format_webp_lossy|||WEBP lossy|||WEBP con pérdida
+export_format_webp_lossless|||WEBP lossless|||WEBP sin pérdida
+export_format_pdf|||PDF|||PDF
+export_scale|||Output scale|||Escala de salida
+export_keep_exif|||Keep EXIF data|||Conservar datos EXIF
+export_strip_exif|||Remove EXIF data|||Eliminar datos EXIF
+export_target_size|||Compress to target size|||Comprimir a tamaño objetivo
+export_target_size_kb|||Target: %1$d KB|||Objetivo: %1$d KB
+export_estimated|||Estimated: %1$s|||Estimado: %1$s
+export_layer_only|||Export selected layer only|||Exportar solo la capa seleccionada
+export_selection_only|||Export selection only|||Exportar solo la selección
+export_replace_original|||Replace the original image|||Reemplazar la imagen original
+export_replace_original_hint|||Overwrites the file this image was opened from instead of saving a new copy|||Sobrescribe el archivo del que se abrió esta imagen en lugar de guardar una copia nueva
+export_replace_format|||Format: %1$s (fixed to the original)|||Formato: %1$s (fijado al original)
+export_replace|||Replacing original|||Reemplazando original
+export_replaced|||Original image replaced|||Imagen original reemplazada
+export_failed|||Could not export the image|||No se ha podido exportar la imagen
+export_pdf_pages|||One page per image|||Una página por imagen
+export_done|||Export finished|||Exportación terminada
+crop_social_title|||Quick social crops|||Recortes rápidos para redes
+image_info|||Image info|||Información de la imagen
+image_info_dimensions|||Dimensions|||Dimensiones
+image_info_weight|||File size|||Peso
+image_info_exif|||EXIF data|||Datos EXIF
+image_info_no_exif|||No EXIF data|||Sin datos EXIF
+image_info_date|||Date taken|||Fecha de captura
+image_info_camera|||Camera|||Cámara
+image_info_lens|||Lens|||Objetivo
+image_info_gps|||Location data|||Datos de ubicación
+image_info_gps_present|||Included in the file|||Incluidos en el archivo
+image_info_canvas|||Current canvas|||Lienzo actual
+image_info_layers|||Layers|||Capas
+image_info_source|||Opened file|||Archivo abierto
+exif_cleared|||EXIF data removed|||Datos EXIF eliminados
+pixa_import_ok|||Project imported|||Proyecto importado
+pixa_import_failed|||That file is not a valid .pixa project|||Ese archivo no es un proyecto .pixa válido
+pixa_export_ok|||.pixa file exported|||Archivo .pixa exportado
+# Lienzo y gestos
+canvas_zoom_fit|||Fit|||Ajustar
+canvas_zoom_100|||100 %|||100 %
+canvas_grid|||Grid|||Cuadrícula
+canvas_rulers|||Rulers|||Reglas
+canvas_guides|||Guides|||Guías
+canvas_magnifier|||Magnifier|||Lupa
+canvas_measures|||Measurements|||Medidas
+canvas_align|||Align|||Alinear
+canvas_distribute|||Distribute|||Distribuir
+align_left|||Align left|||Alinear a la izquierda
+align_center_h|||Center horizontally|||Centrar horizontalmente
+align_right|||Align right|||Alinear a la derecha
+align_top|||Align top|||Alinear arriba
+align_center_v|||Center vertically|||Centrar verticalmente
+align_bottom|||Align bottom|||Alinear abajo
+align_to_canvas|||Relative to canvas|||Respecto al lienzo
+align_to_selection|||Relative to selection|||Respecto a la selección
+resolution_warning|||This size exceeds the %1$d px limit and will be reduced|||Este tamaño supera el límite de %1$d px y se reducirá
+out_of_memory|||Not enough memory for that size|||No hay memoria suficiente para ese tamaño
+# Capas
+layers_title|||Layers|||Capas
+layers_panel|||Full layer panel|||Panel completo de capas
+layer_add|||Add layer|||Añadir capa
+layer_from_gallery|||Image from gallery|||Imagen de la galería
+layer_from_camera|||Photo from camera|||Foto de la cámara
+layer_add_empty|||Empty layer|||Capa vacía
+layer_add_solid|||Solid colour|||Color sólido
+layer_image|||Image|||Imagen
+layer_text|||Text|||Texto
+layer_shape|||Shape|||Forma
+layer_draw|||Drawing|||Dibujo
+layer_fill|||Fill|||Relleno
+layer_qr|||QR code|||Código QR
+layer_visible|||Show or hide layer|||Mostrar u ocultar capa
+layer_locked|||Lock or unlock layer|||Bloquear o desbloquear capa
+layer_merge_down|||Merge down|||Combinar hacia abajo
+layer_flatten|||Flatten image|||Acoplar imagen
+layer_group|||Group into folder|||Agrupar en carpeta
+layer_ungroup|||Ungroup|||Desagrupar
+layer_blend_mode|||Blend mode|||Modo de fusión
+layer_reorder_hint|||Drag to reorder|||Arrastra para reordenar
+layer_locked_warning|||This layer is locked|||Esta capa está bloqueada
+mask_clip|||Clipping mask|||Máscara de recorte
+blend_normal|||Normal|||Normal
+blend_multiply|||Multiply|||Multiplicar
+blend_screen|||Screen|||Trama
+blend_overlay|||Overlay|||Superponer
+blend_soft_light|||Soft light|||Luz suave
+blend_hard_light|||Hard light|||Luz fuerte
+blend_lighten|||Lighten|||Aclarar
+blend_darken|||Darken|||Oscurecer
+blend_difference|||Difference|||Diferencia
+blend_color|||Color|||Color
+blend_luminosity|||Luminosity|||Luminosidad
+blend_hue|||Hue|||Tono
+blend_saturation|||Saturation|||Saturación
+blend_color_burn|||Color burn|||Subexponer color
+blend_color_dodge|||Color dodge|||Sobreexponer color
+blend_exclusion|||Exclusion|||Exclusión
+# Selección y fondos
+select_title|||Selection|||Selección
+select_rect|||Rectangle|||Rectángulo
+select_ellipse|||Ellipse|||Elipse
+select_lasso|||Free|||Libre
+select_poly|||Polygonal|||Poligonal
+select_magnetic|||Magnetic|||Magnético
+select_magnetic_hint|||Draw roughly along the edge; the line snaps to the contour when you lift your finger.|||Dibuja por el borde sin mucha precisión; al soltar, la línea se ajusta al contorno.
+select_poly_hint|||Tap to add points. Tap the first point or double-tap to close.|||Toca para añadir puntos. Toca el primer punto o haz doble toque para cerrar.
+select_undo_point|||Undo point|||Deshacer punto
+select_close_shape|||Close shape|||Cerrar forma
+select_duplicate_layer|||Duplicate to new layer|||Duplicar en capa nueva
+select_wand|||Wand|||Varita
+select_ai|||AI|||IA
+select_ai_hint|||Tap the object, or draw around it. More taps refine it; use Remove to exclude areas.|||Toca el objeto o dibuja a su alrededor. Más toques lo afinan; usa Quitar para excluir zonas.
+select_by_color|||By color|||Por color
+select_mode_new|||New|||Nueva
+select_mode_add|||Add|||Añadir
+select_mode_subtract|||Subtract|||Restar
+select_mode_intersect|||Intersect|||Intersectar
+select_contiguous|||Contiguous|||Contigua
+select_deselect|||Deselect|||Deseleccionar
+select_invert|||Invert selection|||Invertir selección
+select_expand|||Expand|||Expandir
+select_contract|||Contract|||Contraer
+select_feather|||Feather edge|||Suavizar borde
+select_crop_to|||Crop canvas to selection|||Recortar lienzo a la selección
+select_fill|||Fill selection|||Rellenar selección
+select_paste_as_layer|||Paste as new layer|||Pegar como nueva capa
+select_copy|||Copy|||Copiar
+select_cut|||Cut|||Cortar
+select_none_active|||No active selection|||No hay selección activa
+bg_remove_title|||Remove background|||Eliminar fondo
+bg_remove_short|||Background|||Borrar fondo
+bg_remove_auto|||Automatic (subject)|||Automático (sujeto)
+bg_method_mlkit|||ML Kit|||ML Kit
+bg_method_mediapipe|||MediaPipe|||MediaPipe
+bg_method_u2net|||General cutout|||Recorte general
+bg_remove_by_color|||By color|||Por color
+bg_remove_white|||Remove white automatically|||Borrar blanco automáticamente
+bg_edge_smooth|||Edge smoothing|||Suavizado de bordes
+bg_brush_restore|||Restore|||Restaurar
+bg_brush_erase|||Erase|||Borrar
+bg_change|||Change background|||Cambiar fondo
+bg_model_downloading|||Downloading model... %1$d %%|||Descargando modelo... %1$d %%
+bg_model_unavailable|||Automatic background removal is not available on this device|||El borrado automático de fondo no está disponible en este dispositivo
+bg_remove_failed|||Could not detect a subject|||No se ha podido detectar ningun sujeto
+bg_tap_color_hint|||Tap the color you want to remove|||Toca el color que quieres eliminar
+# Transformación
+transform_title|||Transform|||Transformar
+transform_move|||Move|||Mover
+transform_scale|||Scale|||Escalar
+transform_scale_free|||Free scale|||Escala libre
+transform_scale_prop|||Keep proportions|||Mantener proporciones
+transform_flip_h|||Flip horizontally|||Voltear horizontalmente
+transform_flip_v|||Flip vertically|||Voltear verticalmente
+transform_skew|||Skew|||Sesgar
+transform_perspective|||Perspective|||Perspectiva
+transform_perspective_hint|||Drag a corner to distort in perspective|||Arrastra una esquina para deformar en perspectiva
+transform_rotate_90|||Rotate 90 degrees|||Rotar 90 grados
+crop_title|||Crop|||Recortar
+crop_free|||Free|||Libre
+crop_straighten|||Straighten|||Enderezar
+crop_whole_project|||Crop whole project|||Recortar todo el proyecto
+image_size|||Image size|||Tamaño de imagen
+canvas_size|||Canvas size|||Lienzo
+canvas_anchor|||Anchor|||Anclaje
+canvas_extend_fill|||Fill with color|||Rellenar con color
+canvas_extend_transparent|||Transparent|||Transparente
+canvas_extend_stretch|||Stretch edges|||Estirar bordes
+canvas_extend_mirror|||Mirror edges|||Espejo de bordes
+mirror_title|||Mirror / kaleidoscope|||Espejo / caleidoscopio
+mirror_segments|||Segments|||Segmentos
+mirror_hint|||Reflects half of the image over the other half, around the chosen edge|||Refleja la mitad de la imagen sobre la otra mitad, alrededor del borde elegido
+kaleidoscope_title|||Kaleidoscope|||Caleidoscopio
+kaleidoscope_hint|||Repeats a circular wedge as many times as segments you set, like a real kaleidoscope. A preview shows as you move the slider.|||Repite un sector circular tantas veces como segmentos indiques, como un caleidoscopio real. Se ve una vista previa al mover el deslizador.
+# Texto
+text_title|||Text|||Texto
+text_add|||Add text|||Añadir texto
+text_edit_hint|||Double tap to edit|||Doble toque para editar
+text_placeholder|||Your text|||Tu texto
+text_font_picker|||Choose font|||Elegir fuente
+text_font_import_zip|||Import|||Importar
+font_browse_button|||More Google Fonts|||Más fuentes de Google
+font_browse_title|||Google Fonts|||Google Fonts
+font_browse_search_hint|||Search fonts|||Buscar fuentes
+font_browse_no_key|||No Google Fonts API key configured|||No hay clave de API de Google Fonts configurada
+font_browse_error|||Couldn't load the font list, check your connection|||No se pudo cargar la lista de fuentes, comprueba tu conexión
+font_scroll_hint|||Scroll down to see more fonts|||Desliza hacia abajo para ver más fuentes
+font_label|||Font:|||Fuente:
+text_font_downloading|||Downloading font...|||Descargando fuente...
+text_font_offline|||Offline: a system font is used|||Sin conexión: se usa una fuente del sistema
+text_align_left|||Left|||Izquierda
+text_align_center|||Center|||Centro
+text_align_right|||Right|||Derecha
+text_line_height|||Line spacing|||Interlineado
+text_letter_spacing|||Letter spacing|||Espaciado entre letras
+text_bold|||Bold|||Negrita
+text_italic|||Italic|||Cursiva
+text_underline|||Underline|||Subrayado
+text_strike|||Strikethrough|||Tachado
+text_uppercase|||UPPERCASE|||MAYÚSCULAS
+text_outline|||Outline|||Contorno
+text_shadow|||Shadow|||Sombra
+text_box|||Background box|||Caja de fondo
+text_gradient_fill|||Gradient fill|||Relleno con degradado
+text_arc|||Curved text|||Texto curvado
+text_arc_amount|||Arc|||Arco
+text_image_fill|||Image inside text|||Imagen dentro del texto
+text_image_fill_hint|||Use two fingers to move the photo inside the letters|||Usa dos dedos para mover la foto dentro de las letras
+text_on_path|||Text on path|||Texto en trayecto
+text_on_path_hint|||Draw a line and the text will follow it|||Dibuja una línea y el texto la seguirá
+text_emoji|||Emoji|||Emoji
+emoji_search_hint|||Search emoji|||Buscar emoji
+emoji_not_found|||No emoji found|||No se ha encontrado ningún emoji
+# Imágenes de stock (Pixabay)
+stock_images_title|||Stock images|||Imágenes stock
+stock_images_search_hint|||Search photos, illustrations, vectors…|||Buscar fotos, ilustraciones, vectores…
+stock_images_type_all|||All|||Todas
+stock_images_type_photo|||Photos|||Fotos
+stock_images_type_illustration|||Illustrations|||Ilustraciones
+stock_images_type_vector|||Vectors|||Vectores
+stock_images_no_key|||No Pixabay API key configured|||No hay clave de API de Pixabay configurada
+stock_images_error|||Couldn't load images, check your connection|||No se pudieron cargar imágenes, comprueba tu conexión
+text_rasterize|||Rasterize text|||Rasterizar texto
+text_multiline|||Multiline|||Multilínea
+# Dibujo y formas
+draw_title|||Draw|||Dibujo
+tool_brush|||Brush|||Pincel
+tool_pencil|||Pencil|||Lápiz
+tool_airbrush|||Airbrush|||Aerógrafo
+tool_eraser|||Eraser|||Borrador
+tool_eyedropper|||Eyedropper|||Cuentagotas
+tool_bucket|||Paint bucket|||Bote de pintura
+tool_gradient|||Gradient|||Degradado
+tool_shape|||Shapes|||Formas
+brush_hardness|||Hardness|||Dureza
+brush_flow|||Flow|||Flujo
+brush_smoothing|||Stroke smoothing|||Suavizado del trazo
+brush_symmetry|||Symmetry brush|||Pincel de simetría
+symmetry_off|||Off|||Desactivada
+symmetry_vertical|||Vertical|||Vertical
+symmetry_horizontal|||Horizontal|||Horizontal
+symmetry_radial|||Radial|||Radial
+symmetry_axes|||Axes|||Ejes
+gradient_linear|||Linear|||Lineal
+gradient_radial|||Radial|||Radial
+gradient_sweep|||Angular|||Angular
+gradient_stops|||Gradient stops|||Paradas del degradado
+gradient_from|||Start colour|||Color inicial
+gradient_to|||End colour|||Color final
+shape_title|||Shapes|||Formas
+shape_drag_hint|||Drag on the canvas to draw the shape|||Arrastra sobre el lienzo para dibujar la forma
+gradient_add_stop|||Add stop|||Añadir parada
+shape_rect|||Rectangle|||Rectángulo
+shape_ellipse|||Ellipse|||Elipse
+shape_line|||Line|||Línea
+shape_arrow|||Arrow|||Flecha
+shape_polygon|||Polygon|||Polígono
+shape_star|||Star|||Estrella
+shape_heart|||Heart|||Corazón
+shape_sides|||Sides|||Lados
+shape_fill|||Fill|||Relleno
+shape_stroke|||Border|||Borde
+shape_image_fill|||Fill shape with photo|||Rellenar forma con foto
+stroke_style_solid|||Solid|||Sólido
+stroke_style_dashed|||Dashed|||Punteado
+stroke_style_dotted|||Dotted|||De puntos
+arrow_head_end|||Right|||Derecha
+arrow_head_start|||Left|||Izquierda
+arrow_head_both|||Both|||Ambas
+# Código QR
+qr_title|||QR code|||Código QR
+qr_type_url|||URL|||URL
+qr_type_text|||Text|||Texto
+qr_type_wifi|||Wi-Fi|||Wi-Fi
+qr_type_contact|||Contact (vCard)|||Contacto (vCard)
+qr_type_email|||Email|||Email
+qr_type_phone|||Phone|||Teléfono
+qr_fg_color|||Code color|||Color del código
+qr_bg_color|||Background color|||Color del fondo
+qr_error_level|||Error correction|||Corrección de errores
+qr_margin|||Margin|||Margen
+qr_modules_square|||Square modules|||Módulos cuadrados
+qr_modules_round|||Rounded modules|||Módulos redondeados
+qr_logo|||Center logo|||Logo central
+qr_wifi_ssid|||Network name|||Nombre de la red
+qr_wifi_password|||Password|||Contraseña
+qr_wifi_security|||Security|||Seguridad
+qr_contact_name|||Full name|||Nombre completo
+qr_contact_phone|||Phone|||Teléfono
+qr_contact_email|||Email|||Email
+qr_contact_org|||Organisation|||Organización
+qr_contact_title|||Job title|||Cargo
+qr_contact_url|||Website|||Sitio web
+qr_contact_address|||Address|||Dirección
+qr_contact_note|||Note|||Nota
+qr_email_subject|||Subject|||Asunto
+qr_email_body|||Message|||Mensaje
+qr_wifi_hidden|||Hidden network|||Red oculta
+qr_empty|||Enter some content for the code|||Escribe el contenido del código
+qr_too_long|||That content is too long for a QR code|||Ese contenido es demasiado largo para un QR
+# Ajustes y efectos
+adjust_title|||Adjustments|||Ajustar
+adjust_brightness|||Brightness|||Brillo
+adjust_contrast|||Contrast|||Contraste
+adjust_exposure|||Exposure|||Exposición
+adjust_saturation|||Saturation|||Saturación
+adjust_vibrance|||Vibrance|||Vibranza
+adjust_temperature|||Temperature|||Temperatura
+adjust_warmth|||Warmth|||Calidez
+adjust_tint|||Tint|||Tinte
+adjust_shadows|||Shadows|||Sombras
+adjust_highlights|||Highlights|||Luces
+adjust_sharpen|||Sharpness|||Nitidez
+adjust_blur|||Gaussian blur|||Desenfoque gaussiano
+adjust_vignette|||Vignette (black / white)|||Viñeta (negra / blanca)
+adjust_grain|||Grain|||Grano
+adjust_curves|||Curves|||Curvas
+adjust_levels|||Levels|||Niveles
+adjust_hsl|||HSL by colour|||HSL por color
+adjust_replace_color|||Replace colour|||Reemplazar color
+adjust_auto|||Auto enhance|||Auto-mejorar
+channel_rgb|||RGB|||RGB
+channel_red|||Red|||Rojo
+channel_green|||Green|||Verde
+channel_blue|||Blue|||Azul
+levels_black|||Black point|||Punto negro
+levels_white|||White point|||Punto blanco
+levels_gamma|||Gamma|||Gamma
+replace_from|||Source colour|||Color de origen
+replace_to|||Target colour|||Color de destino
+fx_title|||Effects|||Efectos
+fx_bw|||Black and white|||Blanco y negro
+fx_gaussian_blur|||Gaussian blur|||Desenfoque gaussiano
+fx_sepia|||Sepia|||Sepia
+fx_invert|||Invert|||Invertir
+fx_threshold|||Threshold|||Umbral
+fx_posterize|||Posterize|||Posterizar
+fx_duotone|||Duotone|||Duotono
+fx_glitch|||Glitch|||Glitch
+fx_rgb_split|||RGB split|||Separación RGB
+fx_halftone|||Halftone|||Semitono
+fx_vintage|||Vintage|||Vintage
+fx_motion_blur|||Motion blur|||Desenfoque de movimiento
+fx_radial_blur|||Radial blur|||Desenfoque radial
+fx_pixelate|||Pixelate|||Pixelado
+fx_solarize|||Solarize|||Solarizado
+fx_scanlines|||Scanlines|||Líneas de escaneo
+fx_mirror|||Mirror|||Espejo
+fx_broken_tv|||Broken TV|||TV estropeada
+fx_randomize|||Randomize|||Aleatorio
+fx_interference|||Interference|||Interferencias
+filters_title|||Filters|||Filtros
+filter_none|||Original|||Original
+filter_vivid|||Vivid|||Vivido
+filter_soft|||Soft|||Suave
+filter_bright|||Bright|||Luminoso
+filter_bw|||B&W|||B/N
+filter_bw_hard|||High contrast B&W|||B/N contrastado
+filter_noir|||Noir|||Noir
+filter_sepia|||Sepia|||Sepia
+filter_vintage|||Vintage|||Vintage
+filter_retro|||Retro|||Retro
+filter_warm|||Warm|||Cálido
+filter_cool|||Cool|||Frío
+filter_fade|||Fade|||Desvaído
+filter_matte|||Matte|||Mate
+filter_drama|||Drama|||Drama
+filter_sunset|||Sunset|||Atardecer
+filter_forest|||Forest|||Bosque
+filter_cyber|||Cyber|||Ciber
+filter_invert|||Invert|||Invertir
+filter_threshold|||Threshold|||Umbral
+filter_posterize|||Posterize|||Posterizar
+filter_solarize|||Solarize|||Solarizar
+filter_glitch|||Glitch|||Glitch
+filter_broken_tv|||Broken TV|||TV rota
+filter_pixelate|||Pixelate|||Pixelado
+filter_rgb_split|||RGB split|||RGB split
+filter_halftone|||Halftone|||Semitono
+filter_scanlines|||Scanlines|||Líneas de escaneo
+filter_cyanotype|||Cyanotype|||Cianotipo
+filter_neon_purple|||Purple neon|||Neón púrpura
+filter_old_gold|||Old gold|||Oro viejo
+preset_save|||Save preset|||Guardar preset
+preset_saved|||Preset saved|||Preset guardado
+preset_my_presets|||My presets|||Mis presets
+preset_name_hint|||Preset name|||Nombre del preset
+preview_hold_hint|||Hold to compare before / after|||Mantén pulsado para ver antes / después
+# Retoque y privacidad
+retouch_title|||Retouch|||Retoque
+retouch_clone|||Clone stamp|||Tampón de clonar
+retouch_blur_brush|||Blur brush|||Pincel desenfocar
+retouch_sharpen_brush|||Sharpen brush|||Pincel enfocar
+retouch_red_eye|||Red eye fix|||Corrector de ojos rojos
+privacy_title|||Hide data|||Ocultar datos
+privacy_pixelate|||Pixelate|||Pixelar
+privacy_blur|||Blur|||Difuminar
+privacy_mode_brush|||Brush|||Pincel
+privacy_mode_rect|||Rectangle|||Rectángulo
+faces_title|||Censor faces|||Censurar
+faces_detecting|||Detecting faces...|||Detectando caras...
+faces_found|||%1$d faces found|||%1$d caras encontradas
+faces_none|||No faces detected|||No se han detectado caras
+faces_add_manual|||Add area manually|||Añadir zona manualmente
+faces_cover_bar|||Black bar|||Barra negra
+faces_cover_pixelate|||Pixelate|||Pixelado
+faces_cover_blur|||Blur|||Desenfoque
+faces_cover_emoji|||Emoji|||Emoji
+faces_apply|||Apply to selected|||Aplicar a las seleccionadas
+clone_pick_source|||Tap to pick the clone source|||Toca para elegir el origen del clonado
+# Marca de agua y marcos
+watermark_title|||Watermark|||Marca
+watermark_text|||Text watermark|||Marca de agua de texto
+watermark_image|||Logo watermark|||Marca de agua de imagen
+watermark_tile|||Repeat as tiles|||Mosaico repetido
+watermark_position|||Position|||Posición
+watermark_free_position|||Free position|||Posición libre
+watermark_presets|||Watermark presets|||Presets de marca de agua
+watermark_empty|||No saved watermarks yet|||Aún no hay marcas de agua guardadas
+frames_title|||Frames|||Marcos
+frame_none|||No frame|||Sin marco
+frame_solid|||Solid|||Sólido
+frame_rounded|||Rounded|||Redondeado
+frame_polaroid|||Polaroid|||Polaroid
+frame_film|||Film|||Película
+frame_shadow|||Shadow|||Sombra
+frame_pattern|||Pattern|||Patrón
+# Historial
+history_title|||History|||Historial
+history_step|||Step %1$d|||Paso %1$d
+history_empty|||Nothing to undo yet|||Nada que deshacer todavía
+history_limit|||History steps|||Pasos de historial
+history_initial|||Opened|||Apertura
+gesture_undo_hint|||Two-finger tap: undo. Three fingers: redo|||Toque con dos dedos: deshacer. Tres dedos: rehacer
+# Posts sociales
+social_title|||Social posts|||Posts sociales
+social_platform|||Platform|||Plataforma
+social_format|||Format|||Formato
+social_dark_mode|||Dark mode|||Modo oscuro
+social_avatar|||Profile picture|||Foto de perfil
+social_display_name|||Name|||Nombre
+social_handle|||Username|||Usuario
+social_verified|||Verified badge|||Insignia verificado
+social_body|||Post text|||Texto de la publicación
+social_datetime|||Date and time|||Fecha y hora
+social_location|||Location|||Ubicación
+social_link|||Link|||Enlace
+social_likes|||Likes|||Me gusta
+social_comments|||Comments|||Comentarios
+social_shares|||Shares|||Compartidos
+social_saves|||Saves|||Guardados
+social_views|||Views|||Reproducciones
+social_comment_add|||Add comment|||Añadir comentario
+social_comment_author|||Comment author|||Autor del comentario
+social_comment_text|||Comment text|||Texto del comentario
+social_images|||Images|||Imágenes
+social_fmt_text|||Text post|||Publicación de texto
+social_fmt_photo|||Square photo|||Foto cuadrada
+social_fmt_carousel|||Image carousel|||Carrusel de imágenes
+social_fmt_thread|||Thread with replies|||Hilo con respuestas
+social_fmt_video|||Video with thumbnail|||Vídeo con miniatura
+social_fmt_story|||Vertical story|||Story vertical
+social_fmt_reel|||Reel / short video|||Reel / vídeo corto
+social_fmt_group|||Group post|||Publicación de grupo
+social_fmt_profile|||Professional profile|||Perfil profesional
+social_fmt_saved|||Saved post|||Publicación guardada
+social_fmt_chat|||Chat|||Chat
+social_fmt_stream|||Streaming content|||Contenido de streaming
+social_disclaimer|||These layouts only imitate the look of well-known platforms. Do not use them to impersonate anyone or to pass fake content off as real.|||Estos diseños solo imitan el aspecto de plataformas conocidas. No los uses para suplantar a nadie ni para hacer pasar contenido falso por real.
+social_live|||LIVE|||EN DIRECTO
+social_empty|||Fill in the name and the post text|||Rellena el nombre y el texto de la publicación
+social_content|||Content|||Contenido
+social_stats|||Counters|||Contadores
+social_replies|||Replies and messages|||Respuestas y mensajes
+social_mine|||Sent by me|||Enviado por mí
+social_pick_images|||Choose images|||Elegir imágenes
+social_accent|||Accent colour|||Color de acento
+# Memes
+meme_title|||Memes|||Memes
+meme_top_text|||Top text|||Texto de arriba
+meme_bottom_text|||Bottom text|||Texto de abajo
+meme_classic|||Classic|||Clásico
+meme_modern|||White bar on top|||Barra blanca arriba
+meme_add_box|||Add text box|||Añadir caja de texto
+meme_autofit|||Auto fit to width|||Ajustar al ancho
+# Editor por lotes
+batch_title|||Batch editor|||Editor por lotes
+batch_pick_images|||Choose images|||Elegir imágenes
+batch_steps|||Operations|||Operaciones
+batch_resize|||Resize|||Redimensionar
+batch_resize_by_width|||By width|||Por ancho
+batch_resize_by_height|||By height|||Por alto
+batch_resize_by_percent|||By percentage|||Por porcentaje
+batch_crop_ratio|||Crop to ratio|||Recortar a proporción
+batch_convert|||Convert format|||Convertir formato
+batch_apply_preset|||Apply preset or filter|||Aplicar preset o filtro
+batch_watermark|||Add watermark|||Añadir marca de agua
+batch_strip_exif|||Remove EXIF|||Eliminar EXIF
+batch_rename|||Rename with pattern|||Renombrar con patrón
+batch_rename_hint|||name_###|||nombre_###
+batch_run|||Run|||Procesar
+batch_running|||%1$d of %2$d|||%1$d de %2$d
+batch_done|||%1$d images processed|||%1$d imágenes procesadas
+batch_cancelled|||Cancelled|||Cancelado
+batch_save_folder|||Save to folder|||Guardar en carpeta
+batch_share_all|||Share all|||Compartir todas
+batch_no_images|||Choose at least one image|||Elige al menos una imagen
+batch_no_steps|||Add at least one operation|||Añade al menos una operación
+batch_images_selected|||%1$d images|||%1$d imágenes
+batch_folder_failed|||Could not write to the chosen folder|||No se ha podido escribir en la carpeta elegida
+batch_notif_channel|||Batch progress|||Progreso del lote
+# Unir fotos
+stitch_title|||Stitch photos|||Unir fotos
+stitch_direction|||Direction|||Dirección
+stitch_match_width|||Match common width|||Ajustar a ancho común
+stitch_match_height|||Match common height|||Ajustar a alto común
+stitch_gap|||Gap|||Separación
+stitch_reorder_hint|||Drag to reorder|||Arrastra para reordenar
+stitch_add_photos|||Add photos|||Añadir fotos
+# Ajustes
+settings_title|||Settings|||Ajustes
+settings_appearance|||Appearance|||Apariencia
+settings_theme|||Theme|||Tema
+theme_system|||System|||Sistema
+theme_light|||Light|||Claro
+theme_dark|||Dark|||Oscuro
+theme_oled|||OLED (pure black)|||OLED (negro puro)
+settings_accent|||Accent colour|||Color de acento
+settings_accent_custom|||Custom colour|||Color personalizado
+settings_language|||Language|||Idioma
+language_auto|||Automatic (system)|||Automático (según sistema)
+language_es|||Espanol|||Español
+language_en|||English|||English
+settings_editor|||Editor|||Editor
+settings_handedness|||Handedness|||Mano
+handedness_right|||Right-handed|||Diestro
+handedness_left|||Left-handed|||Zurdo
+settings_handedness_sub|||Side of the toolbar and the layers button|||Lado de la barra de herramientas y del botón de capas
+settings_haptics|||Haptic feedback|||Feedback háptico
+settings_magnifier|||Show magnifier while painting|||Mostrar lupa al pintar
+settings_grid_default|||Show grid by default|||Mostrar cuadrícula por defecto
+settings_snap|||Smart guides and snapping|||Guías inteligentes e imantado
+settings_refit_on_panel|||Re-fit image when opening or closing panels|||Reajustar imagen al abrir o cerrar paneles
+settings_lock_orientation|||Lock to portrait|||Bloquear en vertical
+settings_max_resolution|||Resolution limit|||Límite de resolución
+settings_autosave|||Autosave|||Autoguardado
+settings_autosave_sub|||Saves the open project periodically|||Guarda el proyecto en curso periódicamente
+settings_data|||Data|||Datos
+settings_palette|||My colour palette|||Mi paleta de colores
+settings_palette_recent|||Recent colours|||Colores recientes
+settings_palette_add|||Save current colour|||Guardar el color actual
+settings_backup|||Backup and restore|||Copia de seguridad
+settings_backup_export|||Export settings, presets and palettes|||Exportar ajustes, presets y paletas
+settings_backup_import|||Import a backup file|||Importar un archivo de copia
+settings_backup_ok|||Backup exported|||Copia exportada
+settings_restore_ok|||Backup restored|||Copia restaurada
+settings_restore_failed|||That file is not a valid Pixa backup|||Ese archivo no es una copia válida de Pixa
+settings_tutorial_again|||Show the tutorial again|||Volver a ver el tutorial
+settings_reset_hints|||Show all hints again|||Volver a mostrar todos los avisos
+# Acerca de
+about_title|||About|||Acerca de
+about_version|||Version %1$s|||Versión %1$s
+about_made_by|||Made with love by DSK|||Hecho con amor por DSK
+about_website|||Website|||Sitio web
+about_email|||Contact by email|||Contactar por email
+about_licenses|||Licences|||Licencias
+about_licenses_title|||Fonts and libraries|||Fuentes y librerías
+about_no_trackers|||No ads, no trackers|||Sin anuncios ni trackers
+# Tutorial y ayuda
+tutorial_title|||Welcome to Pixa|||Bienvenido a Pixa
+tutorial_p1_title|||A mini photo studio|||Un mini estudio de fotos
+tutorial_p1_body|||Open a photo or start a blank canvas and work with layers, text, shapes and filters.|||Abre una foto o empieza un lienzo en blanco y trabaja con capas, textos, formas y filtros.
+tutorial_p2_title|||Projects and images|||Proyectos e imágenes
+tutorial_p2_body|||A project stays editable inside Pixa. An exported image goes to your gallery.|||Un proyecto se queda editable dentro de Pixa. Una imagen exportada va a tu galería.
+tutorial_p3_title|||Gestures|||Gestos
+tutorial_p3_body|||Pinch to zoom and drag with two fingers to pan. The hand button next to the zoom makes one finger move the canvas. Tap outside the canvas to deselect, and hold an element for 1 second to delete it.|||Pellizca para hacer zoom y arrastra con dos dedos para desplazar. El botón de la mano, junto al zoom, hace que un dedo mueva el lienzo. Toca fuera del lienzo para deseleccionar y mantén pulsado un elemento 1 segundo para eliminarlo.
+tutorial_p4_title|||Everything in one place|||Todo en un sitio
+tutorial_p4_body|||Collage and comics, memes, social posts, stitched photos and batch editing live in the Create section.|||Collage y cómic, memes, posts sociales, unir fotos y edición por lotes están en la sección Crear.
+tutorial_start|||Start|||Empezar
+help_title|||Help|||Ayuda
+# Widget
+widget_label|||Pixa|||Pixa
+widget_new_canvas|||New canvas|||Nuevo lienzo
+widget_last_edit|||Last edit|||Última edición
+widget_camera|||Camera|||Cámara
+widget_no_last|||No recent project|||Sin proyecto reciente
+# Accesibilidad
+cd_settings|||Settings|||Ajustes
+cd_about|||About|||Acerca de
+cd_back|||Go back|||Volver
+cd_more_options|||More options|||Más opciones
+cd_layers_button|||Layers|||Capas
+cd_undo|||Undo|||Deshacer
+cd_redo|||Redo|||Rehacer
+cd_project_thumb|||Project thumbnail|||Miniatura del proyecto
+cd_image_thumb|||Image thumbnail|||Miniatura de la imagen
+cd_color_swatch|||Colour swatch|||Muestra de color
+cd_delete_item|||Delete item|||Borrar elemento
+cd_drag_handle|||Drag handle|||Asa para arrastrar
+cd_toggle_visibility|||Toggle visibility|||Alternar visibilidad
+cd_toggle_lock|||Toggle lock|||Alternar bloqueo
+cd_pick_image|||Pick an image|||Elegir una imagen
+cd_tool|||Tool|||Herramienta
+cd_eyedropper|||Pick colour from the canvas|||Tomar color del lienzo
+cd_help_tool|||Help for this tool|||Ayuda de esta herramienta
+cd_expand|||Expand|||Desplegar
+cd_collapse|||Collapse|||Plegar
+# Selector de color
+color_picker_title|||Colour|||Color
+color_hex|||HEX|||HEX
+color_hue|||Hue|||Tono
+color_saturation|||Saturation|||Saturación
+color_value|||Brightness|||Brillo
+color_alpha|||Opacity|||Opacidad
+color_presets|||Presets|||Predefinidos
+color_my_palette|||My palette|||Mi paleta
+color_recent|||Recent|||Recientes
+color_invalid_hex|||Invalid HEX value|||Valor HEX no válido
+color_saved_to_palette|||Colour saved to your palette|||Color guardado en tu paleta
+# Errores
+error_generic|||Something went wrong|||Algo ha ido mal
+error_load_image|||Could not open that image|||No se ha podido abrir esa imagen
+error_save|||Could not save|||No se ha podido guardar
+error_no_app_for_link|||No app can open this link|||Ninguna app puede abrir este enlace
+error_permission_notifications|||Allow notifications to see batch progress|||Permite notificaciones para ver el progreso del lote
+# Atajos del launcher
+shortcut_new_canvas_short|||New canvas|||Nuevo lienzo
+shortcut_new_canvas_long|||Create a new canvas|||Crear un lienzo nuevo
+shortcut_camera_short|||Camera|||Cámara
+shortcut_camera_long|||Take a photo and edit it|||Hacer una foto y editarla
+# Ajustes: paleta y ayuda contextual
+palette_empty|||No saved colours yet|||Aún no hay colores guardados
+palette_tap_to_remove|||Tap a colour to remove it|||Pulsa un color para quitarlo
+help_settings_backup|||The backup includes settings, presets, palettes, watermarks and imported fonts. Your projects are not included.|||La copia incluye ajustes, preajustes, paletas, marcas de agua y fuentes importadas. Tus proyectos no se incluyen.
+# Editor: ayuda contextual de cada panel
+help_adjust|||Drag a slider to preview the change and tap Apply to bake it into the layer. Hold the canvas to compare with the original.|||Arrastra un deslizador para ver el cambio y pulsa Aplicar para fijarlo en la capa. Mantén pulsado el lienzo para comparar con el original.
+help_filters|||Pick a category, tap a look to preview it and set its strength. Import .cube LUTs in the LUTs tab. Turn on the curtain to compare before / after.|||Elige una categoría, pulsa un look para verlo y ajusta su intensidad. Importa LUT .cube en la pestaña LUTs. Activa la cortina para comparar antes / después.
+help_effects|||Creative effects in groups: classic, lens and light, art, weather and sky. Each has its own options; use the dice to get another random layout.|||Efectos creativos por grupos: clásicos, lente y luz, arte, clima y cielo. Cada uno tiene sus opciones; el dado da otra distribución al azar.
+help_tone|||Precise colour control: curves per channel, levels, hue and saturation by colour range, and colour replacement.|||Control fino del color: curvas por canal, niveles, tono y saturación por rango de color, y sustitución de un color.
+help_crop|||Drag the frame corners, pick a ratio, or straighten the photo by a few degrees.|||Arrastra las esquinas del marco, elige una proporción o endereza la foto unos grados.
+help_transform|||Move, scale, rotate, flip, skew or distort the selected layer. The numeric fields are exact.|||Mueve, escala, gira, voltea, sesga o distorsiona la capa seleccionada. Los campos numéricos son exactos.
+help_canvas|||Image size changes the pixels. Canvas size only changes the area, keeping the layers where they are.|||El tamaño de imagen cambia los píxeles. El tamaño de lienzo solo cambia el área y deja las capas donde están.
+help_select|||Pick an area to work on. New, add, subtract and intersect decide how each new selection combines with the current one.|||Elige la zona sobre la que trabajar. Nueva, sumar, restar e intersecar deciden cómo se combina cada selección con la actual.
+help_background|||Remove the background automatically, by colour, or fix the edges by hand with the restore and erase brushes.|||Quita el fondo de forma automática, por color, o retoca los bordes a mano con los pinceles de restaurar y borrar.
+help_text|||Text layers stay editable until you rasterise them. Tap a layer to edit its words again at any time.|||Las capas de texto siguen siendo editables hasta que las rasterices. Pulsa una capa para volver a cambiar su texto cuando quieras.
+help_draw|||Choose brush, size, hardness and opacity. Each stroke becomes part of the active drawing layer.|||Elige pincel, tamaño, dureza y opacidad. Cada trazo se suma a la capa de dibujo activa.
+help_shapes|||Shapes stay vector: you can change their size, colour and corners afterwards without losing quality.|||Las formas siguen siendo vectoriales: puedes cambiar su tamaño, color y esquinas después sin perder calidad.
+help_qr|||The code is regenerated whenever you change its content, so you can keep editing it later.|||El código se regenera cada vez que cambias su contenido, así que puedes seguir editándolo más adelante.
+help_retouch|||Clone stamp copies pixels from one place to another. First tap sets the source, then paint.|||El tampón de clonar copia píxeles de un sitio a otro. El primer toque fija el origen y luego se pinta.
+help_privacy|||Hide what you do not want to show: paint over an area or drag a box, with pixelate or blur.|||Oculta lo que no quieras mostrar: pinta sobre una zona o arrastra un rectángulo, con mosaico o desenfoque.
+help_faces|||Faces are detected on the device. Pick which ones to cover and how; each cover becomes an editable layer.|||Las caras se detectan en el propio dispositivo. Elige cuáles tapar y cómo; cada tapado se crea como capa editable.
+help_watermark|||Save your signature or logo as a preset and place it on any image, once or tiled.|||Guarda tu firma o logo como preajuste y colócalo en cualquier imagen, una vez o en mosaico.
+help_frames|||Decorative borders drawn over the finished image. They do not change the layers.|||Bordes decorativos que se pintan sobre la imagen terminada. No modifican las capas.
+help_measure|||Exact position and size of the selected layer, plus alignment and distribution.|||Posición y tamaño exactos de la capa seleccionada, más alineación y distribución.
+help_history|||Every step you take is listed here. Tap any step to jump straight back to it.|||Aquí se lista cada paso que das. Pulsa uno para volver directamente a ese momento.
+help_export|||Export writes a flat image to your gallery. To keep layers editable, save the project instead.|||Exportar escribe una imagen plana en la galería. Para conservar las capas editables, guarda el proyecto.
+help_image|||Dimensions, file size and EXIF data of the image you opened.|||Dimensiones, peso y datos EXIF de la imagen que abriste.
+# Editor: nombres de posiciones, marcos y rangos de color
+anchor_top_left|||Top left|||Arriba izquierda
+anchor_top_center|||Top centre|||Arriba centro
+anchor_top_right|||Top right|||Arriba derecha
+anchor_middle_left|||Middle left|||Centro izquierda
+anchor_center|||Centre|||Centro
+anchor_middle_right|||Middle right|||Centro derecha
+anchor_bottom_left|||Bottom left|||Abajo izquierda
+anchor_bottom_center|||Bottom centre|||Abajo centro
+anchor_bottom_right|||Bottom right|||Abajo derecha
+frame_double|||Double|||Doble
+frame_dashed|||Dashed|||Discontinuo
+frame_inset|||Inset|||Hundido
+frame_corners|||Corners|||Esquinas
+frame_dotted|||Dotted|||Puntos
+frame_gradient|||Gradient|||Degradado
+frame_neon|||Neon|||Neón
+frame_vignette|||Vignette|||Vineteado
+frames_flatten_hint|||The frame wraps the selected layer at its own size, not the whole canvas|||El marco envuelve la capa seleccionada a su propio tamaño, no todo el lienzo
+hsl_red|||Red|||Rojo
+hsl_orange|||Orange|||Naranja
+hsl_yellow|||Yellow|||Amarillo
+hsl_green|||Green|||Verde
+hsl_cyan|||Cyan|||Cian
+hsl_blue|||Blue|||Azul
+hsl_purple|||Purple|||Violeta
+hsl_magenta|||Magenta|||Magenta
+symmetry_both|||Both axes|||Ambos ejes
+# Editor: avisos de capa y rasterizado
+layer_pick_any|||Select a layer|||Selecciona una capa
+layer_pick_raster|||Select an image layer|||Selecciona una capa de imagen
+layer_pick_raster_long|||This tool paints pixels, so it needs an image layer. Select one, or rasterize the current layer from the layers menu.|||Esta herramienta pinta píxeles, así que necesita una capa de imagen. Elige una o rasteriza la capa actual desde el menú de capas.
+layer_vector_badge|||vector|||vectorial
+raster_ask_title|||Rasterize the layer?|||Rasterizar la capa?
+raster_ask_body|||"%1$s" is not an image layer, so its pixels cannot be edited yet. Rasterizing turns it into an image: text and shapes stop being editable, though you can still undo.|||"%1$s" no es una capa de imagen, de modo que aún no se pueden editar sus píxeles. Al rasterizarla se convierte en imagen: el texto y las formas dejan de ser editables, aunque siempre puedes deshacer.
+action_rasterize|||Rasterize|||Rasterizar
+layer_rasterize|||Convert to image|||Convertir en imagen
+# Editor: curvas y HSL por color
+label_hue|||Hue|||Tono
+label_saturation|||Saturation|||Saturación
+label_lightness|||Lightness|||Luminosidad
+curve_hint|||Tap to add a point, drag to move it, double tap to reset|||Toca para añadir un punto, arrastra para moverlo, doble toque para restablecer
+retouch_clone_source|||Source|||Origen
+retouch_clone_ready|||Source set: paint where you want to cover|||Origen fijado: pinta donde quieras tapar
+retouch_red_eye_hint|||Tap each red eye|||Toca cada ojo rojo
+privacy_hint|||Paint or drag over what you want to hide|||Pinta o arrastra sobre lo que quieras tapar
+faces_scan|||Detect faces|||Detectar caras
+faces_item|||Face %1$d|||Cara %1$d
+# Ampliacion: efectos nuevos
+fx_film_grain|||Film grain|||Grano de película
+fx_vignette|||Vignette|||Viñeta
+fx_chromatic|||Chromatic aberration|||Aberración cromática
+fx_bloom|||Bloom|||Resplandor
+fx_tilt_shift|||Tilt-shift (miniature)|||Tilt-shift (miniatura)
+fx_bokeh|||Lens blur|||Desenfoque de lente
+fx_light_leak|||Light leak|||Fuga de luz
+fx_burned_edges|||Burned edges|||Bordes quemados
+fx_sketch|||Pencil sketch|||Boceto a lápiz
+fx_comic|||Comic|||Cómic
+fx_oil|||Oil paint|||Óleo
+fx_watercolor|||Watercolor|||Acuarela
+fx_mosaic|||Stained glass|||Vidriera
+fx_scatter|||Scatter|||Dispersión
+fx_speed_lines|||Speed lines|||Líneas de velocidad
+fx_rain|||Rain|||Lluvia
+fx_snow|||Snow|||Nieve
+fx_sparkles|||Sparkles|||Destellos
+fx_double_exposure|||Double exposure|||Doble exposición
+fx_anaglyph|||3D anaglyph|||Anaglifo 3D
+fx_heatmap|||Heat map|||Mapa de calor
+fx_sensor_noise|||Sensor noise|||Ruido de sensor
+fx_sky_golden|||Golden sky|||Cielo dorado
+fx_sky_night|||Day to night|||De día a noche
+fx_sky_dramatic|||Dramatic sky|||Cielo dramático
+fx_sky_blue|||Deep blue sky|||Cielo azul intenso
+fx_split_tone|||Split toning|||Tonos divididos
+fxg_classic|||Classic|||Clásicos
+fxg_lens|||Lens & light|||Lente y luz
+fxg_art|||Art|||Arte
+fxg_weather|||Weather & sparkle|||Clima y destellos
+fxg_sky|||Sky|||Cielo
+# Ampliacion: ajustes de detalle
+adjust_clarity|||Clarity|||Claridad
+adjust_texture|||Texture|||Textura
+adjust_dehaze|||Dehaze|||Quitar neblina
+adjust_denoise|||Noise reduction|||Reducir ruido
+adjust_sharpen_edges|||Sharpen edges only|||Nitidez solo en bordes
+# Ampliacion: mejora con IA
+ai_enhance|||AI enhance|||Mejora con IA
+ai_title|||AI enhance|||Mejora con IA
+ai_explain|||On-device super-resolution model (about 8 MB, downloaded the first time). There is no size limit, but big photos can take several minutes. You can cancel at any time.|||Modelo de superresolución en el dispositivo (unos 8 MB, se descarga la primera vez). No hay límite de tamaño, pero las fotos grandes pueden tardar varios minutos. Puedes cancelar en cualquier momento.
+ai_same_size|||Improve detail|||Mejorar detalle
+ai_double|||Upscale ×2|||Ampliar ×2
+ai_busy|||Processing with AI...|||Procesando con IA...
+ai_downloading|||Downloading AI model...|||Descargando el modelo de IA...
+ai_failed|||AI task failed (not enough memory, or the model could not be loaded)|||La tarea de IA ha fallado (poca memoria o no se pudo cargar el modelo)
+# Ampliacion: LUT y categorias de filtros
+lut_title|||LUT|||LUT
+lut_import|||Import .cube|||Importar .cube
+lut_delete|||Delete LUT|||Eliminar LUT
+lut_imported|||LUT imported|||LUT importada
+lut_invalid|||Not a valid 3D .cube file|||No es un archivo .cube 3D válido
+lut_empty_hint|||No LUTs yet. Import a .cube file to use professional looks.|||Aún no hay LUT. Importa un archivo .cube para usar looks profesionales.
+preset_empty_hint|||You have no saved presets yet. Save one from Adjust.|||Aún no tienes presets guardados. Guarda uno desde Ajustes.
+fcat_basic|||Basic|||Básicos
+fcat_portrait|||Portrait|||Retrato
+fcat_landscape|||Landscape|||Paisaje
+fcat_food|||Food|||Comida
+fcat_cinema|||Cinema|||Cine
+fcat_analog|||Analog film|||Película analógica
+fcat_retro|||Retro|||Retro
+fcat_neon|||Neon & pastel|||Neón y pastel
+fcat_sky|||Sky|||Cielo
+fcat_lut|||LUTs|||LUTs
+# Ampliacion: comparar antes / despues
+compare_curtain|||Before / after curtain|||Cortina antes / después
+compare_curtain_hint|||Move the divider to compare with the original|||Mueve el divisor para comparar con el original
+compare_position|||Divider position|||Posición del divisor
+# Ampliacion: presets de fabrica
+fp_soft_skin|||Soft skin|||Piel suave
+fp_warm_portrait|||Warm portrait|||Retrato cálido
+fp_glow|||Soft glow|||Brillo suave
+fp_clean_studio|||Clean studio|||Estudio limpio
+fp_portrait_bw|||Portrait B&W|||Retrato B/N
+fp_golden_hour|||Golden hour|||Hora dorada
+fp_deep_forest|||Deep forest|||Bosque profundo
+fp_vivid_nature|||Vivid nature|||Naturaleza viva
+fp_alpine|||Alpine|||Alpino
+fp_desert|||Desert|||Desierto
+fp_fresh|||Fresh|||Fresco
+fp_cozy|||Cozy|||Acogedor
+fp_rustic|||Rustic|||Rústico
+fp_teal_orange|||Teal & orange|||Teal y naranja
+fp_blockbuster|||Blockbuster|||Superproducción
+fp_neo_noir|||Neo noir|||Neo noir
+fp_kodak|||Kodak warm|||Kodak cálido
+fp_fuji|||Fuji|||Fuji
+fp_scifi_green|||Sci-fi green|||Verde ciencia ficción
+fp_bleach_bypass|||Bleach bypass|||Bleach bypass
+fp_film_400|||Film 400|||Película 400
+fp_light_leaks|||Light leaks|||Fugas de luz
+fp_burned_edges|||Burned edges|||Bordes quemados
+fp_expired_film|||Expired film|||Película caducada
+fp_cross_process|||Cross process|||Proceso cruzado
+fp_disposable|||Disposable camera|||Cámara desechable
+fp_instant|||Instant|||Instantánea
+fp_70s|||70s|||Años 70
+fp_80s|||80s|||Años 80
+fp_vhs|||VHS|||VHS
+fp_polaroid_look|||Polaroid|||Polaroid
+fp_daguerreotype|||Daguerreotype|||Daguerrotipo
+fp_cyberpunk|||Cyberpunk|||Cyberpunk
+fp_neon_nights|||Neon nights|||Noches de neón
+fp_synthwave|||Synthwave|||Synthwave
+fp_vaporwave|||Vaporwave|||Vaporwave
+fp_pastel|||Pastel|||Pastel
+fp_candy|||Candy|||Caramelo
+fp_sky_golden|||Golden sky|||Cielo dorado
+fp_sky_night|||Day to night|||De día a noche
+fp_sky_dramatic|||Dramatic sky|||Cielo dramático
+fp_sky_blue|||Deep blue sky|||Cielo azul intenso
+# Lienzo: incluir capas al redimensionar (recuperadas del build anterior)
+canvas_include_layers|||Include layers|||Incluir capas
+canvas_include_layers_hint|||Scales layers to fill the new size; otherwise only the canvas changes|||Escala las capas para llenar el nuevo tamaño; si no, solo cambia el lienzo
+adjust_lens|||Lens correction|||Corrección de lente
+# Mejoras: cancelar IA, aviso de cambios sin aplicar, ajustes
+ai_same_size_hint|||Sharper and cleaner, same dimensions|||Más nítida y limpia, con las mismas dimensiones
+ai_double_hint|||Doubles width and height of the whole canvas|||Duplica el ancho y el alto de todo el lienzo
+ai_cancelled|||Cancelled|||Cancelado
+curtain_toggle|||Before / after curtain|||Cortina antes / después
+discard_title|||Unapplied changes|||Cambios sin aplicar
+discard_text|||You have a preview that has not been applied yet. If you leave now it will be lost.|||Tienes una vista previa que aún no se ha aplicado. Si sales ahora se perderá.
+discard_apply|||Apply and continue|||Aplicar y continuar
+discard_leave|||Leave without applying|||Salir sin aplicar
+discard_keep|||Keep editing|||Seguir editando
+settings_confirm_discard|||Warn about unapplied changes|||Avisar de cambios sin aplicar
+settings_confirm_discard_hint|||Ask before closing a panel that has a pending preview|||Pregunta antes de cerrar un panel con una vista previa pendiente
+image_info_layer_px|||Selected layer pixels|||Píxeles de la capa seleccionada
+image_info_estimate|||Estimated JPG size (90 %)|||Tamaño JPG estimado (90 %)
+image_info_original_file|||Original file|||Archivo original
+image_info_calculating|||Calculating...|||Calculando...
+settings_curtain_default|||Before / after curtain on by default|||Cortina antes / después activa por defecto
+settings_curtain_default_hint|||Turns the curtain on every time you open Adjust, Filters or Effects|||La activa cada vez que entras en Ajustes, Filtros o Efectos
+# Seccion IA
+ai_panel_title|||AI|||IA
+help_ai|||Tools that use AI models running on your device. Each card shows how much it downloads; before starting you see the estimated time, and you can cancel at any time.|||Herramientas con modelos de IA que se ejecutan en tu dispositivo. Cada tarjeta indica cuánto se descarga; antes de empezar ves el tiempo estimado y puedes cancelar en cualquier momento.
+ai_panel_intro|||Everything runs on your device. Models are downloaded the first time and can be deleted from the manager below.|||Todo se ejecuta en tu dispositivo. Los modelos se descargan la primera vez y puedes borrarlos desde el gestor de abajo.
+ai_group_quality|||Quality|||Calidad
+ai_group_color|||Color and depth|||Color y profundidad
+ai_group_select|||Selection and objects|||Selección y objetos
+ai_group_text|||Text and documents|||Texto y documentos
+ai_card_denoise_t|||Remove noise|||Quitar ruido
+ai_card_denoise_d|||Cleans grain and noise from real photos|||Limpia el grano y el ruido de fotos reales
+ai_card_face_t|||Enhance faces|||Mejorar caras
+ai_card_face_d|||Restores detail in blurry or low quality faces|||Recupera detalle en caras borrosas o de poca calidad
+ai_card_colorize_t|||Colorize|||Colorear
+ai_card_colorize_d|||Adds color to black and white photos|||Añade color a fotos en blanco y negro
+ai_card_portrait_t|||Portrait blur|||Desenfoque de retrato
+ai_card_portrait_d|||Blurs the background using a depth map|||Desenfoca el fondo según su profundidad
+ai_card_fog_t|||Depth fog|||Niebla por profundidad
+ai_card_fog_d|||Adds haze that grows with distance|||Añade neblina que crece con la distancia
+ai_card_select_t|||Select by tap|||Seleccionar por toque
+ai_card_select_d|||Tap an object on the image and it gets selected|||Toca un objeto en la imagen y se selecciona
+ai_card_remove_t|||Remove object|||Eliminar objeto
+ai_card_remove_d|||Fills the selection with what should be behind it|||Rellena la selección con lo que debería haber detrás
+ai_card_ocr_t|||Copy text|||Copiar texto
+ai_card_ocr_d|||Reads the text that appears in the image|||Lee el texto que aparece en la imagen
+ai_card_scan_t|||Scan document|||Escanear documento
+ai_card_scan_d|||Crops and straightens a paper with the camera|||Recorta y endereza un papel con la cámara
+ai_model_ready|||Model downloaded|||Modelo descargado
+ai_model_to_download|||%1$s to download|||%1$s por descargar
+ai_busy_text|||Reading text...|||Leyendo el texto...
+ai_ocr_title|||Recognized text|||Texto reconocido
+ai_ocr_empty|||No text found|||No se ha encontrado texto
+ai_ocr_failed|||Text recognition is not available yet (it may need a connection the first time)|||El reconocimiento de texto aún no está disponible (la primera vez puede necesitar conexión)
+ai_copy|||Copy|||Copiar
+ai_copied|||Copied|||Copiado
+ai_share|||Share|||Compartir
+ai_scan_added|||Scan added as a layer|||Escaneo añadido como capa
+ai_scan_failed|||The scanner could not be started|||No se pudo iniciar el escáner
+ai_no_selection|||Select something first: use Select by tap or the Selection tools|||Primero selecciona algo: usa Seleccionar por toque o las herramientas de Selección
+ai_no_faces|||No faces found|||No se han encontrado caras
+ai_faces_done|||%1$s face(s) enhanced|||%1$s cara(s) mejorada(s)
+ai_sam_hint|||Tap the object on the image. Add more taps to refine, or switch to Remove to exclude areas.|||Toca el objeto en la imagen. Añade más toques para afinar, o cambia a Quitar para excluir zonas.
+ai_sam_add|||Add|||Añadir
+ai_sam_remove|||Remove|||Quitar
+ai_sam_clear|||Clear|||Borrar
+ai_sam_done|||Done|||Hecho
+ai_sam_stale|||The image changed; analyze it again|||La imagen ha cambiado; vuelve a analizarla
+ai_preflight_download|||Download: %1$s|||Descarga: %1$s
+ai_preflight_download_eta|||About %1$s on your connection|||Unos %1$s con tu conexión
+ai_preflight_download_unknown|||The time depends on your connection (measured after the first download)|||El tiempo depende de tu conexión (se mide tras la primera descarga)
+ai_preflight_wifi|||Wi-Fi recommended|||Se recomienda Wi-Fi
+ai_preflight_ready|||Model already downloaded|||Modelo ya descargado
+ai_preflight_time|||Processing: about %1$s|||Procesado: unos %1$s
+ai_preflight_time_unknown_title|||Processing time not measured yet|||Tiempo de procesado aún sin medir
+ai_preflight_time_unknown|||It is measured the first time on this device; you will see the remaining time live|||Se mide la primera vez en este dispositivo; verás el tiempo restante en directo
+ai_preflight_cancel_hint|||You can cancel at any time.|||Puedes cancelar en cualquier momento.
+ai_preflight_continue|||Continue|||Continuar
+ai_dur_s|||%1$d s|||%1$d s
+ai_dur_min|||%1$d min|||%1$d min
+ai_dur_min_s|||%1$d min %2$d s|||%1$d min %2$d s
+ai_eta|||About %1$s left|||Quedan unos %1$s
+ai_failed_download|||Could not download the model. Check your connection.|||No se pudo descargar el modelo. Comprueba tu conexión.
+ai_models_title|||AI models|||Modelos de IA
+ai_models_manage|||Manage AI models|||Gestionar modelos de IA
+ai_models_hint|||Downloaded models take space on your device. Delete the ones you do not use; they are downloaded again when needed.|||Los modelos descargados ocupan espacio en tu dispositivo. Borra los que no uses; se vuelven a descargar cuando hagan falta.
+ai_models_used|||%1$s on device|||%1$s en el dispositivo
+ai_models_total|||Space used by models: %1$s|||Espacio usado por los modelos: %1$s
+ai_models_delete|||Delete|||Eliminar
+ai_models_download|||Download|||Descargar
+ai_model_super_res|||Detail and ×2 (Swin2SR)|||Detalle y ×2 (Swin2SR)
+ai_model_denoise|||Noise removal (SCUNet)|||Quitar ruido (SCUNet)
+ai_model_segment|||Select by tap (MobileSAM)|||Seleccionar por toque (MobileSAM)
+ai_model_depth|||Depth (Depth Anything V2)|||Profundidad (Depth Anything V2)
+ai_model_colorize|||Colorize (DDColor)|||Colorear (DDColor)
+ai_model_inpaint|||Remove objects (MI-GAN)|||Eliminar objetos (MI-GAN)
+ai_model_face|||Faces (GFPGAN)|||Caras (GFPGAN)
+settings_ai_models|||AI models|||Modelos de IA
+settings_ai_models_hint|||See the size of each model, download or delete them|||Consulta el peso de cada modelo, descárgalos o bórralos
+# Quitar fondo con modelos de IA
+ai_card_bg_d|||Removes the background with the model you choose, with live preview and fine controls|||Quita el fondo con el modelo que elijas, con vista previa en directo y ajustes finos
+bg_analyze|||Analyze image|||Analizar imagen
+bg_analyze_short|||Analyze|||Analizar
+bg_analyze_hint|||First analyze the image with the chosen model; then you tune the result live and press Apply.|||Primero se analiza la imagen con el modelo elegido; después ajustas el resultado en directo y pulsas Aplicar.
+bg_threshold|||Threshold|||Umbral
+bg_hardness|||Edge hardness|||Dureza del borde
+bg_grow|||Expand / shrink|||Expandir / contraer
+bg_refine|||Refine edges (hair)|||Refinar bordes (pelo)
+bg_decontam|||Clean color halo|||Limpiar halo de color
+bg_invert|||Invert|||Invertir
+bg_invert_hint|||Remove the subject and keep the background|||Quita el sujeto y deja el fondo
+bg_output|||Result|||Resultado
+bg_out_transparent|||Transparent|||Transparente
+bg_out_color|||Solid color|||Color sólido
+bg_out_blur|||Blurred background|||Fondo desenfocado
+bg_blur_amount|||Background blur|||Desenfoque del fondo
+bg_method_u2netp|||U2-Net lite|||U2-Net ligero
+bg_method_silueta|||Silueta|||Silueta
+bg_method_u2net_full|||U2-Net|||U2-Net
+bg_method_isnet|||ISNet|||ISNet
+bg_method_isnet_anime|||ISNet anime|||ISNet anime
+bg_method_modnet|||MODNet|||MODNet
+bg_method_rmbg|||RMBG 1.4|||RMBG 1.4
+bg_legend_mlkit|||Fast and with no download of its own. Good for people and clear objects in normal photos.|||Rápido y sin descarga propia. Bueno para personas y objetos claros en fotos normales.
+bg_legend_mediapipe|||Made for portraits and selfies: tells hair, skin and clothes apart. Light model.|||Pensado para retratos y selfies: distingue pelo, piel y ropa. Modelo ligero.
+bg_legend_u2netp|||Very light general cutout at low internal resolution. Best for quick drafts.|||Recorte general muy ligero y de baja resolución interna. Mejor para borradores rápidos.
+bg_legend_silueta|||Fast general cutout with a good quality for its size. Objects and people.|||Recorte general rápido con buena calidad para su tamaño. Objetos y personas.
+bg_legend_u2net|||General cutout, more precise than Silueta on complex shapes.|||Recorte general, más preciso que Silueta en formas complejas.
+bg_legend_isnet|||The most versatile: products, animals and people with clean edges. Recommended for general use.|||El más versátil: productos, animales y personas con bordes limpios. Recomendado para uso general.
+bg_legend_isnet_anime|||For illustrations, anime and drawings.|||Para ilustraciones, anime y dibujos.
+bg_legend_modnet|||Portraits with fine hair: real matting with semi-transparent edges. People only.|||Retratos con pelo fino: matting real con bordes semitransparentes. Solo personas.
+bg_legend_rmbg|||Very good general quality on products, people and busy backgrounds. BRIA license: non-commercial use only.|||Muy buena calidad general en productos, personas y fondos complicados. Licencia de BRIA: solo uso no comercial.
+ai_model_bg_u2netp|||Background: U2-Net lite|||Fondo: U2-Net ligero
+ai_model_bg_mediapipe|||Background: MediaPipe portrait|||Fondo: MediaPipe retrato
+ai_model_bg_silueta|||Background: Silueta|||Fondo: Silueta
+ai_model_bg_u2net|||Background: U2-Net|||Fondo: U2-Net
+ai_model_bg_isnet|||Background: ISNet|||Fondo: ISNet
+ai_model_bg_isnet_anime|||Background: ISNet anime|||Fondo: ISNet anime
+ai_model_bg_modnet|||Background: MODNet|||Fondo: MODNet
+ai_model_bg_rmbg|||Background: RMBG 1.4|||Fondo: RMBG 1.4
+# Ampliar x4
+ai_x4|||Upscale ×4|||Ampliar ×4
+ai_x4_hint|||Quadruples width and height with a real-world model: best quality, slower than ×2|||Cuadruplica el ancho y el alto con un modelo de imágenes reales: mejor calidad, más lento que ×2
+ai_x4_too_big|||The result would be too large (max about 48 megapixels). Crop or reduce the image first.|||El resultado sería demasiado grande (máx. unos 48 megapíxeles). Recorta o reduce la imagen antes.
+ai_model_super_res_x4|||Upscale ×4 (Swin2SR real-world)|||Ampliar ×4 (Swin2SR imágenes reales)
+# Correccion automatica y texto avanzado
+geo_title|||Automatic correction|||Corrección automática
+geo_hint|||Straightens, fixes converging lines and lens distortion. Works best with buildings, horizons and documents; adjust by hand if needed.|||Endereza, corrige líneas convergentes y distorsión de lente. Funciona mejor con edificios, horizontes y documentos; ajusta a mano si hace falta.
+geo_auto|||Automatic|||Automático
+geo_reset|||Reset|||Restablecer
+geo_none|||No clear straight lines found; adjust by hand|||No se han encontrado líneas rectas claras; ajusta a mano
+geo_rotation|||Straighten|||Enderezar
+geo_key_v|||Vertical perspective|||Perspectiva vertical
+geo_key_h|||Horizontal perspective|||Perspectiva horizontal
+geo_lens|||Lens distortion|||Distorsión de lente
+text_outline_n|||Outline %1$d|||Contorno %1$d
+text_outline_add|||Add outline|||Añadir contorno
+text_shape|||Text shape|||Forma del texto
+text_shape_none|||Straight|||Recto
+text_shape_circle|||Circle|||Círculo
+text_shape_wave|||Wave|||Onda
+text_texture|||Texture fill|||Relleno con textura
+tex_gold|||Gold|||Oro
+tex_silver|||Silver|||Plata
+tex_wood|||Wood|||Madera
+tex_marble|||Marble|||Mármol
+tex_fire|||Fire|||Fuego
+tex_ice|||Ice|||Hielo
+# Borrador magico
+ai_card_eraser_t|||Object eraser|||Borrador de objetos
+ai_card_eraser_d|||Draw over an object and it is detected and removed|||Dibuja sobre un objeto y se detecta y elimina
+ai_eraser_hint|||Paint over the object. It is removed when you lift your finger.|||Pinta sobre el objeto. Se elimina al soltar el dedo.
+ai_eraser_detect|||Detect the object inside the stroke|||Detectar el objeto dentro del trazo
+ai_eraser_detect_hint|||Mark a rough zone and the object found inside is removed. Turn off to erase exactly what you paint.|||Marca una zona aproximada y se borra el objeto que haya dentro. Desactívalo para borrar exactamente lo que pintes.
+ai_card_zone_t|||Remove object in selection|||Borrar objeto de la selección
+ai_card_zone_d|||Detects the object inside the selected zone and removes it|||Detecta el objeto dentro de la zona seleccionada y lo borra
+ai_no_object|||No object detected in that zone. Mark it tighter around the object, or turn off detection to erase exactly what you paint.|||No se ha detectado ningún objeto en esa zona. Márcala más ajustada al objeto, o desactiva la detección para borrar exactamente lo que pintes.
+# Borrador magico manual
+ai_card_mark_t|||Magic eraser|||Borrador mágico
+ai_card_mark_d|||Mark small details (moles, spots, wires...) with points, strokes or shapes and fill them from their surroundings|||Marca detalles pequeños (lunares, manchas, cables…) con puntos, trazos o formas y se rellenan con lo que hay alrededor
+ai_mark_hint|||Mark what you want to remove: tap for points, drag for strokes, or pick a shape. Then press Apply. Nothing is detected: exactly what you mark is filled.|||Marca lo que quieras quitar: toca para puntos, arrastra para trazos o elige una forma. Después pulsa Aplicar. No se detecta nada: se rellena exactamente lo marcado.
+ai_mark_brush|||Brush|||Pincel
+ai_mark_rect|||Rectangle|||Rectángulo
+ai_mark_ellipse|||Ellipse|||Elipse
+ai_mark_lasso|||Free shape|||Forma libre
+ai_mark_undo|||Undo mark|||Deshacer marca
+ai_mark_clear|||Clear marks|||Borrar marcas
+ai_mark_count|||%1$d marks|||%1$d marcas
+ai_mark_outside|||The marks are outside the image layer|||Las marcas quedan fuera de la capa de imagen
+# Mover vista, accesos de Inicio y restaurar foto
+ai_pan_mode|||Move view|||Mover vista
+home_magic_eraser|||Magic eraser|||Borrador mágico
+home_quick_adjust|||Quick adjust|||Ajustes rápidos
+home_ai_tools|||AI tools|||Herramientas IA
+restore_title|||Restore photo|||Restaurar foto
+restore_card_d|||Cleans noise, restores faces and optionally colors and upscales an old photo in one go|||Limpia el ruido, restaura caras y, si quieres, colorea y amplía una foto antigua de una sola vez
+restore_intro|||Pick the steps. They run in order: noise, faces, color and upscale.|||Elige los pasos. Se ejecutan en orden: ruido, caras, color y ampliación.
+restore_colorize_hint|||Only for black and white photos|||Solo para fotos en blanco y negro
+restore_start|||Restore|||Restaurar
+ai_mark_size|||Brush size|||Grosor del pincel
+ai_mark_pencil|||Pencil (paint)|||Lápiz (pintar)
+ai_mark_options|||Size and shapes|||Grosor y formas
+settings_magnifier_zoom|||Magnifier zoom|||Zoom de la lupa
+settings_magnifier_avoid|||Move the magnifier away from the finger|||Apartar la lupa del dedo
+settings_magnifier_avoid_hint|||It rests in the chosen corner and jumps to another only when the finger gets close. Off: always fixed in that corner.|||Descansa en la esquina elegida y salta a otra solo cuando el dedo se acerca. Desactivado: siempre fija en esa esquina.
+settings_magnifier_margin|||Margin before moving the magnifier|||Margen antes de apartar la lupa
+settings_lens_cross_size|||Magnifier crosshair size (selection)|||Tamaño de la mira de la lupa (selección)
+settings_lens_cross_width|||Magnifier crosshair thickness (selection)|||Grosor de la mira de la lupa (selección)
+settings_selection_line_width|||Selection line thickness|||Grosor de la línea de selección
+settings_magnifier_corner|||Magnifier position|||Posición de la lupa
+corner_top_left|||Top left|||Arriba izq.
+corner_top_right|||Top right|||Arriba der.
+corner_bottom_left|||Bottom left|||Abajo izq.
+corner_bottom_right|||Bottom right|||Abajo der.
+settings_magnifier_shape|||Magnifier shape|||Forma de la lupa
+settings_magnifier_size|||Magnifier size|||Tamaño de la lupa
+mag_shape_circle|||Circle|||Círculo
+mag_shape_square|||Square|||Cuadrado
+mag_shape_rect|||Rectangle|||Rectángulo
+settings_white_logo_cycle|||Colorful logo with white accent|||Logotipo en color con acento blanco
+settings_white_logo_cycle_hint|||With the white accent, the header logo cycles vivid colors (never white or gray)|||Con el acento blanco, el logotipo cicla colores vivos (nunca blanco ni gris)
+# Salir de generadores
+leave_work_title|||Discard your work?|||¿Descartar el trabajo?
+leave_work_body|||If you go back now, the changes you made will be lost.|||Si vuelves atrás ahora, perderás los cambios que has hecho.
+leave_work_leave|||Leave|||Salir
+# Maquetas sociales: textos de interfaz
+social_ui_likes|||likes|||Me gusta
+social_ui_view_all|||View all %s comments|||Ver los %s comentarios
+social_ui_views|||views|||visualizaciones
+social_ui_like|||Like|||Me gusta
+social_ui_comment|||Comment|||Comentar
+social_ui_share|||Share|||Compartir
+social_ui_repost|||Repost|||Compartir
+social_ui_send|||Send|||Enviar
+social_ui_follow|||Follow|||Seguir
+social_ui_following|||Following|||Siguiendo
+social_ui_for_you|||For You|||Para ti
+social_ui_subscribe|||Subscribe|||Suscribirse
+social_ui_save|||Save|||Guardar
+social_ui_join|||Join|||Unirse
+social_ui_comments|||comments|||comentarios
+social_ui_replies|||replies|||respuestas
+social_ui_shares|||shares|||veces compartido
+social_ui_sound|||Original sound|||Sonido original
+social_ui_followers|||Followers|||Seguidores
+social_ui_posts|||Posts|||Publicaciones
+social_ui_message|||Message|||Mensaje
+# Efectos de capa
+layer_style_title|||Layer effects|||Efectos de capa
+ls_none|||None|||Ninguno
+ls_sticker|||Sticker|||Pegatina
+ls_soft_shadow|||Soft shadow|||Sombra suave
+ls_float|||Floating|||Flotante
+ls_hard_shadow|||Hard shadow|||Sombra dura
+ls_retro|||Retro|||Retro
+ls_outline_white|||White outline|||Contorno blanco
+ls_outline_black|||Black outline|||Contorno negro
+ls_neon_cyan|||Cyan neon|||Neón cian
+ls_neon_pink|||Pink neon|||Neón rosa
+ls_gold_glow|||Golden glow|||Brillo dorado
+ls_neon_green|||Green neon|||Neón verde
+ls_neon_yellow|||Yellow neon|||Neón amarillo
+ls_neon_purple|||Purple neon|||Neón morado
+ls_fire_glow|||Fire glow|||Brillo de fuego
+ls_ice_glow|||Ice glow|||Brillo de hielo
+ls_white_glow|||White glow|||Brillo blanco
+ls_sticker_black|||Black sticker|||Pegatina negra
+ls_sticker_pink|||Pink sticker|||Pegatina rosa
+ls_pop_shadow|||Pop shadow|||Sombra pop
+ls_blue_shadow|||Blue shadow|||Sombra azul
+ls_gold_outline|||Gold outline|||Contorno dorado
+ls_long_shadow|||Long shadow|||Sombra larga
+ls_polaroid|||Polaroid|||Polaroid
+ls_glow_stroke|||Glowing outline|||Contorno brillante
+ls_shadow|||Shadow|||Sombra
+ls_glow|||Glow|||Resplandor
+ls_outline|||Outline|||Contorno
+ls_blur|||Blur|||Desenfoque
+ls_offset_x|||Horizontal offset|||Desplazamiento horizontal
+ls_offset_y|||Vertical offset|||Desplazamiento vertical
+ls_thickness|||Thickness|||Grosor
+# Estilos de texto
+text_presets_title|||Text styles|||Estilos de texto
+tpg_impact|||Impact and memes|||Impacto y memes
+tpg_neon|||Neon and retro|||Neón y retro
+tpg_material|||Materials|||Materiales
+tpg_gradient|||Gradients|||Degradados
+tpg_label|||Labels and boxes|||Etiquetas y cajas
+tpg_fun|||Fun and signature|||Divertidos y de autor
+tp_meme|||Meme|||Meme
+tp_comic|||Comic|||Cómic
+tp_headline|||Headline|||Titular
+tp_sticker|||Sticker|||Pegatina
+tp_heavy|||Heavy|||Contundente
+tp_double_outline|||Double outline|||Doble contorno
+tp_neon_cyan|||Cyan neon|||Neón cian
+tp_neon_pink|||Pink neon|||Neón rosa
+tp_neon_green|||Green neon|||Neón verde
+tp_neon_double|||Dual neon|||Neón doble
+tp_arcade|||Arcade|||Arcade
+tp_vapor|||Vaporwave|||Vaporwave
+tp_sunset|||Sunset|||Atardecer
+tp_ocean|||Ocean|||Océano
+tp_aurora|||Aurora|||Aurora
+tp_instagram|||Insta gradient|||Degradado Insta
+tp_rainbow|||Rainbow|||Arcoíris
+tp_flame_gradient|||Flame|||Llama
+tp_subtitle|||Subtitle|||Subtítulo
+tp_highlighter|||Highlighter|||Resaltador
+tp_pill|||Black pill|||Píldora negra
+tp_banner|||Red banner|||Banner rojo
+tp_glass|||Glass|||Cristal
+tp_postit|||Sticky note|||Post-it
+tp_hollow|||Hollow|||Hueco
+tp_glitch|||Glitch|||Glitch
+tp_elegant|||Elegant|||Elegante
+tp_long_shadow|||Long shadow|||Sombra larga
+tp_script|||Script|||Manuscrito
+tp_terminal|||Terminal|||Terminal
+tp_street|||Street marker|||Rotulador urbano
+tp_poster|||Poster|||Cartel
+tp_horror|||Horror|||Terror
+tp_stencil|||Stencil|||Plantilla militar
+tp_neon_yellow|||Yellow neon|||Neón amarillo
+tp_neon_purple|||Purple neon|||Neón morado
+tp_cyber|||Cyber|||Cyber
+tp_diner|||Retro diner|||Cartel retro
+tp_candy|||Candy|||Caramelo
+tp_mint|||Mint|||Menta
+tp_gold_gradient|||Golden gradient|||Degradado dorado
+tp_midnight|||Midnight|||Medianoche
+tp_lava|||Lava|||Lava
+tp_label_blue|||Blue label|||Etiqueta azul
+tp_label_green|||Green label|||Etiqueta verde
+tp_tag_white|||White tag|||Etiqueta blanca
+tp_pop|||Pop outline|||Contorno pop
+tp_handwritten|||Handwritten|||A mano
+tp_typewriter|||Typewriter|||Máquina de escribir
+tp_gothic|||Gothic|||Gótico
+tp_kids|||Playful|||Divertido
+tp_graffiti|||Graffiti|||Grafiti
+tp_western|||Western|||Western
+tp_boxing|||Boxing|||Boxeo
+tp_noir|||Noir|||Noir
+tp_neon_red|||Red neon|||Neón rojo
+tp_neon_blue|||Blue neon|||Neón azul
+tp_synthwave|||Synthwave|||Synthwave
+tp_laser|||Laser|||Láser
+tp_peach|||Peach|||Melocotón
+tp_deep_ocean|||Deep sea|||Mar profundo
+tp_forest|||Forest|||Bosque
+tp_fire_ice|||Fire and ice|||Fuego y hielo
+tp_pastel|||Pastel|||Pastel
+tp_holo|||Holographic|||Holográfico
+tp_label_pink|||Pink label|||Etiqueta rosa
+tp_label_orange|||Orange label|||Etiqueta naranja
+tp_label_gray|||Gray label|||Etiqueta gris
+tp_ribbon|||Purple ribbon|||Cinta morada
+tp_tape|||Tape|||Cinta adhesiva
+tp_comic_book|||Comic book|||Tebeo
+tp_chalk|||Chalk|||Tiza
+tp_wedding|||Elegant script|||Caligrafía elegante
+tp_thin|||Thin modern|||Fino moderno
+tp_bold_serif|||Bold serif|||Serif negrita
+tp_marker_blue|||Blue marker|||Rotulador azul
+text_styles_hint|||Tap to open|||Pulsa para abrir
+# Collage
+create_collage|||Collage / Comic|||Collage / Cómic
+collage_title|||Collage / Comic|||Collage / Cómic
+collage_fullscreen|||Full screen|||Pantalla completa
+collage_add_photos|||Add photos|||Añadir fotos
+collage_empty|||Add photos to start your collage|||Añade fotos para empezar tu collage
+collage_hint|||Tap a slot to select it. Drag to frame, pinch to zoom, long-press and drag onto another slot to swap photos.|||Toca un hueco para elegirlo. Arrastra para encuadrar, pellizca para acercar y mantén pulsado y arrastra sobre otro hueco para intercambiar fotos.
+collage_selected|||Slot %1$d|||Hueco %1$d
+collage_rotate|||Rotate|||Girar
+collage_flip|||Flip|||Voltear
+collage_move_earlier|||Move earlier|||Mover antes
+collage_move_later|||Move later|||Mover después
+collage_reset_framing|||Reset framing|||Restablecer encuadre
+collage_zoom|||Zoom|||Zoom
+collage_layout|||Layout|||Diseño
+collage_canvas|||Canvas|||Lienzo
+collage_slots|||Slots|||Huecos
+collage_gap|||Spacing|||Separación
+collage_margin|||Margin|||Margen
+collage_border|||Border|||Borde
+collage_shadow|||Shadow|||Sombra
+collage_bg|||Background|||Fondo
+collage_bg_solid|||Solid|||Color
+collage_bg_gradient|||Gradient|||Degradado
+collage_bg_blur|||Blurred photo|||Foto desenfocada
+collage_bg_custom|||Custom|||Personalizado
+collage_grad_start|||Start color|||Color inicial
+collage_grad_end|||End color|||Color final
+collage_grad_swap|||Swap colors|||Invertir colores
+collage_grad_start_pos|||Start position|||Posición inicial
+collage_grad_end_pos|||End position|||Posición final
+collage_grad_angle|||Angle|||Ángulo
+collage_layer_photo|||Photo %1$d|||Foto %1$d
+collage_layer_frame|||Frame %1$d|||Marco %1$d
+collage_layer_border|||Border %1$d|||Borde %1$d
+collage_layer_bg|||Background|||Fondo
+collage_mode_collage|||Collage|||Collage
+collage_mode_comic|||Comic|||Cómic
+draft_title|||Unsaved work|||Trabajo sin guardar
+draft_body|||You have unfinished work in %1$s. Do you want to recover it?|||Tienes un trabajo sin terminar en %1$s. ¿Quieres recuperarlo?
+gradient_pick|||Select a gradient layer to edit it.|||Selecciona una capa de degradado para editarla.
+gradient_reverse|||Reverse|||Invertir
+help_gradient|||Edit the gradient layer: type, preset, the color of each stop (with transparency), where each stop sits and the angle. Opacity and blend mode are changed from the layers manager.|||Edita la capa de degradado: tipo, preset, el color de cada parada (con transparencia), dónde está cada parada y el ángulo. La opacidad y el modo de mezcla se cambian desde el gestor de capas.
+rasterize_none|||Select a text, shape or other non-image layer to rasterize it.|||Selecciona una capa de texto, forma u otra que no sea imagen para rasterizarla.
+stickers_title|||Stickers|||Stickers
+stickers_search_hint|||Search stickers…|||Buscar stickers…
+stickers_no_key|||Stickers are not available: the Klipy API key is missing.|||Stickers no disponibles: falta la clave de la API de Klipy.
+bubble_title|||Speech bubble|||Bocadillo
+bubble_add|||Speech bubbles (faces)|||Bocadillos (caras)
+bubble_pick|||Select a speech bubble layer to edit it.|||Selecciona una capa de bocadillo para editarla.
+bubble_text|||Text|||Texto
+bubble_tail_x|||Tail horizontal|||Cola horizontal
+bubble_tail_y|||Tail vertical|||Cola vertical
+bubble_pad_top|||Inner margin: top|||Margen interior: arriba
+bubble_pad_bottom|||Inner margin: bottom|||Margen interior: abajo
+bubble_pad_left|||Inner margin: left|||Margen interior: izquierda
+bubble_pad_right|||Inner margin: right|||Margen interior: derecha
+bubble_stroke_color|||Outline color|||Color del contorno
+bubble_no_faces|||No faces found: added a single bubble|||No se encontraron caras: se añadió un solo bocadillo
+help_bubble|||Move, rotate and resize the bubble with your fingers like any layer. Here you change its text, type, font, colors, outline and where the tail points. Double-tap it on the canvas to edit it again.|||Mueve, gira y cambia el tamaño del bocadillo con los dedos como cualquier capa. Aquí cambias su texto, tipo, tipografía, colores, contorno y hacia dónde apunta la cola. Toca dos veces sobre él en el lienzo para volver a editarlo.
+collage_photo_effect|||Photo effect (comic, halftone, solarize...)|||Efecto de las fotos (cómic, trama, solarizado...)
+comic_detect_faces|||Bubbles on faces|||Bocadillos en caras
+comic_no_faces|||No faces found|||No se encontró ninguna cara
+comic_hint|||Tap a bubble to select it. Drag to move it, pinch to resize it and drag the round handle to aim its tail. Slots work as in a collage.|||Toca un bocadillo para elegirlo. Arrástralo para moverlo, pellizca para cambiar su tamaño y arrastra el punto redondo para apuntar la cola. Los huecos funcionan como en un collage.
+comic_bubbles|||Speech bubbles|||Bocadillos
+comic_add_bubble|||Add bubble|||Añadir bocadillo
+comic_bubble_n|||Bubble %1$d|||Bocadillo %1$d
+comic_default_text|||Hello!|||¡Hola!
+comic_style_speech|||Speech|||Hablar
+comic_style_thought|||Thought|||Pensar
+comic_style_shout|||Shout|||Grito
+comic_style_whisper|||Whisper|||Susurro
+comic_style_caption|||Caption|||Recuadro
+comic_text_size|||Text size|||Tamaño del texto
+comic_outline|||Outline|||Contorno
+comic_text_color|||Text color|||Color del texto
+comic_fill_color|||Fill|||Relleno
+comic_caps|||All caps|||Mayúsculas
+comic_rotation|||Rotation|||Rotación
+# Plantillas de meme
+meme_mode_photo|||Photo + text|||Foto con texto
+meme_photos|||Photos|||Fotos
+meme_photo_n|||photo %1$d|||foto %1$d
+meme_text_n|||Text %1$d|||Texto %1$d
+meme_pan_x|||Horizontal framing|||Encuadre horizontal
+meme_pan_y|||Vertical framing|||Encuadre vertical
+mt_two_panel|||Two panels|||Dos paneles
+mt_yes_no|||Yes / No|||Sí / No
+mt_levels|||Levels|||Niveles
+mt_versus|||Versus|||Versus
+mt_before_after|||Before / After|||Antes / Después
+mt_comic4|||4 panels|||4 viñetas
+mt_strip3|||3-panel strip|||Tira de 3
+mt_labels|||Three labels|||Tres etiquetas
+mt_sign|||Sign|||Cartel
+mt_subtitle|||Movie subtitle|||Subtítulo de película
+mt_poster|||Poster|||Póster
+tpg_base|||Base|||Base
+tp_none|||No style|||Sin estilo
+# Tanda 3 (mas contenido)
+tex_copper|||Copper|||Cobre
+tex_bronze|||Bronze|||Bronce
+tex_rose_gold|||Rose gold|||Oro rosa
+tex_chrome|||Chrome|||Cromo
+tex_emerald|||Emerald|||Esmeralda
+tex_lava|||Lava rock|||Roca de lava
+tex_carbon|||Carbon fiber|||Fibra de carbono
+tex_galaxy|||Galaxy|||Galaxia
+tex_concrete|||Concrete|||Hormigón
+tex_camo|||Camouflage|||Camuflaje
+tex_water|||Water|||Agua
+tex_grass|||Grass|||Hierba
+tex_holo|||Holographic foil|||Holograma
+tex_leather|||Leather|||Cuero
+tp_sunrise|||Sunrise|||Amanecer
+tp_ink|||Ink|||Tinta
+tp_cotton|||Cotton candy|||Algodón de azúcar
+ls_deep_shadow|||Deep shadow|||Sombra profunda
+ls_pixel_shadow|||Pixel shadow|||Sombra pixel
+ls_neon_red|||Red neon|||Neón rojo
+ls_neon_blue|||Blue neon|||Neón azul
+ls_sticker_yellow|||Yellow sticker|||Pegatina amarilla
+frame_stamp|||Postage stamp|||Sello postal
+frame_checkered|||Checkered|||Cuadros
+frame_rainbow|||Rainbow|||Arcoíris
+frame_ornate|||Ornate gold|||Dorado ornamental
+frame_inner_glow|||Inner glow|||Resplandor interior
+frame_double_rounded|||Double rounded|||Doble redondeado
+frame_brackets|||Viewfinder|||Visor
+gradient_reflected|||Reflected|||Reflejado
+gradient_repeating|||Repeating|||Repetido
+gradient_radial_repeat|||Radial rings|||Anillos radiales
+fp_golden_skin|||Golden skin|||Piel dorada
+fp_cool_studio|||Cool studio|||Estudio frío
+fp_misty_morning|||Misty morning|||Mañana de niebla
+fp_dune|||Dune|||Duna
+fp_fresh_food|||Fresh dish|||Plato fresco
+fp_noir_blue|||Blue noir|||Noir azul
+fp_warm_film|||Warm film|||Carrete cálido
+fx_emboss|||Emboss|||Relieve
+fx_dreamy|||Dreamy glow|||Ensueño
+fx_lomo|||Lomo|||Lomo
+fx_cross_process|||Cross process|||Proceso cruzado
+fx_swirl|||Swirl|||Remolino
+comic_style_box|||Box|||Cuadro
+mt_three_photos|||Three photos|||Tres fotos
+settings_panel_view|||View when opening panels|||Vista al abrir paneles
+panel_view_fit|||Fit whole canvas|||Encajar todo el lienzo
+panel_view_keep|||Keep zoom|||No tocar el zoom
+panel_view_selected|||Fit selected object|||Encajar el objeto elegido
+zoom_out|||Zoom out|||Alejar
+zoom_in|||Zoom in|||Acercar
+zoom_reset|||Reset zoom|||Restaurar zoom
+shape_draw_another|||Draw another shape|||Dibujar otra forma
+zoom_hand|||Pan canvas (hand)|||Mover el lienzo (mano)
+
+tutorial_p5_title|||Layers your way|||Capas a tu medida
+tutorial_p5_body|||Image, text, shape, QR, emoji, gradient and speech bubble are all layers. Use the quick or the full manager (it minimizes and the canvas adapts), duplicate, rasterize and add layer styles: shadow, glow and outline.|||Imagen, texto, forma, QR, emoji, degradado y bocadillo son capas. Usa el gestor rápido o el completo (se minimiza y el lienzo se adapta), duplica, rasteriza y añade estilos de capa: sombra, resplandor y contorno.
+tutorial_p6_title|||Precise selection|||Selección precisa
+tutorial_p6_body|||Rectangle, ellipse, free, polygonal and magnetic lasso, magic wand and select by color. The magnifier helps you refine, and you can duplicate a selection into a new layer.|||Rectángulo, elipse, lazo libre, poligonal y magnético, varita mágica y selección por color. La lupa te ayuda a afinar y puedes duplicar lo seleccionado en una capa nueva.
+tutorial_p7_title|||Text with style|||Texto con estilo
+tutorial_p7_body|||Over 100 ready-made styles, 20 textures such as gold or galaxy, your own fonts, curved text, text on a path and photos inside the letters.|||Más de 100 estilos listos, 20 texturas como oro o galaxia, tus fuentes, texto curvado, sobre trayecto y con una foto dentro de las letras.
+tutorial_p8_title|||Drawing, shapes and gradients|||Dibujo, formas y degradados
+tutorial_p8_body|||Brushes with symmetry, vector shapes that stay selected after drawing, QR codes and editable gradients with color, transparency and 6 types.|||Pinceles con simetría, formas vectoriales que quedan seleccionadas al dibujarlas, códigos QR y degradados editables con color, transparencia y 6 tipos.
+tutorial_p9_title|||Speech bubbles and stickers|||Bocadillos y stickers
+tutorial_p9_body|||Add speech bubbles that point at faces by themselves, drag the tail and edit font, margins and shape. Find stickers and stock photos from the + button.|||Añade bocadillos que apuntan solos a las caras, mueve la cola con el dedo y edita tipografía, márgenes y forma. Busca stickers y fotos de stock desde el botón +.
+tutorial_p10_title|||Filters and effects|||Filtros y efectos
+tutorial_p10_body|||80 filters and 50 effects with thumbnails and live preview. Import LUTs, adjust curves, levels and color by hue. The curtain compares before and after.|||80 filtros y 50 efectos con miniatura y vista previa en directo. Importa LUTs, ajusta curvas, niveles y el color por tonos. La cortina compara el antes y el después.
+tutorial_p11_title|||Remove background|||Quitar fondo
+tutorial_p11_body|||Its own section with 9 AI methods. Analyze, refine the edge and the hair with live preview and apply with the check in the header.|||Una sección propia con 9 métodos de IA. Analiza, afina el borde y el pelo con vista previa en directo y aplica con el check de la cabecera.
+tutorial_p12_title|||AI on your phone|||IA en tu móvil
+tutorial_p12_body|||Select objects with a tap, erase what you don't want with the magic eraser, upscale x4, reduce noise, enhance faces, colorize and restore old photos.|||Selecciona objetos con un toque, elimina lo que sobra con el borrador mágico, amplía x4, reduce el ruido, mejora caras, colorea y restaura fotos antiguas.
+tutorial_p13_title|||More AI tricks|||Más trucos de IA
+tutorial_p13_body|||Portrait blur and depth fog, copy the text out of an image and scan documents. Everything runs on your device and each model is downloaded only once.|||Desenfoque de retrato y niebla por profundidad, copia el texto de una imagen y escanea documentos. Todo se procesa en tu dispositivo y cada modelo se descarga una sola vez.
+tutorial_p14_title|||Collage and comics|||Collage y cómic
+tutorial_p14_body|||Over 120 layouts, a comic effect for your photos and a comic mode on an A4 sheet with speech bubbles and face detection.|||Más de 120 diseños, efecto cómic para tus fotos y un modo cómic en hoja A4 con bocadillos y detección de caras.
+tutorial_p15_title|||Your work stays safe|||Tu trabajo a salvo
+tutorial_p15_body|||Autosave and recovery protect the editor and every creator. When leaving, choose to save, export or discard, and deleted projects wait 30 days in the trash.|||El autoguardado y la recuperación protegen el editor y cada creador. Al salir elige guardar, exportar o descartar, y los proyectos borrados esperan 30 días en la papelera.
+tutorial_p16_title|||Make it yours|||Hazlo a tu manera
+tutorial_p16_body|||Choose how the view adapts when opening panels, set up the magnifier, the hand and the guides, and change language or theme in Settings. Every panel has its own help.|||Elige cómo se adapta la vista al abrir paneles, configura la lupa, la mano y las guías, y cambia el idioma o el tema en Ajustes. Cada panel tiene su propia ayuda.
+settings_confirm_lut_delete|||Confirm before deleting a LUT|||Confirmar antes de eliminar una LUT
+settings_confirm_lut_delete_hint|||If you turn it off, your own LUTs are deleted straight away.|||Si lo desactivas, tus LUT personales se eliminan directamente.
+fx_old_photo|||Old photo|||Foto antigua
+fx_damage|||Damage|||Daño
+fx_tone|||Tone|||Tono

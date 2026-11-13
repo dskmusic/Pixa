@@ -1,0 +1,124 @@
+{
+  "_help": [
+    "Direcciones de descarga de los modelos de IA. Editar este archivo basta para cambiar un enlace o anadir respaldo.",
+    "files.<archivo>.urls: alternativas en orden; la app prueba la siguiente si una falla (red, HTTP o peso distinto de bytes).",
+    "files.<archivo>.bytes: peso exacto en bytes (0 = no comprobar).",
+    "mirror_base: si no esta vacio (p.ej. https://tuservidor.com/modelos), se anade mirror_base/<archivo> a TODOS los modelos.",
+    "mirror_first: true = probar el espejo antes que las demas direcciones; false = solo como respaldo.",
+    "El espejo debe conservar los NOMBRES de archivo exactos (scunet_color_real_psnr.onnx.data incluido)."
+  ],
+  "mirror_base": "https://www.dskmusic.com/apps/pixa/modelos",
+  "mirror_first": false,
+  "files": {
+    "swin2sr_lightweight_x2.onnx": {
+      "bytes": 8078888,
+      "urls": [
+        "https://huggingface.co/Xenova/swin2SR-lightweight-x2-64/resolve/main/onnx/model.onnx"
+      ]
+    },
+    "scunet_color_real_psnr.onnx": {
+      "bytes": 3798678,
+      "urls": [
+        "https://huggingface.co/Heliosoph/scunet-onnx/resolve/main/scunet_color_real_psnr.onnx"
+      ]
+    },
+    "scunet_color_real_psnr.onnx.data": {
+      "bytes": 73138176,
+      "urls": [
+        "https://huggingface.co/Heliosoph/scunet-onnx/resolve/main/scunet_color_real_psnr.onnx.data"
+      ]
+    },
+    "mobile_sam_image_encoder.onnx": {
+      "bytes": 28157093,
+      "urls": [
+        "https://huggingface.co/Acly/MobileSAM/resolve/main/mobile_sam_image_encoder.onnx"
+      ]
+    },
+    "sam_mask_decoder_single.onnx": {
+      "bytes": 16501323,
+      "urls": [
+        "https://huggingface.co/Acly/MobileSAM/resolve/main/sam_mask_decoder_single.onnx"
+      ]
+    },
+    "depth_anything_v2_small_q.onnx": {
+      "bytes": 27258801,
+      "urls": [
+        "https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/onnx/model_quantized.onnx"
+      ]
+    },
+    "ddcolor_tiny_fp16.onnx": {
+      "bytes": 135444402,
+      "urls": [
+        "https://huggingface.co/edgetools/ddcolor/resolve/main/ddcolor-tiny-fp16.onnx"
+      ]
+    },
+    "migan_pipeline.onnx": {
+      "bytes": 28079181,
+      "urls": [
+        "https://huggingface.co/anyisalin/migan-onnx/resolve/main/onnx/migan_pipeline.onnx"
+      ]
+    },
+    "gfpgan_v1_4.onnx": {
+      "bytes": 340256686,
+      "urls": [
+        "https://huggingface.co/neurobytemind/GFPGANv1.4.onnx/resolve/main/GFPGANv1.4.onnx",
+        "https://huggingface.co/Meeperomi/GFPGANv1.4-onnx/resolve/main/GFPGANv1.4.onnx",
+        "https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/gfpgan_1.4.onnx"
+      ]
+    },
+    "u2netp.onnx": {
+      "bytes": 4574861,
+      "urls": [
+        "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2netp.onnx"
+      ]
+    },
+    "selfie_multiclass_256x256.tflite": {
+      "bytes": 16371837,
+      "urls": [
+        "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite"
+      ]
+    },
+    "silueta.onnx": {
+      "bytes": 44173029,
+      "urls": [
+        "https://github.com/danielgatis/rembg/releases/download/v0.0.0/silueta.onnx"
+      ]
+    },
+    "u2net.onnx": {
+      "bytes": 175997641,
+      "urls": [
+        "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx"
+      ]
+    },
+    "isnet-general-use.onnx": {
+      "bytes": 178648008,
+      "urls": [
+        "https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-general-use.onnx"
+      ]
+    },
+    "isnet-anime.onnx": {
+      "bytes": 176069933,
+      "urls": [
+        "https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-anime.onnx"
+      ]
+    },
+    "modnet_photographic.onnx": {
+      "bytes": 25888640,
+      "urls": [
+        "https://huggingface.co/Xenova/modnet/resolve/main/onnx/model.onnx"
+      ]
+    },
+    "rmbg_1_4_quantized.onnx": {
+      "bytes": 44403226,
+      "urls": [
+        "https://huggingface.co/briaai/RMBG-1.4/resolve/main/onnx/model_quantized.onnx"
+      ]
+    },
+    "swin2sr_realworld_x4.onnx": {
+      "bytes": 52772645,
+      "urls": [
+        "https://huggingface.co/Xenova/swin2SR-realworld-sr-x4-64-bsrgan-psnr/resolve/main/onnx/model.onnx"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+# --- Secretos y configuración local (nunca subir) ---
+local.properties
+*.keystore
+*.jks
+*.p12
+keystore.properties
+.env
+
+# --- Copias de seguridad y archivos personales ---
+.backups/
+.backup/
+*.rar
+*.7z
+*.zip
+CREAR BACKUP.pyw
+*.lnk
+HTML/
+.claude/
+prompt.txt
+Pixa by DSK.md
+modelos_para_descargar.md
+.modelos/
+hs_err_pid*.log
+replay_pid*.log
+*.log
+
+# --- Scripts personales (gradlew.bat sí se sube) ---
+subir_cambios.bat
+bajar_*.bat
+configurar_*.bat
+
+# --- Android Studio / Gradle / compilación ---
+*.iml
+.idea/
+.gradle/
+.kotlin/
+build/
+app/build/
+app/release/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- AÑADE AQUÍ TUS PROPIAS EXCLUSIONES (una por línea) ---
+

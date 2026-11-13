@@ -1,0 +1,13 @@
+# Copia este archivo como "local.properties" (no se sube a Git) y rellénalo.
+# Las claves son opcionales: sin ellas la app compila igual y esa función queda desactivada.
+# También valen variables de entorno: PIXA_API_PIXABAY, PIXA_API_KLIPY, PIXA_API_GOOGLEFONTS.
+
+# Ruta del SDK de Android (Android Studio la pone solo)
+sdk.dir=C:/ruta/a/tu/Android/Sdk
+
+# Imágenes de stock — https://pixabay.com/api/docs/
+pixabay.apiKey=
+# Stickers — https://klipy.com/developers
+klipy.apiKey=
+# Fuentes de Google (lista completa) — https://console.cloud.google.com/apis/credentials (Web Fonts Developer API)
+googleFonts.apiKey=
