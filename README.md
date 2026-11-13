@@ -31,7 +31,12 @@
 
 ---
 
-> 📸 *Screenshots:* coming soon in [`docs/screenshots/`](docs/screenshots).
+<p align="center">
+  <img src="docs/screenshots/pixa01.jpg" width="23%" alt="Home with editing tools and projects">
+  <img src="docs/screenshots/pixa02.jpg" width="23%" alt="Collage and comic maker">
+  <img src="docs/screenshots/pixa03.jpg" width="23%" alt="Editing a photo with layers">
+  <img src="docs/screenshots/pixa04.jpg" width="23%" alt="Effects panel with live preview">
+</p>
 
 ## ✨ What is Pixa?
 

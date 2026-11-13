@@ -31,7 +31,12 @@
 
 ---
 
-> 📸 *Capturas:* próximamente en [`docs/screenshots/`](docs/screenshots).
+<p align="center">
+  <img src="docs/screenshots/pixa01.jpg" width="23%" alt="Inicio con herramientas y proyectos">
+  <img src="docs/screenshots/pixa02.jpg" width="23%" alt="Creador de collages y cómics">
+  <img src="docs/screenshots/pixa03.jpg" width="23%" alt="Edición de una foto con capas">
+  <img src="docs/screenshots/pixa04.jpg" width="23%" alt="Panel de efectos con vista previa viva">
+</p>
 
 ## ✨ ¿Qué es Pixa?
 
