@@ -175,9 +175,9 @@ private fun PixaNavHost(
     var pendingPhotos by remember { mutableStateOf<List<Uri>>(emptyList()) }
     var pendingBackupUri by remember { mutableStateOf<Uri?>(null) }
 
-    val openEditorWithUri: (Uri, Boolean) -> Unit = { uri, external ->
+    fun openEditorWithUri(uri: Uri, external: Boolean, panel: EditorPanel? = null) {
         editor.launchedExternally = external
-        editor.startFromUri(uri)
+        editor.startFromUri(uri, openPanel = panel)
         nav.navigateSingle(Routes.EDITOR)
     }
     val pickForEditor = rememberImagePicker { openEditorWithUri(it, false) }
@@ -228,7 +228,11 @@ private fun PixaNavHost(
                     nav.navigateSingle(Routes.EDITOR)
                 }
             }
-            is LaunchRequest.EditImage -> openEditorWithUri(request.uri, request.externalEdit)
+            // Imagen llegada de otra app: abre directo en Recortar si el ajuste esta activo.
+            is LaunchRequest.EditImage -> openEditorWithUri(
+                request.uri, request.externalEdit,
+                if (settings.cropOnExternalOpen) EditorPanel.CROP else null,
+            )
             is LaunchRequest.StitchWith -> {
                 pendingPhotos = request.uris
                 nav.navigateSingle(Routes.STITCH)

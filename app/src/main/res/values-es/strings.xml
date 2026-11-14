@@ -733,6 +733,8 @@
     <string name="handedness_right">Diestro</string>
     <string name="handedness_left">Zurdo</string>
     <string name="settings_handedness_sub">Lado de la barra de herramientas y del botón de capas</string>
+    <string name="settings_crop_on_external">Abrir imágenes recibidas en Recortar</string>
+    <string name="settings_crop_on_external_hint">Al recibir una foto de otra app, empezar en el panel Recortar</string>
     <string name="settings_haptics">Feedback háptico</string>
     <string name="settings_magnifier">Mostrar lupa al pintar</string>
     <string name="settings_grid_default">Mostrar cuadrícula por defecto</string>

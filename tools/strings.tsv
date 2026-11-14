@@ -708,6 +708,8 @@ settings_handedness|||Handedness|||Mano
 handedness_right|||Right-handed|||Diestro
 handedness_left|||Left-handed|||Zurdo
 settings_handedness_sub|||Side of the toolbar and the layers button|||Lado de la barra de herramientas y del botón de capas
+settings_crop_on_external|||Open shared images in Crop|||Abrir imágenes recibidas en Recortar
+settings_crop_on_external_hint|||When another app sends a photo to Pixa, start in the Crop panel|||Al recibir una foto de otra app, empezar en el panel Recortar
 settings_haptics|||Haptic feedback|||Feedback háptico
 settings_magnifier|||Show magnifier while painting|||Mostrar lupa al pintar
 settings_grid_default|||Show grid by default|||Mostrar cuadrícula por defecto

@@ -733,6 +733,8 @@
     <string name="handedness_right">Right-handed</string>
     <string name="handedness_left">Left-handed</string>
     <string name="settings_handedness_sub">Side of the toolbar and the layers button</string>
+    <string name="settings_crop_on_external">Open shared images in Crop</string>
+    <string name="settings_crop_on_external_hint">When another app sends a photo to Pixa, start in the Crop panel</string>
     <string name="settings_haptics">Haptic feedback</string>
     <string name="settings_magnifier">Show magnifier while painting</string>
     <string name="settings_grid_default">Show grid by default</string>

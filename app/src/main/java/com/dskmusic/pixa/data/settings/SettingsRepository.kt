@@ -30,6 +30,7 @@ class SettingsRepository(private val context: Context) {
         val LANGUAGE = stringPreferencesKey("language")
         val HANDEDNESS = stringPreferencesKey("handedness")
         val HAPTICS = booleanPreferencesKey("haptics")
+        val CROP_ON_EXTERNAL = booleanPreferencesKey("crop_on_external")
         val CONFIRM_DISCARD = booleanPreferencesKey("confirm_discard")
         val CONFIRM_LUT_DELETE = booleanPreferencesKey("confirm_lut_delete")
         val WHITE_LOGO_CYCLE = booleanPreferencesKey("white_logo_cycle")
@@ -69,6 +70,7 @@ class SettingsRepository(private val context: Context) {
             language = this[Keys.LANGUAGE]?.let { runCatching { AppLanguage.valueOf(it) }.getOrNull() } ?: d.language,
             handedness = this[Keys.HANDEDNESS]?.let { runCatching { Handedness.valueOf(it) }.getOrNull() } ?: d.handedness,
             haptics = this[Keys.HAPTICS] ?: d.haptics,
+            cropOnExternalOpen = this[Keys.CROP_ON_EXTERNAL] ?: d.cropOnExternalOpen,
             confirmDiscard = this[Keys.CONFIRM_DISCARD] ?: d.confirmDiscard,
             confirmLutDelete = this[Keys.CONFIRM_LUT_DELETE] ?: d.confirmLutDelete,
             whiteLogoCycle = this[Keys.WHITE_LOGO_CYCLE] ?: d.whiteLogoCycle,
@@ -117,6 +119,7 @@ class SettingsRepository(private val context: Context) {
     suspend fun setLanguage(language: AppLanguage) = edit { this[Keys.LANGUAGE] = language.name }
     suspend fun setHandedness(value: Handedness) = edit { this[Keys.HANDEDNESS] = value.name }
     suspend fun setHaptics(value: Boolean) = edit { this[Keys.HAPTICS] = value }
+    suspend fun setCropOnExternalOpen(value: Boolean) = edit { this[Keys.CROP_ON_EXTERNAL] = value }
     suspend fun setConfirmDiscard(value: Boolean) = edit { this[Keys.CONFIRM_DISCARD] = value }
     suspend fun setConfirmLutDelete(value: Boolean) = edit { this[Keys.CONFIRM_LUT_DELETE] = value }
     suspend fun setWhiteLogoCycle(value: Boolean) = edit { this[Keys.WHITE_LOGO_CYCLE] = value }
@@ -182,6 +185,7 @@ class SettingsRepository(private val context: Context) {
         "language" to current.language.name,
         "handedness" to current.handedness.name,
         "haptics" to current.haptics.toString(),
+        "crop_on_external" to current.cropOnExternalOpen.toString(),
         "confirm_discard" to current.confirmDiscard.toString(),
         "confirm_lut_delete" to current.confirmLutDelete.toString(),
         "white_logo_cycle" to current.whiteLogoCycle.toString(),
@@ -215,6 +219,7 @@ class SettingsRepository(private val context: Context) {
         map["language"]?.let { v -> runCatching { AppLanguage.valueOf(v) }.getOrNull()?.let { this[Keys.LANGUAGE] = it.name } }
         map["handedness"]?.let { v -> runCatching { Handedness.valueOf(v) }.getOrNull()?.let { this[Keys.HANDEDNESS] = it.name } }
         map["haptics"]?.toBooleanStrictOrNull()?.let { this[Keys.HAPTICS] = it }
+        map["crop_on_external"]?.toBooleanStrictOrNull()?.let { this[Keys.CROP_ON_EXTERNAL] = it }
         map["confirm_discard"]?.toBooleanStrictOrNull()?.let { this[Keys.CONFIRM_DISCARD] = it }
         map["confirm_lut_delete"]?.toBooleanStrictOrNull()?.let { this[Keys.CONFIRM_LUT_DELETE] = it }
         map["white_logo_cycle"]?.toBooleanStrictOrNull()?.let { this[Keys.WHITE_LOGO_CYCLE] = it }

@@ -244,6 +244,8 @@ fun EditorScreen(
         val pending = state.pendingPanel
         if (pending != null) {
             ui.panel = pending
+            // Recortar necesita su herramienta (el recuadro) activa desde el primer momento.
+            if (pending == EditorPanel.CROP) ui.tool = CanvasTool.CROP
             vm.consumePendingPanel()
         } else {
             ui.closePanel()

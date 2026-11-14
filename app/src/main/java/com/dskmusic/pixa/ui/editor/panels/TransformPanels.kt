@@ -3,6 +3,7 @@ package com.dskmusic.pixa.ui.editor.panels
 import android.graphics.Rect
 import android.graphics.RectF
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -110,6 +111,63 @@ private fun RatioChip(rw: Float, rh: Float, selected: Boolean, onClick: () -> Un
             Box(Modifier.size(w, h).border(1.5.dp, color, RoundedCornerShape(2.dp)))
         }
         Text(label, style = MaterialTheme.typography.labelSmall, color = color, maxLines = 1)
+    }
+}
+
+/**
+ * Regla de grados: puntos que se desplazan bajo el dedo y el valor fijo en el centro. El 0 es
+ * magnetico: dentro de +-[SNAP] grados se queda en 0 (con vibracion al engancharse).
+ */
+@Composable
+private fun AngleDial(value: Float, onValueChange: (Float) -> Unit, modifier: Modifier = Modifier) {
+    val snap = 1.5f
+    val pxPerDeg = with(androidx.compose.ui.platform.LocalDensity.current) { 9.dp.toPx() }
+    val haptic = androidx.compose.ui.platform.LocalHapticFeedback.current
+    var raw by remember { mutableStateOf(value) }
+    // Cambios externos (Restablecer) reposicionan la regla.
+    LaunchedEffect(value) {
+        val shown = if (kotlin.math.abs(raw) < snap) 0f else (raw * 10f).roundToInt() / 10f
+        if (shown != value) raw = value
+    }
+    val dotColor = MaterialTheme.colorScheme.onSurfaceVariant
+    val accent = MaterialTheme.colorScheme.primary
+    Box(
+        modifier = modifier
+            .height(44.dp)
+            .draggable(
+                orientation = androidx.compose.foundation.gestures.Orientation.Horizontal,
+                state = androidx.compose.foundation.gestures.rememberDraggableState { dx ->
+                    raw = (raw - dx / pxPerDeg).coerceIn(-45f, 45f)
+                    val next = if (kotlin.math.abs(raw) < snap) 0f else (raw * 10f).roundToInt() / 10f
+                    if (next != value) {
+                        if (next == 0f) haptic.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.TextHandleMove)
+                        onValueChange(next)
+                    }
+                },
+            ),
+        contentAlignment = Alignment.Center,
+    ) {
+        androidx.compose.foundation.Canvas(Modifier.fillMaxWidth().height(44.dp)) {
+            val cx = size.width / 2f
+            val cy = size.height / 2f
+            val gap = 22.dp.toPx()
+            for (d in -45..45) {
+                val x = cx + (d - value) * pxPerDeg
+                if (x < 0f || x > size.width || kotlin.math.abs(x - cx) < gap) continue
+                val fade = 1f - (kotlin.math.abs(x - cx) / cx).coerceIn(0f, 1f) * 0.8f
+                val big = d % 5 == 0
+                drawCircle(
+                    color = (if (d == 0) accent else dotColor).copy(alpha = fade),
+                    radius = (if (d == 0) 3.5f else if (big) 2.5f else 1.5f).dp.toPx(),
+                    center = androidx.compose.ui.geometry.Offset(x, cy),
+                )
+            }
+        }
+        Text(
+            String.format("%.1f", value),
+            style = MaterialTheme.typography.labelLarge,
+            color = if (value == 0f) MaterialTheme.colorScheme.onSurface else accent,
+        )
     }
 }
 
@@ -227,7 +285,7 @@ fun CropPanel(
                     }
                 }
             }) { Icon(Icons.Filled.Flip, stringResource(R.string.crop_flip)) }
-            Slider(
+            AngleDial(
                 value = straighten,
                 onValueChange = {
                     straighten = it
@@ -241,14 +299,7 @@ fun CropPanel(
                         )
                     }
                 },
-                valueRange = -45f..45f,
                 modifier = Modifier.weight(1f),
-            )
-            Text(
-                String.format("%.1f°", straighten),
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.width(48.dp),
             )
             // Girar: +90 cada vez; todo el lienzo, o solo la capa activa.
             IconButton(onClick = {

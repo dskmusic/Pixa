@@ -209,6 +209,12 @@ fun SettingsScreen(
                 onCheckedChange = { value -> scope.launch { repo.setHaptics(value) } },
             )
             ToggleRow(
+                label = stringResource(R.string.settings_crop_on_external),
+                subtitle = stringResource(R.string.settings_crop_on_external_hint),
+                checked = settings.cropOnExternalOpen,
+                onCheckedChange = { value -> scope.launch { repo.setCropOnExternalOpen(value) } },
+            )
+            ToggleRow(
                 label = stringResource(R.string.settings_confirm_discard),
                 subtitle = stringResource(R.string.settings_confirm_discard_hint),
                 checked = settings.confirmDiscard,
