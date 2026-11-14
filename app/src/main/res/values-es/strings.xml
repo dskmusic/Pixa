@@ -342,6 +342,8 @@
     <string name="crop_free">Libre</string>
     <string name="crop_straighten">Enderezar</string>
     <string name="crop_whole_project">Recortar todo el proyecto</string>
+    <string name="crop_all">Todo</string>
+    <string name="crop_flip">Reflejar</string>
     <string name="image_size">Tamaño de imagen</string>
     <string name="canvas_size">Lienzo</string>
     <string name="canvas_anchor">Anclaje</string>
@@ -542,7 +544,7 @@
     <string name="filter_soft">Suave</string>
     <string name="filter_bright">Luminoso</string>
     <string name="filter_bw">B/N</string>
-    <string name="filter_bw_hard">B/N 2</string>
+    <string name="filter_bw_hard">B/N contrastado</string>
     <string name="filter_noir">Noir</string>
     <string name="filter_sepia">Sepia</string>
     <string name="filter_vintage">Vintage</string>
@@ -564,7 +566,7 @@
     <string name="filter_pixelate">Pixelado</string>
     <string name="filter_rgb_split">RGB split</string>
     <string name="filter_halftone">Semitono</string>
-    <string name="filter_scanlines">Scanlines</string>
+    <string name="filter_scanlines">Líneas de escaneo</string>
     <string name="filter_cyanotype">Cianotipo</string>
     <string name="filter_neon_purple">Neón púrpura</string>
     <string name="filter_old_gold">Oro viejo</string>

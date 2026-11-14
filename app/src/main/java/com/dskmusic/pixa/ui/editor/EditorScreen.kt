@@ -609,7 +609,8 @@ fun EditorScreen(
                 }
                 // Con el gestor completo de capas abierto (aunque este minimizado) no se muestran
                 // ni las capas rapidas ni el boton de anadir elementos.
-                if (!wide && !layersPanel) {
+                // Con un panel desplegado tampoco: vuelven al minimizarlo o cerrarlo.
+                if (!wide && !layersPanel && (ui.panel == null || ui.panelMinimized)) {
                     LayersFab(
                         doc = state.doc,
                         vm = vm,

@@ -330,6 +330,8 @@ crop_title|||Crop|||Recortar
 crop_free|||Free|||Libre
 crop_straighten|||Straighten|||Enderezar
 crop_whole_project|||Crop whole project|||Recortar todo el proyecto
+crop_all|||All|||Todo
+crop_flip|||Mirror|||Reflejar
 image_size|||Image size|||Tamaño de imagen
 canvas_size|||Canvas size|||Lienzo
 canvas_anchor|||Anchor|||Anclaje

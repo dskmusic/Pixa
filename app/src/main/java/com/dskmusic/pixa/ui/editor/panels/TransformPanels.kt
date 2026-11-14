@@ -3,6 +3,11 @@ package com.dskmusic.pixa.ui.editor.panels
 import android.graphics.Rect
 import android.graphics.RectF
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.Alignment
@@ -10,6 +15,7 @@ import androidx.compose.material3.Checkbox
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Slider
@@ -74,18 +80,44 @@ import kotlin.math.roundToInt
 // Recortar (requisito 9)
 // ======================================================================================
 
-/** Proporciones rapidas de recorte; 0 significa libre. */
+/** Proporciones rapidas de recorte (ancho, alto); la primera, "Personalizado", es libre. */
 private val CropRatios = listOf(
-    Triple(R.string.crop_free, 0f, 0f),
-    Triple(R.string.preset_square, 1f, 1f),
-    Triple(R.string.preset_portrait, 4f, 5f),
-    Triple(R.string.preset_story, 9f, 16f),
-    Triple(R.string.preset_landscape, 16f, 9f),
-    Triple(R.string.preset_banner, 3f, 1f),
-    Triple(R.string.preset_cover, 3f, 2f),
-    Triple(R.string.preset_a4, 210f, 297f),
+    0f to 0f, 1f to 1f, 16f to 9f, 4f to 3f, 4f to 5f, 9f to 16f, 3f to 2f, 3f to 1f, 210f to 297f,
 )
 
+@Composable
+private fun RatioChip(rw: Float, rh: Float, selected: Boolean, onClick: () -> Unit) {
+    val color = MaterialTheme.colorScheme.onSurfaceVariant
+    val frame = if (selected) MaterialTheme.colorScheme.primary else Color.Transparent
+    val label = when {
+        rw <= 0f -> stringResource(R.string.crop_free)
+        rw == 210f -> "A4"
+        else -> "${rw.toInt()}:${rh.toInt()}"
+    }
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .width(68.dp)
+            .border(2.dp, frame, RoundedCornerShape(4.dp))
+            .clickable(onClick = onClick)
+            .padding(vertical = 8.dp),
+    ) {
+        val k = if (rw <= 0f) 1f else rw / rh
+        val w = if (k >= 1f) 30.dp else 30.dp * k
+        val h = if (k >= 1f) 30.dp / k else 30.dp
+        Box(Modifier.size(30.dp), contentAlignment = Alignment.Center) {
+            Box(Modifier.size(w, h).border(1.5.dp, color, RoundedCornerShape(2.dp)))
+        }
+        Text(label, style = MaterialTheme.typography.labelSmall, color = color, maxLines = 1)
+    }
+}
+
+/**
+ * Recortar: arriba reflejar, giro fino (-45..45) y girar 90; debajo las proporciones con
+ * "Reiniciar" al principio. "Todo" (junto al titulo) hace que recorte, reflejo y giro de
+ * 90 afecten a todo el proyecto en vez de solo a la capa activa.
+ */
 @Composable
 fun CropPanel(
     vm: EditorViewModel,
@@ -101,13 +133,29 @@ fun CropPanel(
 ) {
     var straighten by remember { mutableStateOf(0f) }
     var wholeProject by remember { mutableStateOf(true) }
+    var ratioIdx by remember { mutableStateOf(0) }
+    var ratioFlipped by remember { mutableStateOf(false) }
+    // Documento al abrir: "Reiniciar" lo restaura (deshace reflejos y giros ya confirmados).
+    val baseDoc = remember { doc }
+    val context = LocalContext.current
+    val rasterizer = remember(context) { context.pixa.rasterizer }
     val start = ui.dragStart
     val current = ui.dragCurrent
     val rect = if (start != null && current != null) rectOf(start.x, start.y, current.x, current.y) else null
 
-    // Requisito del usuario: el "Aplicar" (recorte) sube a la cabecera, junto a ayuda y
-    // cerrar; solo esta activo cuando hay un recuadro pendiente. Al aplicarlo se cierra el
-    // panel, porque ya no hay nada mas que recortar.
+    // El giro fino y el reflejo de capa necesitan una capa activa: sin ninguna se elige la
+    // primera de pixeles (la imagen abierta).
+    LaunchedEffect(Unit) {
+        if (doc.selected == null) doc.layers.firstOrNull { it.isRaster }?.let { vm.selectLayer(it.id) }
+    }
+    // Tras reflejar o girar el lienzo, el recuadro viejo ya no vale: se vuelve a todo el lienzo.
+    fun resetBox() {
+        ratioIdx = 0
+        ratioFlipped = false
+        ui.boxRatio = null
+        SelectionBox.set(ui, RectF(0f, 0f, vm.doc.width.toFloat(), vm.doc.height.toFloat()))
+    }
+
     // Previsualizacion en vivo del enderezado: se gira la capa activa sin tocar sus pixeles;
     // el recorte de las esquinas vacias solo se aplica al confirmar.
     DisposableEffect(Unit) { onDispose { vm.cancelPreview() } }
@@ -128,20 +176,22 @@ fun CropPanel(
             onClose()
         }
     } else null
+
+    val allToggle: @Composable () -> Unit = {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(stringResource(R.string.crop_all), style = MaterialTheme.typography.labelLarge)
+            Checkbox(checked = wholeProject, onCheckedChange = { wholeProject = it })
+        }
+    }
     if (minimized) {
         MinimizedPanelBar(
-            text = title,
-            onMaximize = onMaximize,
-            onClose = onClose,
-            onApply = applyAction,
+            text = title, onMaximize = onMaximize, onClose = onClose,
+            onApply = applyAction, extra = allToggle,
         )
     } else {
         SectionTitle(
-            text = title,
-            help = help,
-            onClose = onClose,
-            onMinimize = onMinimize,
-            onApply = applyAction,
+            text = title, help = help, onClose = onClose, onMinimize = onMinimize,
+            onApply = applyAction, extra = allToggle,
         )
     }
 
@@ -152,54 +202,31 @@ fun CropPanel(
             .padding(bottom = 4.dp),
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .horizontalScroll(rememberScrollState())
-                .padding(horizontal = 12.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp),
         ) {
-            CropRatios.forEach { (label, rw, rh) ->
-                TextButton(
-                    onClick = {
-                        ui.tool = CanvasTool.CROP
-                        if (rw <= 0f) {
-                            // Libre: el recuadro se queda donde esta y lo que se suelta es
-                            // la proporcion, para poder estirarlo a cualquier forma.
-                            ui.boxRatio = null
-                        } else {
-                            val r = TransformOps.aspectCrop(doc.width, doc.height, rw, rh)
-                            val box = RectF(
-                                r.left.toFloat(),
-                                r.top.toFloat(),
-                                r.right.toFloat(),
-                                r.bottom.toFloat(),
-                            )
-                            ui.boxRatio = box.width() / box.height()
-                            SelectionBox.set(ui, box)
+            // Reflejar: todo el proyecto en espejo horizontal, o solo la capa activa.
+            IconButton(onClick = {
+                if (wholeProject) {
+                    val w = doc.width.toFloat()
+                    vm.resizeDocument(doc.width, doc.height, doc.layers.map { l ->
+                        val (lw, _) = LayerGeometry.intrinsic(l, rasterizer, doc)
+                        val x = l.transform
+                        // ponytail: con perspectiva no se refleja; sirve para el resto de capas.
+                        l.copy(transform = x.copy(
+                            tx = w - x.tx - lw, rotation = -x.rotation,
+                            skewX = -x.skewX, skewY = -x.skewY, flipH = !x.flipH,
+                        ))
+                    })
+                    resetBox()
+                } else {
+                    doc.selected?.let { l ->
+                        vm.updateLayer(R.string.crop_flip, l.id) {
+                            it.copy(transform = it.transform.copy(flipH = !it.transform.flipH))
                         }
-                    },
-                ) { Text(stringResource(label)) }
-            }
-        }
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(horizontal = 4.dp),
-        ) {
-            Checkbox(checked = wholeProject, onCheckedChange = { wholeProject = it })
-            Text(stringResource(R.string.crop_whole_project), style = MaterialTheme.typography.bodyMedium)
-        }
-        Text(
-            text = rect?.let { "${it.width()} × ${it.height()} px" }
-                ?: stringResource(R.string.crop_title),
-            style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp),
-        )
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 4.dp),
-        ) {
-            Text(stringResource(R.string.crop_straighten), style = MaterialTheme.typography.bodyMedium)
+                    }
+                }
+            }) { Icon(Icons.Filled.Flip, stringResource(R.string.crop_flip)) }
             Slider(
                 value = straighten,
                 onValueChange = {
@@ -215,27 +242,66 @@ fun CropPanel(
                     }
                 },
                 valueRange = -45f..45f,
-                modifier = Modifier.weight(1f).padding(horizontal = 8.dp),
+                modifier = Modifier.weight(1f),
             )
             Text(
-                "${straighten.roundToInt()}°",
+                String.format("%.1f°", straighten),
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.width(36.dp),
+                modifier = Modifier.width(48.dp),
             )
-            IconButton(
+            // Girar: +90 cada vez; todo el lienzo, o solo la capa activa.
+            IconButton(onClick = {
+                if (wholeProject) {
+                    rotateCanvas90(vm, rasterizer, doc)
+                    resetBox()
+                } else {
+                    doc.selected?.let { l ->
+                        vm.updateLayer(R.string.transform_rotate_90, l.id) {
+                            it.copy(transform = it.transform.copy(rotation = it.transform.rotation + 90f))
+                        }
+                    }
+                }
+            }) { Icon(Icons.Filled.Rotate90DegreesCw, stringResource(R.string.transform_rotate_90)) }
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .horizontalScroll(rememberScrollState())
+                .padding(horizontal = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
+            ToolButton(
+                icon = Icons.Filled.Refresh,
+                label = stringResource(R.string.action_reset),
                 onClick = {
                     straighten = 0f
                     vm.cancelPreview()
+                    if (vm.doc !== baseDoc) vm.commit(R.string.action_reset, baseDoc)
+                    resetBox()
                 },
-                enabled = straighten != 0f,
-                modifier = Modifier.size(36.dp),
-            ) {
-                Icon(
-                    Icons.Filled.Refresh,
-                    contentDescription = stringResource(R.string.action_reset),
-                    modifier = Modifier.size(18.dp),
-                )
+            )
+            CropRatios.forEachIndexed { i, (rw, rh) ->
+                // Pulsar otra vez la proporcion elegida la alterna con su inversa (4:3 <-> 3:4).
+                val sel = ratioIdx == i
+                val swap = sel && ratioFlipped
+                RatioChip(if (swap) rh else rw, if (swap) rw else rh, selected = sel) {
+                    val flip = sel && rw > 0f && !ratioFlipped
+                    ratioFlipped = flip
+                    ratioIdx = i
+                    ui.tool = CanvasTool.CROP
+                    val bw = if (flip) rh else rw
+                    val bh = if (flip) rw else rh
+                    if (bw <= 0f) {
+                        // Libre: el recuadro se queda donde esta y se puede estirar a cualquier forma.
+                        ui.boxRatio = null
+                    } else {
+                        val r = TransformOps.aspectCrop(doc.width, doc.height, bw, bh)
+                        val box = RectF(r.left.toFloat(), r.top.toFloat(), r.right.toFloat(), r.bottom.toFloat())
+                        ui.boxRatio = box.width() / box.height()
+                        SelectionBox.set(ui, box)
+                    }
+                }
             }
         }
     }

@@ -342,6 +342,8 @@
     <string name="crop_free">Free</string>
     <string name="crop_straighten">Straighten</string>
     <string name="crop_whole_project">Crop whole project</string>
+    <string name="crop_all">All</string>
+    <string name="crop_flip">Mirror</string>
     <string name="image_size">Image size</string>
     <string name="canvas_size">Canvas size</string>
     <string name="canvas_anchor">Anchor</string>
