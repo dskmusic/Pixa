@@ -23,7 +23,7 @@ data class PixaSettings(
     val handedness: Handedness = Handedness.RIGHT,
     val haptics: Boolean = true,
     /** Una imagen recibida de otra app (editar/compartir) se abre ya en el panel Recortar. */
-    val cropOnExternalOpen: Boolean = true,
+    val cropOnExternalOpen: Boolean = false,
     /** Preguntar antes de descartar los cambios sin aplicar de un panel. */
     val confirmDiscard: Boolean = true,
     /** Pedir confirmacion antes de eliminar una LUT personal (si no, se borra directamente). */
