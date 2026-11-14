@@ -1904,7 +1904,11 @@ internal class ToolHandler(
         // Si ya habia una seleccion se reaprovecha su marco: el recuadro aparece donde se
         // estaba trabajando en vez de en medio del lienzo.
         val previous = state.selection?.bounds?.takeIf { !it.isEmpty }
-        val box = if (previous != null) {
+        val box = if (ui.tool == CanvasTool.CROP) {
+            // Recortar: arranca seleccionando toda la imagen y en modo libre.
+            ui.boxRatio = null
+            RectF(0f, 0f, docWidth, docHeight)
+        } else if (previous != null) {
             RectF(
                 previous.left.toFloat(),
                 previous.top.toFloat(),
