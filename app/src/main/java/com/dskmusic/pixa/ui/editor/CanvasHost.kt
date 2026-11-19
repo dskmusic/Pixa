@@ -107,8 +107,8 @@ fun CanvasHost(
     onDoubleTap: (Offset) -> Boolean = { false },
     onLongPress: (Offset) -> Unit = {},
     onLongPressRelease: () -> Unit = {},
-    /** Mantener quieto 1 s o mas sobre un punto con la herramienta Mover (pedir borrar). */
-    onLongHold: (Offset) -> Unit = {},
+    /** Esquina superior derecha del marco como boton rojo de borrar (herramienta Mover). */
+    deleteCorner: Boolean = false,
     onStrokeStart: (Offset) -> Unit = {},
     onStrokeMove: (Offset) -> Unit = {},
     onStrokeEnd: (Offset) -> Unit = {},
@@ -159,7 +159,6 @@ fun CanvasHost(
                         var strokeActive = false
                         var viewMode = false
                         var longPressSent = false
-                        var holdSent = false
                         var lastPos = downPos
 
                         // Con el cuentagotas la lupa aparece ya al apoyar el dedo, sin
@@ -191,18 +190,7 @@ fun CanvasHost(
                         var panAnchor = downPos
 
                         while (true) {
-                            // Con el dedo quieto no llegan eventos: se espera con tiempo limite para poder
-                            // detectar 1 s de pulsacion sin movimiento sobre un elemento.
-                            val waitHold = ui.tool == CanvasTool.MOVE && !ui.handPan && !holdSent && !viewMode &&
-                                maxPointers == 1 && travelled < slop * 2f
-                            val event = if (waitHold) withTimeoutOrNull(100L) { awaitPointerEvent() } else awaitPointerEvent()
-                            if (waitHold && travelled < slop * 2f &&
-                                android.os.SystemClock.uptimeMillis() - downAt >= 1000L
-                            ) {
-                                holdSent = true
-                                onLongHold(controller.viewToDoc(downPos))
-                            }
-                            if (event == null) continue
+                            val event = awaitPointerEvent()
                             val active = event.changes.filter { it.pressed }
                             if (active.isEmpty()) break
                             maxPointers = max(maxPointers, active.size)
@@ -385,7 +373,7 @@ fun CanvasHost(
                     MarchingAnts.draw(canvas, path, controller.zoom, ants, ui.selectionLineWidth)
                     canvas.restoreToCount(saved)
                 }
-                if (handleQuad != null) drawHandles(canvas, handleQuad, matrix, handleRadius, paints)
+                if (handleQuad != null) drawHandles(canvas, handleQuad, matrix, handleRadius, paints, deleteCorner)
                 if (ui.showRulers) drawRulers(canvas, controller, paints)
                 // Con el cuentagotas la lupa sale siempre: es la unica forma de ver
                 // el color que hay bajo el dedo sin que el dedo lo tape.
@@ -569,6 +557,13 @@ private class CanvasPaints {
         strokeWidth = 3f
         color = 0xFF3E7BFA.toInt()
     }
+    val deleteFill = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFFE53935.toInt() }
+    val deleteCross = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.STROKE
+        strokeWidth = 4f
+        strokeCap = Paint.Cap.ROUND
+        color = 0xFFFFFFFF.toInt()
+    }
     val ruler = Paint().apply { color = 0xCC222222.toInt() }
     val rulerTick = Paint().apply {
         color = 0xFFEEEEEE.toInt()
@@ -711,6 +706,7 @@ private fun drawHandles(
     matrix: Matrix,
     radius: Float,
     paints: CanvasPaints,
+    deleteCorner: Boolean,
 ) {
     if (quad.size < 8) return
     val pts = quad.copyOf()
@@ -723,10 +719,21 @@ private fun drawHandles(
     paints.path.close()
     canvas.drawPath(paints.path, paints.handleStroke)
     for (i in 0 until 4) {
+        if (deleteCorner && i == 1) continue
         canvas.drawCircle(pts[i * 2], pts[i * 2 + 1], radius, paints.handleFill)
         canvas.drawCircle(pts[i * 2], pts[i * 2 + 1], radius, paints.handleStroke)
     }
-    // Tiradores de los lados (bocadillos): un poco mas pequenos que los de las esquinas.
+    if (deleteCorner) {
+        // Boton de borrar: circulo rojo con una X blanca en la esquina superior derecha.
+        val x = pts[2]
+        val y = pts[3]
+        val r = radius * 1.35f
+        canvas.drawCircle(x, y, r, paints.deleteFill)
+        val a = r * 0.42f
+        canvas.drawLine(x - a, y - a, x + a, y + a, paints.deleteCross)
+        canvas.drawLine(x - a, y + a, x + a, y - a, paints.deleteCross)
+    }
+    // Tiradores de los lados: un poco mas pequenos que los de las esquinas.
     if (pts.size >= 16) {
         for (i in 4 until 8) {
             canvas.drawCircle(pts[i * 2], pts[i * 2 + 1], radius * 0.75f, paints.handleFill)

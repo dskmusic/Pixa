@@ -59,7 +59,7 @@ data class PixaSettings(
     /** Reajustar el lienzo al abrir/cerrar un panel inferior (requisito del usuario). */
     val refitOnPanel: Boolean = true,
     /** Vista al abrir / cerrar paneles: 0 encajar el lienzo, 1 no tocar el zoom, 2 (defecto) encajar el objeto elegido. */
-    val panelViewMode: Int = 2,
+    val panelViewMode: Int = 1,
     /** Bloquear la app en vertical (móviles). El default real depende del dispositivo. */
     val lockOrientation: Boolean = true,
     val tutorialDone: Boolean = false,

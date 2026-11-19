@@ -40,7 +40,7 @@ import kotlin.math.roundToInt
 object TextRenderer {
 
     /** Margen extra alrededor del texto para que contorno, sombra y caja no se recorten. */
-    private fun padding(spec: TextSpec): Float {
+    fun padding(spec: TextSpec): Float {
         val shadow = if (spec.shadowRadius > 0f || spec.shadowDx != 0f || spec.shadowDy != 0f) {
             spec.shadowRadius + max(abs(spec.shadowDx), abs(spec.shadowDy))
         } else {
@@ -141,7 +141,7 @@ object TextRenderer {
         val layout = buildLayout(spec, paint)
         return Size(
             ceil(layout.width + pad * 2f).toInt().coerceAtLeast(1),
-            ceil(layout.height + pad * 2f).toInt().coerceAtLeast(1),
+            ceil(max(layout.height.toFloat(), spec.boxHeight) + pad * 2f).toInt().coerceAtLeast(1),
         )
     }
 
@@ -173,9 +173,12 @@ object TextRenderer {
         val pad = padding(spec)
         val fillPaint = buildPaint(spec, typeface)
         val layout = buildLayout(spec, fillPaint)
+        // Caja mas alta que el texto (tiradores de arriba / abajo): el texto va centrado.
+        val blockH = max(layout.height.toFloat(), spec.boxHeight)
+        val dy = (blockH - layout.height) / 2f
         val size = Size(
             ceil(layout.width + pad * 2f).toInt().coerceAtLeast(1),
-            ceil(layout.height + pad * 2f).toInt().coerceAtLeast(1),
+            ceil(blockH + pad * 2f).toInt().coerceAtLeast(1),
         )
         val out = BitmapUtils.create(size.width, size.height)
         val canvas = Canvas(out)
@@ -186,14 +189,14 @@ object TextRenderer {
                 pad - spec.boxPadding,
                 pad - spec.boxPadding,
                 pad + layout.width + spec.boxPadding,
-                pad + layout.height + spec.boxPadding,
+                pad + blockH + spec.boxPadding,
             )
             val boxPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = spec.boxColor }
             canvas.drawRoundRect(box, spec.boxCornerRadius, spec.boxCornerRadius, boxPaint)
         }
 
         canvas.save()
-        canvas.translate(pad, pad)
+        canvas.translate(pad, pad + dy)
 
         // Contorno debajo del relleno, con union redondeada para que las puntas no piquen.
         // Contornos debajo del relleno, del mas externo al mas interno, con union redondeada

@@ -329,11 +329,23 @@ private fun TextEditor(
         GradientKind.entries.associateWith { context.getString(EditorLabels.gradient(it)) }
     }
 
+    val rasterizer = remember(context) { context.pixa.rasterizer }
+
+    // Cualquier cambio deja el centro de la caja donde estaba: crecer o encoger con el
+    // tamano, la fuente o la negrita ya no descuadra el texto (requisito del usuario).
     fun change(block: (TextSpec) -> TextSpec) {
         vm.updateLayer(R.string.text_title, layer.id) {
             val current = it.content
             if (current is LayerContent.Text) {
-                it.copy(content = LayerContent.Text(block(current.spec)))
+                val next = it.copy(content = LayerContent.Text(block(current.spec)))
+                val s0 = rasterizer.intrinsicSize(it, doc.width, doc.height)
+                val s1 = rasterizer.intrinsicSize(next, doc.width, doc.height)
+                next.copy(
+                    transform = next.transform.copy(
+                        tx = next.transform.tx + (s0.width - s1.width) / 2f,
+                        ty = next.transform.ty + (s0.height - s1.height) / 2f,
+                    ),
+                )
             } else {
                 it
             }
@@ -429,8 +441,15 @@ private fun TextEditor(
         SliderRow(
             label = stringResource(R.string.label_size),
             value = spec.sizePx,
-            onValueChange = { value -> change { it.copy(sizePx = value) } },
-            valueRange = 8f..(doc.height * 0.9f).coerceAtLeast(64f),
+            // La caja crece y encoge con la letra: las lineas no se recolocan al cambiar
+            // el tamano. ponytail: 8-200 aqui; los tiradores de esquina pueden pasar de 200.
+            onValueChange = { value ->
+                change {
+                    val k = value / it.sizePx.coerceAtLeast(1f)
+                    it.copy(sizePx = value, boxWidth = it.boxWidth * k, boxHeight = it.boxHeight * k)
+                }
+            },
+            valueRange = 8f..200f,
             valueText = "${spec.sizePx.roundToInt()} px",
         )
         ColorRow(

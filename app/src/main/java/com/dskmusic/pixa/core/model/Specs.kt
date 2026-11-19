@@ -158,6 +158,8 @@ data class TextSpec(
     val letterSpacingEm: Float = 0f,
     /** Ancho de la caja en px de documento; el texto se ajusta dentro. */
     val boxWidth: Float = 600f,
+    /** Alto minimo de la caja (0 = el del texto); el texto va centrado en vertical. */
+    val boxHeight: Float = 0f,
     val outlineWidth: Float = 0f,
     val outlineColor: Int = 0xFF000000.toInt(),
     val shadowRadius: Float = 0f,
@@ -179,7 +181,22 @@ data class TextSpec(
     val shape: TextShape = TextShape.NONE,
     /** 0..1: cuanto del circulo se recorre, o amplitud de la onda. */
     val shapeAmount: Float = 0.6f,
-)
+) {
+    /** Todo el texto a escala [k] (tiradores de esquina): letra, caja, contornos y sombra. */
+    fun scaled(k: Float): TextSpec = copy(
+        sizePx = (sizePx * k).coerceAtLeast(4f),
+        boxWidth = (boxWidth * k).coerceAtLeast(8f),
+        boxHeight = boxHeight * k,
+        boxPadding = boxPadding * k,
+        boxCornerRadius = boxCornerRadius * k,
+        outlineWidth = outlineWidth * k,
+        extraOutlines = extraOutlines.map { it.copy(width = it.width * k) },
+        shadowRadius = shadowRadius * k,
+        shadowDx = shadowDx * k,
+        shadowDy = shadowDy * k,
+        path = path?.map { it * k },
+    )
+}
 
 /** Un contorno adicional del texto: grosor hacia fuera (px) y color. */
 @Serializable

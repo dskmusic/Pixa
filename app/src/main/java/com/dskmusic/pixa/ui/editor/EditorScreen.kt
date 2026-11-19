@@ -119,6 +119,7 @@ import com.dskmusic.pixa.core.image.Cutout
 import com.dskmusic.pixa.core.image.Retouch
 import com.dskmusic.pixa.core.model.FillSpec
 import com.dskmusic.pixa.core.model.LayerContent
+import com.dskmusic.pixa.core.model.TextShape
 import com.dskmusic.pixa.core.model.TextSpec
 import com.dskmusic.pixa.core.model.PixaDocument
 import com.dskmusic.pixa.core.model.PixaLayer
@@ -126,6 +127,7 @@ import com.dskmusic.pixa.core.model.Xf
 import com.dskmusic.pixa.core.render.FillPainter
 import com.dskmusic.pixa.core.render.LayerRasterizer
 import com.dskmusic.pixa.core.render.PathShapes
+import com.dskmusic.pixa.core.render.TextRenderer
 import com.dskmusic.pixa.core.selection.Selection
 import com.dskmusic.pixa.core.selection.MagneticLasso
 import com.dskmusic.pixa.core.selection.SelectionTools
@@ -351,6 +353,7 @@ fun EditorScreen(
         if (settings.haptics) haptics.performHapticFeedback(HapticFeedbackType.LongPress)
     }
     handler.onQuad = { quad -> liveQuad = quad }
+    handler.onDeleteAsk = { layer -> deleteAsk = layer }
     handler.onColorPicked = { argb ->
         ui.color = argb
         scope.launch { settingsRepo.pushRecentColor(argb) }
@@ -503,7 +506,7 @@ fun EditorScreen(
             if (canTransform) {
                 runCatching { LayerGeometry.quad(selected, rasterizer, state.doc) }.getOrNull()
                     ?.let { q ->
-                        if (ui.tool == CanvasTool.MOVE && selected.content is LayerContent.SpeechBubble) {
+                        if (ui.tool == CanvasTool.MOVE) {
                             bubbleHandleQuad(selected, rasterizer, q, controller.viewLengthToDoc(HANDLE_GAP_PX))
                         } else {
                             q
@@ -543,14 +546,7 @@ fun EditorScreen(
                     onDoubleTap = handler::onDoubleTap,
                     onLongPress = { vm.setPeek(true) },
                     onLongPressRelease = { vm.setPeek(false) },
-                    onLongHold = { point ->
-                        // 1 s sobre un elemento: pregunta si quieres eliminarlo.
-                        LayerGeometry.pick(state.doc, rasterizer, point, includeFills = true)?.let { layer ->
-                            vm.setPeek(false)
-                            vm.selectLayer(layer.id)
-                            deleteAsk = layer
-                        }
-                    },
+                    deleteCorner = ui.tool == CanvasTool.MOVE && (liveQuad ?: staticQuad) != null,
                     onStrokeStart = handler::onStrokeStart,
                     onStrokeMove = handler::onStrokeMove,
                     onStrokeEnd = handler::onStrokeEnd,
@@ -1510,6 +1506,7 @@ internal class ToolHandler(
     var str: (Int) -> String = { "" }
     var onColorPicked: (Int) -> Unit = {}
     var onQuad: (FloatArray?) -> Unit = {}
+    var onDeleteAsk: (PixaLayer) -> Unit = {}
     var onHaptic: () -> Unit = {}
     var appContext: Context? = null
 
@@ -1526,6 +1523,9 @@ internal class ToolHandler(
     private var edgeCenter = Offset.Zero
     private var edgeAxis = Offset.Zero
     private var edgeHalf = 1f
+    // Texto en bloque estirado desde un lado: cambia la caja, no la escala de la letra.
+    private var edgeTextSpec: TextSpec? = null
+    private var edgeSize = android.util.Size(1, 1)
     private var moveHandle: Int = -1
     private var startXf: Xf? = null
     private var startBounds: RectF? = null
@@ -1565,6 +1565,11 @@ internal class ToolHandler(
         point.x >= 0f && point.y >= 0f && point.x <= doc.width.toFloat() && point.y <= doc.height.toFloat()
 
     fun onTap(point: Offset) {
+        // La X roja de la esquina puede quedar fuera del lienzo: se mira antes que nada.
+        deleteCornerHit(point)?.let { layer ->
+            onDeleteAsk(layer)
+            return
+        }
         if (!insideCanvas(point)) {
             // Tocar la zona negra de fuera del lienzo deselecciona lo que haya seleccionado.
             if (ui.tool == CanvasTool.MOVE) vm.selectLayer(null)
@@ -1878,6 +1883,7 @@ internal class ToolHandler(
         moveLayerId = null
         tailLayerId = null
         edgeLayerId = null
+        edgeTextSpec = null
         edgeBase = null
         ui.tailDragging = false
         moveHandle = -1
@@ -2040,6 +2046,8 @@ internal class ToolHandler(
     // ----------------------------------------------------------------------------------
 
     private fun startMove(point: Offset) {
+        // Arrastrar desde la X de borrar no mueve ni escala nada.
+        if (deleteCornerHit(point) != null) return
         // Punta de la cola de un bocadillo: arrastrarla cambia la cola, no mueve la capa.
         val bubble = doc.selected?.takeIf { !it.locked && it.content is LayerContent.SpeechBubble }
         if (bubble != null) {
@@ -2051,7 +2059,8 @@ internal class ToolHandler(
                 return
             }
         }
-        if (bubble != null && startEdgeStretch(bubble, point)) return
+        doc.selected?.takeIf { !it.locked && !it.transformLocked }
+            ?.let { if (startEdgeStretch(it, point)) return }
         // Sin nada seleccionado (o bloqueado) no hay capa que mover: [CanvasHost] ya ha
         // decidido que este arrastre mueve la vista en su lugar, asi que aqui no hace
         // falta ni aviso ni recoger la capa de debajo del dedo.
@@ -2074,22 +2083,37 @@ internal class ToolHandler(
     }
 
     /**
-     * Requisito del usuario: en texto, los tiradores cambian el ancho de la caja (el
-     * texto se reajusta dentro, con el mismo tamano de letra) en vez de estirar la letra
-     * como si fuera una imagen. El centro se mantiene fijo, igual que la escala uniforme
-     * de las demas capas.
+     * Requisito del usuario: en texto, las esquinas escalan en proporcion (letra, caja,
+     * contornos) re-rasterizando el texto, para que siga nitido. El centro queda fijo.
      */
     private fun resizeTextBox(spec: TextSpec, base: Xf, factor: Float): Pair<TextSpec, Xf> {
-        val oldSize = rasterizer.intrinsicSize(PixaLayer(name = "", content = LayerContent.Text(spec)), doc.width, doc.height)
-        val newSpec = spec.copy(boxWidth = (spec.boxWidth * factor).coerceIn(32f, doc.width * 4f))
-        val newSize = rasterizer.intrinsicSize(PixaLayer(name = "", content = LayerContent.Text(newSpec)), doc.width, doc.height)
-        val newXf = base.copy(
-            scaleX = 1f,
-            scaleY = 1f,
-            tx = base.tx + (oldSize.width - newSize.width) / 2f,
-            ty = base.ty + (oldSize.height - newSize.height) / 2f,
-        )
-        return newSpec to newXf
+        val newSpec = spec.scaled(factor)
+        return newSpec to anchored(base, textSize(spec), textSize(newSpec), 0.5f, 0.5f)
+    }
+
+    private fun textSize(spec: TextSpec): android.util.Size =
+        rasterizer.intrinsicSize(PixaLayer(name = "", content = LayerContent.Text(spec)), doc.width, doc.height)
+
+    /**
+     * [base] recolocada para que el punto (ax, ay) del contenido (0..1) no se mueva en el
+     * documento cuando el tamano intrinseco pasa de [s0] a [s1]. El pivote de [Xf] es el
+     * centro, asi que se corrige la traslacion con la parte lineal de la matriz.
+     */
+    private fun anchored(base: Xf, s0: android.util.Size, s1: android.util.Size, ax: Float, ay: Float): Xf {
+        val dw = (s0.width - s1.width).toFloat()
+        val dh = (s0.height - s1.height).toFloat()
+        val v = floatArrayOf((ax - 0.5f) * dw, (ay - 0.5f) * dh)
+        base.toMatrix(s0.width, s0.height).mapVectors(v)
+        return base.copy(tx = base.tx + dw / 2f + v[0], ty = base.ty + dh / 2f + v[1])
+    }
+
+    /** X roja de borrar: esquina superior derecha del marco de la capa seleccionada. */
+    private fun deleteCornerHit(point: Offset): PixaLayer? {
+        if (ui.tool != CanvasTool.MOVE || ui.handPan) return null
+        val layer = doc.selected?.takeIf { !it.locked && !it.transformLocked } ?: return null
+        val q = runCatching { LayerGeometry.quad(layer, rasterizer, doc) }.getOrNull() ?: return null
+        val radius = controller.viewLengthToDoc(handleRadiusPx)
+        return layer.takeIf { hypot(point.x - q[2], point.y - q[3]) <= radius }
     }
 
     /** true si [point] cae en el tirador de un lado y empieza a estirar el bocadillo. */
@@ -2118,6 +2142,9 @@ internal class ToolHandler(
                 edgeCenter = Offset(cx, cy)
                 edgeAxis = Offset(ax / len, ay / len)
                 edgeHalf = len
+                val text = (layer.content as? LayerContent.Text)?.spec
+                edgeTextSpec = text?.takeIf { it.path == null && it.shape == TextShape.NONE && it.arc == 0f }
+                edgeSize = rasterizer.intrinsicSize(layer, doc.width, doc.height)
                 onHaptic()
                 return true
             }
@@ -2126,29 +2153,55 @@ internal class ToolHandler(
     }
 
     /**
-     * Transformacion con el lado arrastrado en [point] y el lado opuesto fijo: la capa se
-     * estira solo en ese eje (arriba / abajo = alto, izquierda / derecha = ancho).
+     * Capa con el lado arrastrado en [point] y el lado opuesto fijo: se estira solo en ese
+     * eje (arriba / abajo = alto, izquierda / derecha = ancho). En texto en bloque cambia
+     * la caja (ancho de linea o alto minimo) y el texto se recoloca dentro con el mismo
+     * tamano de letra.
      */
-    private fun edgeStretched(point: Offset): Xf? {
+    private fun edgeStretched(layer: PixaLayer, point: Offset): PixaLayer? {
         val base = edgeBase ?: return null
         val along = (point.x - edgeCenter.x) * edgeAxis.x + (point.y - edgeCenter.y) * edgeAxis.y
         // Medida nueva = distancia del lado fijo (-half) al punto; nunca menos de un 5 %.
         val extent = (along + edgeHalf).coerceAtLeast(0.1f * edgeHalf)
+        val horizontal = edgeIndex == 1 || edgeIndex == 3
+        val spec = edgeTextSpec
+        if (spec != null) {
+            val delta = extent - 2f * edgeHalf
+            val newSpec = if (horizontal) {
+                val local = delta / abs(base.scaleX).coerceAtLeast(0.01f)
+                spec.copy(boxWidth = (spec.boxWidth + local).coerceIn(16f, doc.width * 8f))
+            } else {
+                val local = delta / abs(base.scaleY).coerceAtLeast(0.01f)
+                val block = edgeSize.height - 2f * TextRenderer.padding(spec)
+                spec.copy(boxHeight = (block + local).coerceAtLeast(0f))
+            }
+            // Fijo el lado opuesto; en ancho tambien el borde de arriba (el texto crece hacia abajo).
+            val (ax, ay) = when (edgeIndex) {
+                0 -> 0.5f to 1f
+                1 -> 0f to 0f
+                2 -> 0.5f to 0f
+                else -> 1f to 0f
+            }
+            val next = layer.copy(content = LayerContent.Text(newSpec))
+            val size = rasterizer.intrinsicSize(next, doc.width, doc.height)
+            return next.copy(transform = anchored(base, edgeSize, size, ax, ay))
+        }
         val factor = extent / (2f * edgeHalf)
         val shift = (extent - 2f * edgeHalf) / 2f
-        val horizontal = edgeIndex == 1 || edgeIndex == 3
-        return base.copy(
-            scaleX = if (horizontal) (base.scaleX * factor) else base.scaleX,
-            scaleY = if (horizontal) base.scaleY else (base.scaleY * factor),
-            tx = base.tx + edgeAxis.x * shift,
-            ty = base.ty + edgeAxis.y * shift,
+        return layer.copy(
+            transform = base.copy(
+                scaleX = if (horizontal) (base.scaleX * factor) else base.scaleX,
+                scaleY = if (horizontal) base.scaleY else (base.scaleY * factor),
+                tx = base.tx + edgeAxis.x * shift,
+                ty = base.ty + edgeAxis.y * shift,
+            ),
         )
     }
 
     private fun dragMove(point: Offset) {
         edgeLayerId?.let { id ->
-            val next = edgeStretched(point) ?: return
-            val preview = doc.updateLayer(id) { it.copy(transform = next) }
+            val next = doc.layer(id)?.let { edgeStretched(it, point) } ?: return
+            val preview = doc.updateLayer(id) { next }
             vm.previewDocument(preview, fast = true)
             preview.layer(id)?.let { live ->
                 onQuad(
@@ -2214,7 +2267,10 @@ internal class ToolHandler(
         }
         vm.previewDocument(preview, fast = true)
         preview.layer(layerId)?.let { live ->
-            onQuad(runCatching { LayerGeometry.quad(live, rasterizer, preview) }.getOrNull())
+            onQuad(
+                runCatching { LayerGeometry.quad(live, rasterizer, preview) }.getOrNull()
+                    ?.let { bubbleHandleQuad(live, rasterizer, it, controller.viewLengthToDoc(HANDLE_GAP_PX)) },
+            )
         }
     }
 
@@ -2222,12 +2278,13 @@ internal class ToolHandler(
         edgeLayerId?.let { id ->
             edgeLayerId = null
             val end = ui.dragCurrent
-            val next = if (end != null) edgeStretched(end) else null
+            val next = if (end != null) doc.layer(id)?.let { edgeStretched(it, end) } else null
             edgeBase = null
+            edgeTextSpec = null
             if (next == null) {
                 vm.cancelPreview()
             } else {
-                vm.commit(R.string.transform_scale, doc.updateLayer(id) { it.copy(transform = next) })
+                vm.commit(R.string.transform_scale, doc.updateLayer(id) { next })
             }
             onQuad(null)
             return
