@@ -268,6 +268,7 @@ fun EditorScreen(
     // Vista (zoom y desplazamiento) que habia al abrir el gestor de capas, para devolverla al cerrarlo.
     var viewBeforeLayers by remember { mutableStateOf<Pair<Float, Offset>?>(null) }
     var sizeBeforePanel by remember { mutableStateOf<Pair<Int, Int>?>(null) }
+    var cropWasOpen by remember { mutableStateOf(false) }
     var layersMinimized by remember { mutableStateOf(false) }
     LaunchedEffect(layersPanel) { if (layersPanel) layersMinimized = false }
     var deleteAsk by remember { mutableStateOf<PixaLayer?>(null) }
@@ -282,6 +283,15 @@ fun EditorScreen(
     ) {
         val mode = settings.panelViewMode
         val open = ui.panel != null || layersPanel
+        // Recorte cerrado (aplicado o cancelado): la vista vuelve al lienzo entero y centrado.
+        if (ui.panel == EditorPanel.CROP) cropWasOpen = true
+        if (!open && cropWasOpen) {
+            delay(120)
+            controller.fit()
+            cropWasOpen = false
+            viewBeforeLayers = null
+            return@LaunchedEffect
+        }
         if (mode == 1) return@LaunchedEffect
         if (open && viewBeforeLayers == null) {
             viewBeforeLayers = controller.zoom to controller.pan
@@ -306,6 +316,19 @@ fun EditorScreen(
         } else if (layer != null) {
             val box = runCatching { LayerGeometry.bounds(layer, rasterizer, state.doc) }.getOrNull()
             if (box != null) controller.fitRect(box.left, box.top, box.right, box.bottom)
+        }
+    }
+
+    // Recorte: al soltar el recuadro (o cambiar proporcion/reiniciar) la vista se anima para
+    // encajarlo con margen. El pellizco manual sigue libre hasta el siguiente cambio.
+    LaunchedEffect(ui.cropFitTick) {
+        if (ui.cropFitTick == 0 || ui.tool != CanvasTool.CROP) return@LaunchedEffect
+        val b = SelectionBox.of(ui) ?: return@LaunchedEffect
+        val (z1, p1) = controller.viewForRect(b.left, b.top, b.right, b.bottom) ?: return@LaunchedEffect
+        val z0 = controller.zoom
+        val p0 = controller.pan
+        androidx.compose.animation.core.Animatable(0f).animateTo(1f, androidx.compose.animation.core.tween(250)) {
+            controller.restoreView(z0 + (z1 - z0) * value, p0 + (p1 - p0) * value)
         }
     }
 
@@ -2021,6 +2044,7 @@ internal class ToolHandler(
         cancelBox()
         val box = SelectionBox.of(ui)
         if (!dragged || box == null) return
+        if (ui.tool == CanvasTool.CROP) ui.cropFitTick++
         // El recuadro se queda puesto. En recorte lo confirma el panel; en seleccion se
         // aplica al soltar y se puede seguir ajustando sin volver a dibujarlo.
         when (ui.tool) {

@@ -212,6 +212,7 @@ fun CropPanel(
         ratioFlipped = false
         ui.boxRatio = null
         SelectionBox.set(ui, RectF(0f, 0f, vm.doc.width.toFloat(), vm.doc.height.toFloat()))
+        ui.cropFitTick++
     }
 
     // Previsualizacion en vivo del enderezado: se gira la capa activa sin tocar sus pixeles;
@@ -351,6 +352,7 @@ fun CropPanel(
                         val box = RectF(r.left.toFloat(), r.top.toFloat(), r.right.toFloat(), r.bottom.toFloat())
                         ui.boxRatio = box.width() / box.height()
                         SelectionBox.set(ui, box)
+                        ui.cropFitTick++
                     }
                 }
             }

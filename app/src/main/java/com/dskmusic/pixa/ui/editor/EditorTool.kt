@@ -232,6 +232,9 @@ class EditorUi(
      */
     var boxRatio by mutableStateOf<Float?>(null)
 
+    /** Sube cada vez que el recuadro de recorte cambia "de golpe": la vista se reencaja a el. */
+    var cropFitTick by mutableStateOf(0)
+
     /** Puntos del lazo o del trayecto de texto que se esta trazando. */
     var livePoints by mutableStateOf<List<Offset>>(emptyList())
 

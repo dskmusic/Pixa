@@ -91,16 +91,22 @@ class CanvasController {
      * llene la pantalla de golpe.
      */
     fun fitRect(left: Float, top: Float, right: Float, bottom: Float) {
-        if (viewSize.width <= 0f || viewSize.height <= 0f) return
+        val (z, p) = viewForRect(left, top, right, bottom) ?: return
+        zoom = z
+        pan = p
+    }
+
+    /** Zoom y desplazamiento que [fitRect] aplicaria, sin aplicarlos (para animar). */
+    fun viewForRect(left: Float, top: Float, right: Float, bottom: Float): Pair<Float, Offset>? {
+        if (viewSize.width <= 0f || viewSize.height <= 0f) return null
         val w = (right - left).coerceAtLeast(1f)
         val h = (bottom - top).coerceAtLeast(1f)
         val margin = maxOf(MARGIN_PX, 0.09f * min(viewSize.width, viewSize.height))
         val z = min((viewSize.width - 2f * margin) / w, (viewSize.height - 2f * margin) / h)
             .coerceIn(MIN_ZOOM, minOf(MAX_ZOOM, fitScale * 6f))
-        zoom = z
         val cx = (left + right) / 2f
         val cy = (top + bottom) / 2f
-        pan = Offset(-(cx - docWidth / 2f) * z, -(cy - docHeight / 2f) * z)
+        return z to Offset(-(cx - docWidth / 2f) * z, -(cy - docHeight / 2f) * z)
     }
 
     /** 100 %: un pixel de documento, un pixel de pantalla. */
