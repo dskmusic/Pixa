@@ -18,6 +18,7 @@ object Routes {
     const val BATCH = "batch"
     const val STITCH = "stitch"
     const val COLLAGE = "collage"
+    const val ICON_MAKER = "icon_maker"
 }
 
 /** Acciones de los atajos del launcher y del widget (requisito 2). */

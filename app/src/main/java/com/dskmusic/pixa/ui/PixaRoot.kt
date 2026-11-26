@@ -52,6 +52,7 @@ import com.dskmusic.pixa.ui.editor.EditorPanel
 import com.dskmusic.pixa.ui.editor.EditorScreen
 import com.dskmusic.pixa.ui.editor.EditorViewModel
 import com.dskmusic.pixa.ui.home.HomeScreen
+import com.dskmusic.pixa.ui.icon.IconMakerScreen
 import com.dskmusic.pixa.ui.home.NewCanvasScreen
 import com.dskmusic.pixa.ui.home.TrashScreen
 import com.dskmusic.pixa.ui.meme.MemeScreen
@@ -190,13 +191,7 @@ private fun PixaNavHost(
         nav.navigateSingle(Routes.EDITOR)
     }
 
-    // Accesos directos de Inicio a la seccion IA: borrador magico, restaurar foto y el panel completo.
-    val pickForMagicEraser = rememberImagePicker { uri ->
-        editor.launchedExternally = false
-        editor.aiLaunch = "mark"
-        editor.startFromUri(uri, openPanel = EditorPanel.AI)
-        nav.navigateSingle(Routes.EDITOR)
-    }
+    // Accesos directos de Inicio a la seccion IA: restaurar foto y el panel completo.
     // Ajustes rapidos: abre la foto directamente en el panel Ajustes (brillo, contraste...).
     val pickForQuickAdjust = rememberImagePicker { uri ->
         editor.launchedExternally = false
@@ -277,7 +272,6 @@ private fun PixaNavHost(
                 onPickImage = pickForEditor,
                 onCamera = cameraForEditor,
                 onPickBackgroundRemoval = pickForBackgroundRemoval,
-                onPickMagicEraser = pickForMagicEraser,
                 onPickQuickAdjust = pickForQuickAdjust,
                 onPickAiTools = pickForAiTools,
                 onOpenEditor = { nav.navigateSingle(Routes.EDITOR) },
@@ -341,6 +335,14 @@ private fun PixaNavHost(
 
         composable(Routes.SOCIAL) {
             SocialScreen(
+                editor = editor,
+                onBack = { nav.popBackStack() },
+                onOpenEditor = { nav.navigateReplacing(Routes.EDITOR) },
+            )
+        }
+
+        composable(Routes.ICON_MAKER) {
+            IconMakerScreen(
                 editor = editor,
                 onBack = { nav.popBackStack() },
                 onOpenEditor = { nav.navigateReplacing(Routes.EDITOR) },

@@ -1541,3 +1541,109 @@ settings_confirm_lut_delete_hint|||If you turn it off, your own LUTs are deleted
 fx_old_photo|||Old photo|||Foto antigua
 fx_damage|||Damage|||Daño
 fx_tone|||Tone|||Tono
+# Creador de iconos
+ic_create_icon|||Create icon|||Crear icono
+ic_title|||Icon creator|||Creador de iconos
+ic_tab_icon|||Icon|||Icono
+ic_tab_back|||Back|||Fondo
+ic_tab_image|||Image|||Imagen
+ic_tab_text|||Text|||Texto
+ic_items_icon|||Icon items|||Elementos de icono
+ic_items_image|||Image items|||Elementos de imagen
+ic_items_text|||Text items|||Elementos de texto
+ic_item_icon|||Icon %1$d|||Icono %1$d
+ic_item_image|||Image %1$d|||Imagen %1$d
+ic_item_text|||Text %1$d|||Texto %1$d
+ic_open_editor|||Open in editor|||Abrir en el editor
+ic_reset_all|||Reset all|||Restablecer todo
+ic_wrap|||Wrap content|||Ajustar al contenido
+ic_on|||On|||Activado
+ic_off|||Off|||Desactivado
+ic_tap_pick|||Tap to pick an image|||Toca para elegir una imagen
+ic_image_set|||Image selected|||Imagen elegida
+ic_s_icon|||Icon|||Icono
+ic_color|||Color|||Color
+ic_size|||Size|||Tamaño
+ic_rotation|||Rotation|||Rotación
+ic_flip_h|||Flip horizontal|||Voltear horizontal
+ic_flip_v|||Flip vertical|||Voltear vertical
+ic_alignment|||Alignment|||Alineación
+ic_position|||Position|||Posición
+ic_opacity|||Opacity|||Opacidad
+ic_gradient|||Gradient|||Degradado
+ic_first_color|||First color|||Primer color
+ic_second_color|||Second color|||Segundo color
+ic_first_opacity|||First opacity|||Primera opacidad
+ic_second_opacity|||Second opacity|||Segunda opacidad
+ic_first_align|||First alignment|||Primera alineación
+ic_second_align|||Second alignment|||Segunda alineación
+ic_color_stop|||Color stop|||Parada de color
+ic_shadow|||Shadow|||Sombra
+ic_long_shadow|||Long shadow|||Sombra larga
+ic_length|||Length|||Longitud
+ic_angle|||Angle|||Ángulo
+ic_blur|||Blur radius|||Radio de desenfoque
+ic_background|||Background|||Fondo
+ic_width|||Width|||Ancho
+ic_height|||Height|||Alto
+ic_padding|||Padding|||Relleno
+ic_elevation|||Elevation|||Elevación
+ic_radius|||Border radius|||Radio del borde
+ic_border|||Border|||Borde
+ic_border_color|||Border color|||Color del borde
+ic_border_width|||Border width|||Grosor del borde
+ic_left|||Left|||Izquierda
+ic_right|||Right|||Derecha
+ic_top|||Top|||Arriba
+ic_bottom|||Bottom|||Abajo
+ic_center|||Center|||Centro
+ic_al_tl|||Top left|||Arriba izquierda
+ic_al_tc|||Top center|||Arriba centro
+ic_al_tr|||Top right|||Arriba derecha
+ic_al_cl|||Center left|||Centro izquierda
+ic_al_c|||Center|||Centro
+ic_al_cr|||Center right|||Centro derecha
+ic_al_bl|||Bottom left|||Abajo izquierda
+ic_al_bc|||Bottom center|||Abajo centro
+ic_al_br|||Bottom right|||Abajo derecha
+ic_fit|||Fit|||Ajuste
+ic_fit_cover|||Cover|||Cubrir
+ic_fit_contain|||Contain|||Contener
+ic_fit_fill|||Fill|||Rellenar
+ic_fit_width|||Fit width|||Ajustar al ancho
+ic_fit_height|||Fit height|||Ajustar al alto
+ic_bl_multiply|||Multiply|||Multiplicar
+ic_bl_screen|||Screen|||Trama
+ic_bl_overlay|||Overlay|||Superponer
+ic_bl_darken|||Darken|||Oscurecer
+ic_bl_lighten|||Lighten|||Aclarar
+ic_bl_add|||Add|||Sumar
+ic_bl_src_in|||Source in|||Fuente dentro
+ic_bl_src_atop|||Source atop|||Fuente encima
+ic_blend|||Blend mode|||Modo de mezcla
+ic_filter|||Image filter|||Filtro de imagen
+ic_image|||Image|||Imagen
+ic_back_color|||Background color|||Color de fondo
+ic_back_image|||Background image|||Imagen de fondo
+ic_text|||Text|||Texto
+ic_font|||Font family|||Fuente
+ic_weight|||Font weight|||Grosor de fuente
+ic_style|||Font style|||Estilo de fuente
+ic_style_normal|||Normal|||Normal
+ic_style_italic|||Italic|||Cursiva
+ic_letter_spacing|||Letter spacing|||Espaciado de letras
+ic_word_spacing|||Word spacing|||Espaciado de palabras
+ic_line_align|||Line alignment|||Alineación de líneas
+ic_decoration|||Decoration|||Decoración
+ic_deco_none|||None|||Ninguna
+ic_deco_under|||Underline|||Subrayado
+ic_deco_strike|||Strikethrough|||Tachado
+ic_deco_over|||Overline|||Sobrerrayado
+ic_thickness|||Decoration thickness|||Grosor de la decoración
+ic_pick_icon|||Choose icon|||Elegir icono
+ic_search|||Search|||Buscar
+ic_export_size|||Export size|||Tamaño de exportación
+ic_size_custom|||Custom|||Personalizado
+ic_size_side|||Side in pixels (16 to 4096)|||Lado en píxeles (16 a 4096)
+ic_saved|||Icon saved to the gallery|||Icono guardado en la galería
+ic_export_error|||Could not save the icon|||No se pudo guardar el icono

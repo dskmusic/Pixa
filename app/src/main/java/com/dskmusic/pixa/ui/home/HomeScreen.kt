@@ -1,6 +1,7 @@
 package com.dskmusic.pixa.ui.home
 
 import androidx.compose.material.icons.filled.Tune
+import androidx.compose.material.icons.filled.Interests
 import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Restore
 import androidx.compose.material.icons.filled.AutoFixNormal
@@ -138,7 +139,6 @@ fun HomeScreen(
     onPickImage: () -> Unit,
     onCamera: () -> Unit,
     onPickBackgroundRemoval: () -> Unit,
-    onPickMagicEraser: () -> Unit = {},
     onPickQuickAdjust: () -> Unit = {},
     onPickAiTools: () -> Unit = {},
     onOpenEditor: () -> Unit,
@@ -341,9 +341,9 @@ fun HomeScreen(
             // Las seis acciones restantes en 2x3, con el texto en una sola linea.
             val secondaryActions = listOf(
                 HomeAction(
-                    Icons.Filled.AutoFixNormal,
-                    stringResource(R.string.home_magic_eraser),
-                    onPickMagicEraser,
+                    Icons.Filled.Interests,
+                    stringResource(R.string.ic_create_icon),
+                    onClick = { onCreate(Routes.ICON_MAKER) },
                 ),
                 HomeAction(
                     Icons.Filled.BrokenImage,
