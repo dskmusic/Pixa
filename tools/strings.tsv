@@ -1080,7 +1080,7 @@ ai_models_used|||%1$s on device|||%1$s en el dispositivo
 ai_models_total|||Space used by models: %1$s|||Espacio usado por los modelos: %1$s
 ai_models_delete|||Delete|||Eliminar
 ai_models_download|||Download|||Descargar
-ai_model_super_res|||Detail and ×2 (Swin2SR)|||Detalle y ×2 (Swin2SR)
+ai_model_super_res|||Detail and ×2 (Real-ESRGAN)|||Detalle y ×2 (Real-ESRGAN)
 ai_model_denoise|||Noise removal (SCUNet)|||Quitar ruido (SCUNet)
 ai_model_segment|||Select by tap (MobileSAM)|||Seleccionar por toque (MobileSAM)
 ai_model_depth|||Depth (Depth Anything V2)|||Profundidad (Depth Anything V2)
@@ -1132,9 +1132,9 @@ ai_model_bg_modnet|||Background: MODNet|||Fondo: MODNet
 ai_model_bg_rmbg|||Background: RMBG 1.4|||Fondo: RMBG 1.4
 # Ampliar x4
 ai_x4|||Upscale ×4|||Ampliar ×4
-ai_x4_hint|||Quadruples width and height with a real-world model: best quality, slower than ×2|||Cuadruplica el ancho y el alto con un modelo de imágenes reales: mejor calidad, más lento que ×2
+ai_x4_hint|||Quadruples width and height: best quality, accelerated by the GPU|||Cuadruplica el ancho y el alto: mejor calidad, acelerado por la GPU
 ai_x4_too_big|||The result would be too large (max about 48 megapixels). Crop or reduce the image first.|||El resultado sería demasiado grande (máx. unos 48 megapíxeles). Recorta o reduce la imagen antes.
-ai_model_super_res_x4|||Upscale ×4 (Swin2SR real-world)|||Ampliar ×4 (Swin2SR imágenes reales)
+ai_model_super_res_x4|||Upscale ×4 (Real-ESRGAN)|||Ampliar ×4 (Real-ESRGAN)
 # Correccion automatica y texto avanzado
 geo_title|||Automatic correction|||Corrección automática
 geo_hint|||Straightens, fixes converging lines and lens distortion. Works best with buildings, horizons and documents; adjust by hand if needed.|||Endereza, corrige líneas convergentes y distorsión de lente. Funciona mejor con edificios, horizontes y documentos; ajusta a mano si hace falta.

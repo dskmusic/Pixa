@@ -103,6 +103,8 @@ android {
         buildConfig = true
     }
     packaging {
+        // ncnn (modulo ml) y otras bibliotecas traen la misma libc++_shared.
+        jniLibs.pickFirsts += "**/libc++_shared.so"
         resources.excludes += setOf(
             "/META-INF/{AL2.0,LGPL2.1}",
             "META-INF/DEPENDENCIES",

@@ -14,30 +14,13 @@ class AiFile(val name: String, val url: String, val bytes: Long)
  * Catalogo de modelos de IA que se descargan bajo demanda. Todos se ejecutan en el
  * dispositivo con ONNX Runtime; los pesos y URL se comprobaron con inferencia real.
  *
- * Licencias: Swin2SR y SCUNet, Apache 2.0; MobileSAM, MIT; Depth Anything V2 Small,
+ * Licencias: SCUNet, Apache 2.0; Real-ESRGAN (empaquetado), BSD-3; MobileSAM, MIT; Depth Anything V2 Small,
  * Apache 2.0; DDColor, Apache 2.0; MI-GAN, MIT; GFPGAN, Apache 2.0.
  */
 enum class AiModel(val id: String, val files: List<AiFile>) {
-    SUPER_RES(
-        "super_res",
-        listOf(
-            AiFile(
-                "swin2sr_lightweight_x2.onnx",
-                "https://huggingface.co/Xenova/swin2SR-lightweight-x2-64/resolve/main/onnx/model.onnx",
-                8_078_888,
-            ),
-        ),
-    ),
-    SUPER_RES_X4(
-        "super_res_x4",
-        listOf(
-            AiFile(
-                "swin2sr_realworld_x4.onnx",
-                "https://huggingface.co/Xenova/swin2SR-realworld-sr-x4-64-bsrgan-psnr/resolve/main/onnx/model.onnx",
-                52_772_645,
-            ),
-        ),
-    ),
+    // Real-ESRGAN (ncnn) va empaquetado en el APK: sin archivos que descargar.
+    SUPER_RES("super_res", emptyList()),
+    SUPER_RES_X4("super_res_x4", emptyList()),
     DENOISE(
         "denoise",
         listOf(

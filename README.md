@@ -78,7 +78,7 @@ Before each task Pixa tells you how much it will download and how long it should
 
 | Feature | Model | Size |
 |---|---|---|
-| Upscale / enhance detail | Swin2SR lite | 8 MB |
+| Upscale / enhance detail | Real-ESRGAN v3 (ncnn, GPU) | 2,4 MB, incluido en el APK |
 | Denoise | SCUNet | 77 MB |
 | Tap to select | MobileSAM | 45 MB |
 | Portrait blur / depth fog | Depth Anything V2 Small | 27 MB |

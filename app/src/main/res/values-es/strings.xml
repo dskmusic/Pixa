@@ -1126,7 +1126,7 @@
     <string name="ai_models_total">Espacio usado por los modelos: %1$s</string>
     <string name="ai_models_delete">Eliminar</string>
     <string name="ai_models_download">Descargar</string>
-    <string name="ai_model_super_res">Detalle y ×2 (Swin2SR)</string>
+    <string name="ai_model_super_res">Detalle y ×2 (Real-ESRGAN)</string>
     <string name="ai_model_denoise">Quitar ruido (SCUNet)</string>
     <string name="ai_model_segment">Seleccionar por toque (MobileSAM)</string>
     <string name="ai_model_depth">Profundidad (Depth Anything V2)</string>
@@ -1180,9 +1180,9 @@
 
     <!-- Ampliar x4 -->
     <string name="ai_x4">Ampliar ×4</string>
-    <string name="ai_x4_hint">Cuadruplica el ancho y el alto con un modelo de imágenes reales: mejor calidad, más lento que ×2</string>
+    <string name="ai_x4_hint">Cuadruplica el ancho y el alto: mejor calidad, acelerado por la GPU</string>
     <string name="ai_x4_too_big">El resultado sería demasiado grande (máx. unos 48 megapíxeles). Recorta o reduce la imagen antes.</string>
-    <string name="ai_model_super_res_x4">Ampliar ×4 (Swin2SR imágenes reales)</string>
+    <string name="ai_model_super_res_x4">Ampliar ×4 (Real-ESRGAN)</string>
 
     <!-- Correccion automatica y texto avanzado -->
     <string name="geo_title">Corrección automática</string>
