@@ -226,8 +226,9 @@ object WordArtEngine {
     private fun thin(s: Stamp): Stamp {
         var cur = s
         while (cur.n > 6000) {
-            val xs = IntArray(cur.n / 2 + 1)
-            val ys = IntArray(cur.n / 2 + 1)
+            // El patron de tablero no garantiza la mitad exacta: reservar n evita desbordar.
+            val xs = IntArray(cur.n)
+            val ys = IntArray(cur.n)
             var m = 0
             for (i in 0 until cur.n) if (((cur.ox[i] xor cur.oy[i]) and 1) == 0) {
                 xs[m] = cur.ox[i]; ys[m] = cur.oy[i]; m++
@@ -327,8 +328,7 @@ object WordArtEngine {
                 val x = px + s.ox[k]
                 val y = py + s.oy[k]
                 if (x < 0 || y < 0 || x >= w || y >= h || free[y * w + x].toInt() == 0) return false
-                k += stride
-                if (k >= s.n) k -= s.n
+                k = (k + stride) % s.n
                 i++
             }
             return true

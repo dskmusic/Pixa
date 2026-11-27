@@ -134,7 +134,8 @@ class WordArtViewModel(private val app: Application) : AndroidViewModel(app) {
             bgI == 0 -> listOf("vivid", "love", "ocean", "forest", "sunset", "neon")
             else -> listOf("vivid", "love", "ocean", "forest", "sunset", "mono")
         }
-        val pal = WordArtConfig.PALETTES.first { it.first == names.random(r) }.second
+        val palName = names.random(r)
+        val pal = (WordArtConfig.PALETTES.firstOrNull { it.first == palName } ?: WordArtConfig.PALETTES[0]).second
         val text = BuiltinPresets.texts.filter { dark || it.nameRes != R.string.wa_t_neon }.random(r).block
         val inverted = r.nextInt(100) < 15
         val pastel = listOf(0xFFFFCDD2, 0xFFBBDEFB, 0xFFC8E6C9, 0xFFFFF9C4, 0xFFE1BEE7).random(r).toInt()
@@ -199,6 +200,11 @@ class WordArtViewModel(private val app: Application) : AndroidViewModel(app) {
                     withContext(Dispatchers.IO) {
                         runCatching { lastFile.writeText(WordArtConfig.json.encodeToString(cfg)) }
                     }
+                } catch (e: kotlinx.coroutines.CancellationException) {
+                    throw e
+                } catch (e: Throwable) {
+                    // Una combinacion al azar problematica no debe tumbar la app: se conserva la vista previa anterior.
+                    android.util.Log.e("WordArt", "preview failed", e)
                 } finally {
                     _working.value = false
                 }
