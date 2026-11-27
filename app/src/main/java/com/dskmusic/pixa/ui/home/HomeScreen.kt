@@ -6,7 +6,6 @@ import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Restore
 import androidx.compose.material.icons.filled.AutoFixNormal
 import androidx.compose.foundation.layout.ColumnScope
-import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.compose.animation.animateColor
@@ -47,9 +46,11 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.BrokenImage
 import androidx.compose.material.icons.filled.Brush
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Cloud
 import androidx.compose.material.icons.filled.Collections
 import androidx.compose.material.icons.filled.Dashboard
 import androidx.compose.material.icons.filled.Close
@@ -61,6 +62,7 @@ import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PhotoCamera
+import androidx.compose.material.icons.filled.PhotoFilter
 import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.ViewCarousel
@@ -97,7 +99,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
@@ -141,6 +142,8 @@ fun HomeScreen(
     onPickBackgroundRemoval: () -> Unit,
     onPickQuickAdjust: () -> Unit = {},
     onPickAiTools: () -> Unit = {},
+    onPickFilters: () -> Unit = {},
+    onPickEffects: () -> Unit = {},
     onOpenEditor: () -> Unit,
     onCreate: (String) -> Unit,
     onOpenTrash: () -> Unit = {},
@@ -232,13 +235,6 @@ fun HomeScreen(
                 }
             }
         },
-        bottomBar = {
-            // Requisito del usuario: el pie de atribucion siempre visible, no solo al
-            // llegar al final del scroll.
-            Surface(color = MaterialTheme.colorScheme.surfaceContainer) {
-                HomeFooter(modifier = Modifier.padding(vertical = 10.dp))
-            }
-        },
     ) { padding ->
         Column(
             modifier = Modifier
@@ -282,30 +278,27 @@ fun HomeScreen(
                 )
             }
 
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(10.dp))
 
-            // Requisito del usuario: las cuatro acciones principales en 2x2, con icono a
-            // la izquierda, enunciado arriba y una descripcion pequena debajo.
-            // Requisito del usuario: orden 2x2 -> abrir imagen / abrir camara (fila
-            // superior), nueva imagen / pegar imagen (fila inferior).
+            // Requisito del usuario: las cuatro acciones principales en 2x2, compactas y
+            // con una sola linea de texto (sin descripcion).
+            // Orden 2x2 -> abrir imagen / abrir camara (fila superior), nueva imagen /
+            // pegar imagen (fila inferior).
             val primaryActions = listOf(
                 HomeAction(
                     Icons.Filled.PhotoLibrary,
                     stringResource(R.string.home_open_image),
                     onPickImage,
-                    stringResource(R.string.home_open_image_sub),
                 ),
                 HomeAction(
                     Icons.Filled.PhotoCamera,
                     stringResource(R.string.home_camera),
                     onCamera,
-                    stringResource(R.string.home_camera_sub),
                 ),
                 HomeAction(
                     Icons.Filled.Brush,
                     stringResource(R.string.home_new_canvas),
                     onNewCanvas,
-                    stringResource(R.string.home_new_canvas_sub),
                 ),
                 HomeAction(
                     Icons.Filled.ContentPaste,
@@ -319,12 +312,11 @@ fun HomeScreen(
                             onOpenEditor()
                         }
                     },
-                    sublabel = stringResource(R.string.home_paste_sub),
                 ),
             )
             PrimaryGrid(actions = primaryActions, startIndex = 0)
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(12.dp))
 
             // Requisito del usuario: "Herramientas" entre las cuatro principales y las
             // seis de abajo, alineado a la izquierda y en negrita.
@@ -384,6 +376,24 @@ fun HomeScreen(
                     Icons.Filled.GridView,
                     stringResource(R.string.create_batch),
                     onClick = { onCreate(Routes.BATCH) },
+                ),
+                // Nueva fila bajo "Imagenes stock".
+                HomeAction(
+                    Icons.Filled.Cloud,
+                    stringResource(R.string.home_word_art),
+                    onClick = { onCreate(Routes.WORD_ART) },
+                ),
+                // Accesos directos provisionales que rellenan la fila hasta que haya
+                // herramientas propias: abren la foto elegida directamente en un panel.
+                HomeAction(
+                    Icons.Filled.AutoAwesome,
+                    stringResource(R.string.fx_title),
+                    onPickEffects,
+                ),
+                HomeAction(
+                    Icons.Filled.PhotoFilter,
+                    stringResource(R.string.filters_title),
+                    onPickFilters,
                 ),
             )
             ActionGrid(actions = secondaryActions, columns = 3, startIndex = 4)
@@ -570,40 +580,6 @@ fun HomeScreen(
         )
     }
 }
-
-/** Pie de la pantalla de inicio, con el enlace a la web del desarrollador. */
-@Composable
-private fun HomeFooter(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    Row(
-        modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Text(
-            stringResource(R.string.home_footer_prefix),
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        Spacer(Modifier.width(4.dp))
-        Text(
-            "DSK",
-            style = MaterialTheme.typography.bodySmall,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.primary,
-            textDecoration = TextDecoration.Underline,
-            modifier = Modifier.clickable {
-                runCatching {
-                    context.startActivity(
-                        Intent(Intent.ACTION_VIEW, Uri.parse(DEV_URL)),
-                    )
-                }
-            },
-        )
-    }
-}
-
-private const val DEV_URL = "https://www.dskmusic.com/dsk_dev_redirect.php"
 
 /**
  * Nombre de la app con un efecto de color en bucle (requisito del usuario): discreto, no
@@ -998,39 +974,28 @@ private fun PrimaryActionCard(
         shape = RoundedCornerShape(16.dp),
     ) {
         Row(
-            modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp),
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Box(
                 modifier = Modifier
-                    .size(40.dp)
-                    .clip(RoundedCornerShape(12.dp))
+                    .size(30.dp)
+                    .clip(RoundedCornerShape(10.dp))
                     .background(badge),
                 contentAlignment = Alignment.Center,
             ) {
-                Icon(action.icon, contentDescription = null, tint = tint, modifier = Modifier.size(22.dp))
+                Icon(action.icon, contentDescription = null, tint = tint, modifier = Modifier.size(18.dp))
             }
-            Spacer(Modifier.width(12.dp))
-            Column(Modifier.weight(1f)) {
-                Text(
-                    action.label,
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    color = MaterialTheme.colorScheme.onSurface,
-                )
-                action.sublabel?.let {
-                    Spacer(Modifier.height(2.dp))
-                    Text(
-                        it,
-                        style = MaterialTheme.typography.bodySmall,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
-            }
+            Spacer(Modifier.width(10.dp))
+            Text(
+                action.label,
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f),
+            )
         }
     }
 }

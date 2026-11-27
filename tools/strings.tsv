@@ -385,6 +385,8 @@ emoji_search_hint|||Search emoji|||Buscar emoji
 emoji_not_found|||No emoji found|||No se ha encontrado ningún emoji
 # Imágenes de stock (Pixabay)
 stock_images_title|||Stock images|||Imágenes stock
+home_word_art|||Shape cloud|||Nube de formas
+home_word_art_soon|||Shape cloud is coming soon|||Nube de formas llegará pronto
 stock_images_search_hint|||Search photos, illustrations, vectors…|||Buscar fotos, ilustraciones, vectores…
 stock_images_type_all|||All|||Todas
 stock_images_type_photo|||Photos|||Fotos
@@ -1647,3 +1649,202 @@ ic_size_custom|||Custom|||Personalizado
 ic_size_side|||Side in pixels (16 to 4096)|||Lado en píxeles (16 a 4096)
 ic_saved|||Icon saved to the gallery|||Icono guardado en la galería
 ic_export_error|||Could not save the icon|||No se pudo guardar el icono
+wa_title|||Shape cloud|||Nube de formas
+wa_tab_shape|||Shape|||Forma
+wa_tab_words|||Words|||Palabras
+wa_tab_colors|||Colors / Fonts|||Colores / Fuentes
+wa_tab_background|||Background|||Fondo
+wa_tab_effects|||Effects|||Efectos
+wa_tab_presets|||Presets|||Presets
+wa_all|||All|||Todas
+wa_scope_fav|||Favorites|||Favoritas
+wa_scope_recent|||Recent|||Recientes
+wa_scope_mine|||My shapes|||Mis formas
+wa_scope_text|||Text|||Texto
+wa_search_hint|||Search shapes (cat, gato, flower…)|||Buscar formas (gato, cat, flor…)
+wa_cat_animals|||Animals|||Animales
+wa_cat_nature|||Nature|||Naturaleza
+wa_cat_food|||Food|||Comida
+wa_cat_music|||Music|||Música
+wa_cat_sport|||Sports|||Deporte
+wa_cat_symbols|||Symbols|||Símbolos
+wa_cat_shapes|||Shapes|||Formas
+wa_cat_people|||People|||Personas
+wa_cat_transport|||Transport|||Transporte
+wa_cat_objects|||Objects|||Objetos
+wa_cat_emoji|||Emoji & faces|||Emojis y caras
+wa_cat_letters|||Letters & numbers|||Letras y números
+wa_current_shape|||Shape: %1$s|||Forma: %1$s
+wa_no_results|||No shapes match your search|||Ninguna forma coincide con la búsqueda
+wa_nothing_here|||Nothing here yet|||Todavía no hay nada aquí
+wa_long_press_fav|||Long press a shape to add or remove it from favorites|||Mantén pulsada una forma para añadirla o quitarla de favoritas
+wa_import_shape|||Import image or SVG|||Importar imagen o SVG
+wa_import_hint|||PNG with transparency, SVG, or a dark silhouette on a light background.|||PNG con transparencia, SVG, o una silueta oscura sobre fondo claro.
+wa_invert_mask|||Invert silhouette|||Invertir silueta
+wa_invert_mask_sub|||Use the light area as the shape|||Usa la zona clara como forma
+wa_no_imports|||You have not imported any shape yet|||Aún no has importado ninguna forma
+wa_long_press_delete|||Long press a shape to delete it|||Mantén pulsada una forma para borrarla
+wa_delete_shape_confirm|||Delete this imported shape?|||¿Borrar esta forma importada?
+wa_import_failed|||Could not import the file|||No se pudo importar el archivo
+wa_shape_text|||Text to use as a shape|||Texto para usar como forma
+wa_use_text|||Use as shape|||Usar como forma
+wa_text_shape_hint|||Short words in a bold font work best. Use line breaks for several lines.|||Funcionan mejor palabras cortas con una fuente gruesa. Usa saltos de línea para varias líneas.
+wa_inverted|||Inverted mode|||Modo invertido
+wa_inverted_sub|||Fill the outside and leave the shape empty|||Rellena el exterior y deja la forma libre
+wa_lists|||Ready-made lists|||Listas prefijadas
+wa_replace|||Replace|||Reemplazar
+wa_words_title|||Words (%1$d)|||Palabras (%1$d)
+wa_words_hint|||One per line. Optional weight: word:5|||Una por línea. Peso opcional: palabra:5
+wa_paste|||Paste|||Pegar
+wa_import_text|||Import text|||Importar texto
+wa_import_text_sub|||Paste a text or open a file: the most frequent words are counted and weighted.|||Pega un texto o abre un archivo: se cuentan las palabras más frecuentes y se les da peso.
+wa_open_file|||Open text file|||Abrir archivo de texto
+wa_main_word|||Main word|||Palabra principal
+wa_main_word_hint|||Large, in the center (optional)|||Grande y en el centro (opcional)
+wa_size_density|||Size and density|||Tamaño y densidad
+wa_min_size|||Minimum size|||Tamaño mínimo
+wa_max_size|||Maximum size|||Tamaño máximo
+wa_density|||Density|||Densidad
+wa_spacing|||Word spacing|||Espaciado entre palabras
+wa_margin|||Edge margin|||Margen respecto al borde
+wa_order_weight|||Biggest first|||Mayor peso primero
+wa_order_random|||Random order|||Orden aleatorio
+wa_repeat|||Repeat words|||Repetir palabras
+wa_repeat_sub|||Keep adding smaller copies to fill gaps|||Añade copias más pequeñas para llenar huecos
+wa_rotation|||Rotation|||Rotación
+wa_rot_h|||Horizontal|||Horizontal
+wa_rot_v|||Vertical|||Vertical
+wa_rot_mixed|||Mixed|||Mixta
+wa_rot_random|||Random|||Aleatoria
+wa_rot_angles|||Specific angles|||Ángulos concretos
+wa_rot_angles_field|||Angles in degrees, separated by commas|||Ángulos en grados, separados por comas
+wa_zones|||Exclusion zones|||Zonas de exclusión
+wa_zone_n|||Zone %1$d|||Zona %1$d
+wa_zone_ellipse|||Ellipse|||Elipse
+wa_zone_rect|||Rectangle|||Rectángulo
+wa_zone_w|||Half width|||Semiancho
+wa_zone_h|||Half height|||Semialto
+wa_add_zone|||Add zone|||Añadir zona
+wa_seed|||Random seed (repeats the result)|||Semilla aleatoria (repite el resultado)
+wa_regenerate|||Regenerate|||Regenerar
+wa_colors|||Word colors|||Colores de las palabras
+wa_cm_single|||Single|||Uno solo
+wa_cm_palette|||Palette|||Paleta
+wa_cm_random|||Random|||Aleatorio
+wa_cm_gradient|||Gradient|||Degradado
+wa_cm_weight|||By weight|||Por peso
+wa_color|||Color|||Color
+wa_color_start|||Start color|||Color inicial
+wa_color_end|||End color|||Color final
+wa_color_back|||Back color|||Color de fondo
+wa_angle|||Angle|||Ángulo
+wa_fonts|||Fonts|||Tipografías
+wa_font_fixed|||Fixed|||Fija
+wa_font_random|||Random|||Aleatoria
+wa_pool_mix|||Mix|||Mezcla
+wa_pool_script|||Handwritten|||Manuscritas
+wa_pool_bold|||Impact|||Impactantes
+wa_pool_system|||System|||Sistema
+wa_pool_hint|||Google fonts download the first time they are used.|||Las fuentes de Google se descargan la primera vez que se usan.
+wa_text_style|||Text style|||Estilo del texto
+wa_bold|||Bold|||Negrita
+wa_italic|||Italic|||Cursiva
+wa_letter_spacing|||Letter spacing|||Espaciado entre letras
+wa_shadow|||Shadow|||Sombra
+wa_outline|||Outline|||Contorno
+wa_glow|||Glow|||Resplandor
+wa_text_gradient|||Text gradient|||Degradado en el texto
+wa_blur|||Blur|||Desenfoque
+wa_offset_x|||Offset X|||Desplazamiento X
+wa_offset_y|||Offset Y|||Desplazamiento Y
+wa_width|||Width|||Grosor
+wa_radius|||Radius|||Radio
+wa_size|||Size|||Tamaño
+wa_opacity|||Opacity|||Opacidad
+wa_canvas_format|||Canvas format|||Formato del lienzo
+wa_bg_apply_to|||Apply background to|||Aplicar fondo a
+wa_zone_words_inside|||Words zone (inside the shape)|||Zona de palabras (dentro de la forma)
+wa_zone_words_outside|||Words zone (outside the shape)|||Zona de palabras (fuera de la forma)
+wa_zone_free_inside|||Free zone (inside the shape)|||Zona libre (dentro de la forma)
+wa_zone_free_outside|||Free zone (outside the shape)|||Zona libre (fuera de la forma)
+wa_bg_none|||Transparent|||Transparente
+wa_bg_solid|||Solid|||Sólido
+wa_bg_gradient|||Gradient|||Degradado
+wa_bg_image|||Image|||Imagen
+wa_bg_pattern|||Pattern|||Patrón
+wa_bg_none_hint|||This zone stays transparent.|||Esta zona queda transparente.
+wa_radial|||Radial gradient|||Degradado radial
+wa_pick_image|||Choose image|||Elegir imagen
+wa_change_image|||Change image|||Cambiar imagen
+wa_fit_crop|||Fill (crop)|||Rellenar (recortar)
+wa_fit_fit|||Fit|||Ajustar
+wa_fit_stretch|||Stretch|||Estirar
+wa_pat_stripes|||Stripes|||Rayas
+wa_pat_dots|||Dots|||Puntos
+wa_pat_grid|||Grid|||Cuadrícula
+wa_pat_checker|||Checkers|||Damero
+wa_fx_transform|||Shape transform|||Transformar la forma
+wa_fx_scale|||Scale|||Escala
+wa_fx_rotation|||Rotation|||Rotación
+wa_fx_flip_h|||Flip horizontally|||Voltear horizontalmente
+wa_fx_flip_v|||Flip vertically|||Voltear verticalmente
+wa_fx_pos_x|||Position X|||Posición X
+wa_fx_pos_y|||Position Y|||Posición Y
+wa_fx_corner|||Rounded corners|||Esquinas redondeadas
+wa_fx_smooth|||Smooth mask|||Suavizar máscara
+wa_fx_erode|||Erode mask|||Erosionar máscara
+wa_fx_dilate|||Dilate mask|||Dilatar máscara
+wa_fx_border|||Border|||Borde
+wa_fx_border_on|||Show border|||Mostrar borde
+wa_fx_border_gradient|||Gradient border|||Borde con degradado
+wa_fx_border_double|||Double outline|||Contorno doble
+wa_bs_solid|||Solid|||Sólido
+wa_bs_dotted|||Dotted|||Punteado
+wa_bs_dashed|||Dashed|||Discontinuo
+wa_fx_shadow_glow|||Shadow and glow|||Sombra y resplandor
+wa_fx_relief|||Relief|||Relieve
+wa_fx_bevel|||Bevel / emboss|||Relieve / bisel
+wa_fx_strength|||Strength|||Intensidad
+wa_presets_full|||Full presets|||Presets completos
+wa_presets_text|||Text style presets|||Presets de estilo de texto
+wa_presets_bg|||Background presets|||Presets de fondo
+wa_presets_shape|||Shape presets|||Presets de forma
+wa_presets_share|||Share presets|||Compartir presets
+wa_save_current|||Save current|||Guardar el actual
+wa_delete_preset_confirm|||Delete this preset?|||¿Borrar este preset?
+wa_presets_exported|||Presets exported|||Presets exportados
+wa_presets_imported|||Presets imported|||Presets importados
+wa_p_love|||Love heart|||Corazón romántico
+wa_p_star|||Golden star|||Estrella dorada
+wa_p_cloud|||Blue cloud|||Nube azul
+wa_p_drop|||Nature drop|||Gota natural
+wa_p_moon|||Night moon|||Luna nocturna
+wa_p_birthday|||Birthday circle|||Círculo de cumpleaños
+wa_p_inverted|||Inverted heart|||Corazón invertido
+wa_p_music|||Music notes|||Notas musicales
+wa_t_plain|||Plain|||Sencillo
+wa_t_shadow|||Bold shadow|||Negrita con sombra
+wa_t_outline|||White outline|||Contorno blanco
+wa_t_neon|||Neon|||Neón
+wa_b_none|||None|||Ninguno
+wa_b_paper|||Paper|||Papel
+wa_b_night|||Night|||Noche
+wa_b_dots|||Dots|||Puntos
+wa_f_plain|||Plain|||Sin efectos
+wa_f_border|||Border|||Con borde
+wa_f_relief|||Relief|||Relieve
+wa_f_glow|||Glow|||Resplandor
+wa_open_editor|||Open in the editor|||Abrir en el editor
+wa_reset|||Reset everything|||Restablecer todo
+wa_credits|||Credits and licenses|||Créditos y licencias
+wa_credits_intro|||The shape library uses these open collections:|||La biblioteca de formas usa estas colecciones libres:
+wa_export_title|||Export size|||Tamaño de exportación
+wa_export_hint|||PNG with transparency, saved to the gallery. Larger sizes need more memory.|||PNG con transparencia, guardado en la galería. Los tamaños grandes necesitan más memoria.
+wa_saved|||Image saved to the gallery|||Imagen guardada en la galería
+wa_export_error|||Could not save the image|||No se pudo guardar la imagen
+wa_zone_canvas|||Canvas background (behind everything)|||Fondo del lienzo (detrás de todo)
+wa_exit_title|||Leave shape cloud?|||¿Salir de Nube de formas?
+wa_exit_body|||You have changes. If you leave without exporting or opening it in the editor, the result is not saved.|||Tienes cambios. Si sales sin exportar ni abrir en el editor, el resultado no se guarda.
+wa_exit_confirm|||Leave|||Salir
+wa_exit_stay|||Keep editing|||Seguir editando
+wa_surprise|||Surprise me (random combination)|||Sorpréndeme (combinación al azar)

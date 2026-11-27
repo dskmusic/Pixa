@@ -53,6 +53,7 @@ import com.dskmusic.pixa.ui.editor.EditorScreen
 import com.dskmusic.pixa.ui.editor.EditorViewModel
 import com.dskmusic.pixa.ui.home.HomeScreen
 import com.dskmusic.pixa.ui.icon.IconMakerScreen
+import com.dskmusic.pixa.ui.wordart.WordArtScreen
 import com.dskmusic.pixa.ui.home.NewCanvasScreen
 import com.dskmusic.pixa.ui.home.TrashScreen
 import com.dskmusic.pixa.ui.meme.MemeScreen
@@ -199,6 +200,18 @@ private fun PixaNavHost(
         editor.startFromUri(uri, openPanel = EditorPanel.ADJUST)
         nav.navigateSingle(Routes.EDITOR)
     }
+    val pickForEffects = rememberImagePicker { uri ->
+        editor.launchedExternally = false
+        editor.aiLaunch = null
+        editor.startFromUri(uri, openPanel = EditorPanel.EFFECTS)
+        nav.navigateSingle(Routes.EDITOR)
+    }
+    val pickForFilters = rememberImagePicker { uri ->
+        editor.launchedExternally = false
+        editor.aiLaunch = null
+        editor.startFromUri(uri, openPanel = EditorPanel.FILTERS)
+        nav.navigateSingle(Routes.EDITOR)
+    }
     val pickForAiTools = rememberImagePicker { uri ->
         editor.launchedExternally = false
         editor.aiLaunch = null
@@ -274,6 +287,8 @@ private fun PixaNavHost(
                 onPickBackgroundRemoval = pickForBackgroundRemoval,
                 onPickQuickAdjust = pickForQuickAdjust,
                 onPickAiTools = pickForAiTools,
+                onPickFilters = pickForFilters,
+                onPickEffects = pickForEffects,
                 onOpenEditor = { nav.navigateSingle(Routes.EDITOR) },
                 onOpenTrash = { nav.navigateSingle(Routes.TRASH) },
                 onCreate = { route ->
@@ -343,6 +358,14 @@ private fun PixaNavHost(
 
         composable(Routes.ICON_MAKER) {
             IconMakerScreen(
+                editor = editor,
+                onBack = { nav.popBackStack() },
+                onOpenEditor = { nav.navigateReplacing(Routes.EDITOR) },
+            )
+        }
+
+        composable(Routes.WORD_ART) {
+            WordArtScreen(
                 editor = editor,
                 onBack = { nav.popBackStack() },
                 onOpenEditor = { nav.navigateReplacing(Routes.EDITOR) },

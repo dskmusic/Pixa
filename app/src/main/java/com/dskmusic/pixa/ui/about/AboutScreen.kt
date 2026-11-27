@@ -60,7 +60,7 @@ private val Licenses = listOf(
     "Coil — Apache License 2.0",
     "Kotlin, kotlinx.serialization, kotlinx.coroutines — Apache License 2.0",
     "Google Fonts (Anton, Roboto, Montserrat, Lora, Oswald...) — SIL Open Font License 1.1",
-)
+) + com.dskmusic.pixa.core.wordart.WordArtCredits.lines
 
 @Composable
 fun AboutScreen(onBack: () -> Unit) {
