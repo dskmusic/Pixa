@@ -137,6 +137,7 @@ import com.dskmusic.pixa.ui.common.PixaToastHost
 import com.dskmusic.pixa.ui.common.PixaTopBar
 import com.dskmusic.pixa.ui.common.SliderRow
 import com.dskmusic.pixa.ui.common.formatValue
+import com.dskmusic.pixa.ui.common.rememberLeaveGuard
 import com.dskmusic.pixa.ui.common.rememberImagePicker
 import com.dskmusic.pixa.ui.editor.EditorViewModel
 import com.dskmusic.pixa.ui.editor.panels.FontPickerDialog
@@ -221,6 +222,28 @@ fun IconMakerScreen(
     val errorMsg = stringResource(R.string.ic_export_error)
     val title = stringResource(R.string.ic_title)
 
+    // Salir con cambios sin guardar: mismo dialogo que los demas generadores (guardar
+    // proyecto, exportar o descartar). Se rinde a 1024 con las fuentes ya en cache.
+    val build: () -> PixaDocument? = build@{
+        val bm = runCatching { IconRenderer.render(doc, 1024, imageOf) { fonts.cached(it) } }.getOrNull()
+            ?: return@build null
+        val layer = PixaLayer(name = title, content = LayerContent.Raster(editor.putBitmap(bm)))
+        PixaDocument(
+            width = bm.width,
+            height = bm.height,
+            background = CanvasBackground(transparent = true, color = 0),
+            layers = listOf(layer),
+            selectedLayerId = layer.id,
+        )
+    }
+    val guardedBack = rememberLeaveGuard(
+        dirty = stackVersion >= 0 && undo.isNotEmpty(),
+        onLeave = onBack,
+        vm = editor,
+        defaultName = title,
+        build = build,
+    )
+
     val pickBackImage = rememberImagePicker { uri -> updB { it.copy(imageUri = uri.toString(), imageOn = true) } }
     val pickItemImage = rememberImagePicker { uri -> updM { it.copy(uri = uri.toString()) } }
 
@@ -230,7 +253,7 @@ fun IconMakerScreen(
         topBar = {
             PixaTopBar(
                 title = title,
-                onBack = onBack,
+                onBack = guardedBack,
                 actions = {
                     Box {
                         IconButton(onClick = { menu = true }) { Icon(Icons.Filled.MoreVert, null) }
